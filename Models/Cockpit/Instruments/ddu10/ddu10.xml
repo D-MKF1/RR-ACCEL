@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--####################################################################
+Lake of Constance Hangar
+Rolls Royce ACCEL - Spirit of Innovation for Flightgear
+Copyright (C) 2022 M.Kraus
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Every software has a developer, also free software.
+As a gesture of courtesy and respect, I would be delighted
+if you contacted me before making any changes to this software.
+<info (at) marc-kraus.de> Dec, 2021
+########################################################################-->
+<PropertyList>
+
+<path>ddu10.ac</path>
+
+	<effect>
+		<inherits-from>../../../Effects/lcd_display</inherits-from>
+		<object-name>display</object-name>
+	</effect>
+
+	<animation>
+		<type>material</type>
+		<object-name>face</object-name>
+		<condition>
+      <not><property>/sim/rendering/rembrandt/enabled</property></not>
+      <property>systems/accel-electrical/outputs/cabin-dim</property>
+    </condition>
+    <emission>
+      <red>0.8</red>
+      <green>0.8</green>
+      <blue>0.8</blue>
+      <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+    </emission>
+	</animation>
+
+	<animation>
+	    <type>material</type>
+	    <object-name>display</object-name>
+	    <emission>
+	        <red>0.8</red>
+	        <green>0.8</green>
+	        <blue>0.8</blue>
+	        <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+	    </emission>
+	</animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>display</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>display</object-name>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>canvas_ddu10.showDDU10();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+			<type>pick</type>
+			<object-name>touchbutton</object-name>
+			<visible>false</visible>
+			<action>
+				<button>0</button>
+				<repeatable>false</repeatable>
+				<binding>
+					<command>property-toggle</command>
+					<property>/sim/sound/switch2</property>
+				</binding>
+			</action>
+	</animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>lled_1</object-name>
+    <object-name>lled_2</object-name>
+    <object-name>lled_3</object-name>
+    <object-name>lled_4</object-name>
+    <object-name>lled_5</object-name>
+    <object-name>rled_1</object-name>
+    <object-name>rled_2</object-name>
+    <object-name>rled_3</object-name>
+    <object-name>rled_4</object-name>
+    <object-name>rled_5</object-name>
+    <object-name>led_1</object-name>
+    <object-name>led_2</object-name>
+    <object-name>led_3</object-name>
+    <object-name>led_4</object-name>
+    <object-name>led_5</object-name>
+    <object-name>led_6</object-name>
+    <object-name>led_7</object-name>
+    <object-name>led_8</object-name>
+    <object-name>led_9</object-name>
+    <object-name>led_10</object-name>
+    <emission>
+      <red>   1.0 </red>
+      <green> 1.0 </green>
+      <blue>  1.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_1</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.9</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>led_10</object-name>
+      <condition>
+      <and>
+        <greater-than>
+          <property>systems/accel-electrical/battery/battery-charge-percent</property>
+          <value>0.9</value>
+        </greater-than>
+        <greater-than>
+          <property>systems/accel-electrical/battery/engine-volts</property>
+          <value>12</value>
+        </greater-than>
+        <property>systems/accel-electrical/start12v</property>
+      </and>
+      </condition>
+    </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_9</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.8</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+<animation>
+  <type>select</type>
+  <object-name>led_2</object-name>
+  <condition>
+  <and>
+    <greater-than>
+      <property>systems/accel-electrical/battery/battery-charge-percent</property>
+      <value>0.8</value>
+    </greater-than>
+    <greater-than>
+      <property>systems/accel-electrical/battery/engine-volts</property>
+      <value>12</value>
+    </greater-than>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_8</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.6</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>led_3</object-name>
+      <condition>
+      <and>
+        <greater-than>
+          <property>systems/accel-electrical/battery/battery-charge-percent</property>
+          <value>0.6</value>
+        </greater-than>
+        <greater-than>
+          <property>systems/accel-electrical/battery/engine-volts</property>
+          <value>12</value>
+        </greater-than>
+        <property>systems/accel-electrical/start12v</property>
+      </and>
+      </condition>
+    </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_7</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.4</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+    <animation>
+      <type>select</type>
+      <object-name>led_4</object-name>
+      <condition>
+      <and>
+        <greater-than>
+          <property>systems/accel-electrical/battery/battery-charge-percent</property>
+          <value>0.4</value>
+        </greater-than>
+        <greater-than>
+          <property>systems/accel-electrical/battery/engine-volts</property>
+          <value>12</value>
+        </greater-than>
+        <property>systems/accel-electrical/start12v</property>
+      </and>
+      </condition>
+    </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_6</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.2</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led_5</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/battery-charge-percent</property>
+        <value>0.2</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>12</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lled_1</object-name>
+    <object-name>rled_1</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>730</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lled_2</object-name>
+    <object-name>rled_2</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>735</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lled_3</object-name>
+    <object-name>rled_3</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>740</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lled_4</object-name>
+    <object-name>rled_4</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>745</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>lled_5</object-name>
+    <object-name>rled_5</object-name>
+    <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/battery/engine-volts</property>
+        <value>750</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+    </condition>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<system name="crash-detect">
+
+  <channel name="impact-ground">
+
+     <switch name="impact">
+          <test logic="AND" value="1">
+                gear/gear-pos-norm == 1.0
+                position/h-agl-ft lt 3.4
+                simulation/sim-time-sec gt 1.0
+          </test>
+          <test logic="AND" value="1">
+                gear/gear-pos-norm lt 1.0
+                position/h-agl-ft lt 2.4
+                simulation/sim-time-sec gt 1.0
+          </test>
+          <output>systems/crash-detect/crash-on-ground</output>
+     </switch>
+
+  </channel>
+
+</system>

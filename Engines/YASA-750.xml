@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- from Wikipedia
+# max 750 KW for short time, average 450 KW
+# 3 batteries with 450kg and 72 KW/h
+# thats enough for 20min on top speed + start and Landing
+# or 177n/miles ~ 285 km in average speed.
+#
+# It subsequently reached a top speed of 623 km/h (336 kn)
+# 555 km/h (300 kn) over 3 km (1.6 nmi), 532 km/h (287 kn) over 15 km (8.1 nmi),
+# and was able to climb to 3,000 m (9,840 ft) in 3min 22s.
+-->
+<electric_engine name="yasa750">
+	<power unit="WATTS"> 750000 </power>
+</electric_engine>

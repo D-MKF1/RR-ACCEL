@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<electric_engine name="thruster">
+	<power unit="WATTS">750000</power>
+</electric_engine>

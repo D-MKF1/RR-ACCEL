@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--####################################################################
+Lake of Constance Hangar
+Boeing 707 for Flightgear
+Copyright (C) 2013 M.Kraus
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Every software has a developer, also free software.
+As a gesture of courtesy and respect, I would be delighted
+if you contacted me before making any changes to this software.
+<info (at) marc-kraus.de> April, 2017
+########################################################################-->
+<PropertyList>
+    <path>ap-fg.ac</path>
+
+  <animation>
+		<type>material</type>
+        <object-name>altOn</object-name>
+        <object-name>apOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>hdgOn</object-name>
+        <object-name>iasOn</object-name>
+        <object-name>navOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>gpsOn</object-name>
+        <object-name>pitchOn</object-name>
+		<emission>
+			<red>0.6</red>
+			<green>0.4</green>
+			<blue>0.3</blue>
+		</emission>
+	</animation>
+
+  <animation>
+		<type>material</type>
+        <object-name>bg</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/accel-electrical/outputs/cabin-dim</property>
+		</condition>
+		<emission>
+		  <red>0.2</red>
+		  <green>0.2</green>
+		  <blue>0.2‚</blue>
+		  <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+        <object-name>altOn</object-name>
+        <object-name>apOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>hdgOn</object-name>
+        <object-name>iasOn</object-name>
+        <object-name>navOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>gpsOn</object-name>
+        <object-name>pitchOn</object-name>
+        <object-name>altOff</object-name>
+        <object-name>apOff</object-name>
+        <object-name>apprOff</object-name>
+        <object-name>hdgOff</object-name>
+        <object-name>iasOff</object-name>
+        <object-name>navOff</object-name>
+        <object-name>apprOff</object-name>
+        <object-name>gpsOff</object-name>
+        <object-name>pitchOff</object-name>
+				<object-name>shadow</object-name>
+		<condition>
+			<not><property>/sim/rendering/rembrandt/enabled</property></not>
+			<property>systems/accel-electrical/outputs/cabin-dim</property>
+		</condition>
+		<emission>
+		  <red>0.7</red>
+		  <green>0.7</green>
+		  <blue>0.7</blue>
+		  <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>noshadow</type>
+		<object-name>shadow</object-name>
+	</animation>
+
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>shadow</object-name>
+	</effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>altOn</object-name>
+        <object-name>apOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>hdgOn</object-name>
+        <object-name>iasOn</object-name>
+        <object-name>navOn</object-name>
+        <object-name>apprOn</object-name>
+        <object-name>gpsOn</object-name>
+        <object-name>pitchOn</object-name>
+        <condition>
+          <and>
+            <greater-than>
+    					<property>systems/accel-electrical/battery/engine-volts</property>
+    					<value>12</value>
+    				</greater-than>
+    				<property>systems/accel-electrical/start12v</property>
+          </and>
+        </condition>
+    </animation>
+
+    <!--################  buttons on the ap-console #################### -->
+      <!-- Main Switch AP -->
+      <animation>
+          <type>select</type>
+          <object-name>apOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/ap</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>apOff</object-name>
+          <property>/autopilot/switches/ap</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>apOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/ap</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>apOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/ap</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+
+      <!-- Heading Hold -->
+      <animation>
+          <type>select</type>
+          <object-name>hdgOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/hdg</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>hdgOff</object-name>
+          <property>/autopilot/switches/hdg</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>hdgOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/hdg</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>hdgOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/hdg</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+      <!-- Altitude Hold -->
+      <animation>
+          <type>select</type>
+          <object-name>altOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/alt</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>altOff</object-name>
+          <property>/autopilot/switches/alt</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>altOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/alt</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>altOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/alt</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+      <!-- IAS Hold -->
+      <animation>
+          <type>select</type>
+          <object-name>iasOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/ias</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>iasOff</object-name>
+          <property>/autopilot/switches/ias</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>iasOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/ias</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>iasOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/ias</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+      <!-- NAV1 Hold -->
+      <animation>
+          <type>select</type>
+          <object-name>navOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/nav</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>navOff</object-name>
+          <property>/autopilot/switches/nav</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>navOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/nav</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>navOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/nav</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+      <!-- Approach / Glideslope -->
+      <animation>
+          <type>select</type>
+          <object-name>apprOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/appr</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>apprOff</object-name>
+          <property>/autopilot/switches/appr</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>apprOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/appr</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>apprOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/appr</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+
+      <!-- VS Hold -->
+      <animation>
+          <type>select</type>
+          <object-name>pitchOff</object-name>
+          <condition>
+            <equals>
+              <property>/autopilot/switches/vs</property>
+              <value>0</value>
+            </equals>
+          </condition>
+      </animation>
+
+      <animation>
+          <type>translate</type>
+          <object-name>pitchOff</object-name>
+          <property>/autopilot/switches/vs</property>
+          <factor>-0.004</factor>
+          <axis>
+              <x>1</x>
+              <y>0</y>
+              <z>0</z>
+          </axis>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>pitchOff</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/vs</property>
+                <value>1</value>
+              </binding>
+          </action>
+      </animation>
+
+      <animation>
+          <type>pick</type>
+          <visible>true</visible>
+          <object-name>pitchOn</object-name>
+          <action>
+              <button>0</button>
+              <binding>
+                <command>property-assign</command>
+                <property>/autopilot/switches/vs</property>
+                <value>0</value>
+              </binding>
+          </action>
+      </animation>
+  </PropertyList>

@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<!-- from Wikipedia
+# max 750 KW for short time, average 450 KW
+# 3 batteries with 450kg and 72 KW/h
+# thats enough for 20min on top speed + start and Landing
+# or 177n/miles ~ 285 km in average speed.
+#
+# It subsequently reached a top speed of 623 km/h (336 kn)
+# 555 km/h (300 kn) over 3 km (1.6 nmi), 532 km/h (287 kn) over 15 km (8.1 nmi),
+# and was able to climb to 3,000 m (9,840 ft) in 3min 22s.
+-->
+<PropertyList>
+
+<sim>
+  <description>Rolls-Royce ACCEL - Spirit of Innovation</description>
+  <author>Marc Kraus</author>
+  <minimum-fg-version>2020.3</minimum-fg-version>
+
+  <flight-model>jsb</flight-model>
+  <aero>RR-ACCEL-jsbsim</aero>
+  <previews>
+    <preview>
+      <type>development</type>
+      <path>Splash/development.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>cockpit</type>
+      <path>Splash/flightgear-RRAccel1.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>exterior</type>
+      <path>Splash/flightgear-RRAccel2.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>exterior</type>
+      <path>Splash/baukasten.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>exterior</type>
+      <path>Splash/rr-accel-splash.png</path>
+      <splash type="bool">true</splash>
+    </preview>
+  </previews>
+  <tags>
+    <tag>Rolls Royce</tag>
+    <tag>low-wing</tag>
+    <tag>tail-dragger</tag>
+    <tag>retractable-gear</tag>
+    <tag>zero-emmission</tag>
+    <tag>single-engine</tag>
+  </tags>
+
+  <model>
+    <path>Aircraft/RR-ACCEL/Models/RR-ACCEL.xml</path>
+    <livery>
+      <file type="string">Official</file>
+    </livery>
+  </model>
+
+  <sound>
+    <path>Aircraft/RR-ACCEL/Sounds/rr-accel-sound.xml</path>
+  </sound>
+
+  <menubar>
+    <default>
+      <menu n="100">
+        <label>RR-ACCEL</label>
+        <enabled type="bool">true</enabled>
+        <item>
+          <label>--- Selection ---</label>
+          <enabled>false</enabled>
+        </item>
+        <item>
+          <label>Select livery</label>
+          <binding>
+            <command>nasal</command>
+            <script>aircraft.livery.dialog.open()</script>
+          </binding>
+        </item>
+        <item>
+          <label>--- Equipment ---</label>
+          <enabled>false</enabled>
+        </item>
+        <item>
+          <label>Charging Station</label>
+          <binding>
+              <command>nasal</command>
+              <script>
+                setprop("/systems/accel-electrical/battery/battery-charge-percent", 1);
+              </script>
+          </binding>
+        </item>
+      </menu>
+    </default>
+  </menubar>
+
+  <instrumentation>
+    <path>Aircraft/RR-ACCEL/Systems/instrumentation.xml</path>
+  </instrumentation>
+
+  <systems>
+    <electrical>
+      <path/>
+    </electrical>
+    <rr-accel-electrical>
+      <path/>
+    </rr-accel-electrical>
+  </systems>
+
+  <view>
+    <internal archive="y">true</internal>
+    <config>
+      <limits>
+      <enabled archive="y" type="bool">false</enabled>
+      </limits>
+      <!-- x/y/z == right/up/back -->
+      <x-offset-m archive="y">-0.2</x-offset-m>
+      <y-offset-m archive="y">0.48</y-offset-m>
+      <z-offset-m archive="y">0.7</z-offset-m>
+      <pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+      <default-field-of-view-deg type="double">72</default-field-of-view-deg>
+    </config>
+  </view>
+<view n="1">
+  <config>
+  <!-- small plane, so extend chase view offset a bit -->
+  <z-offset-m type="double"  archive="y">28.0</z-offset-m>
+  </config>
+</view>
+
+<multiplay>
+  <generic>
+  <float n="0" alias="/controls/doors/canopy/position-norm"/>
+  <float n="1" alias="/position/altitude-agl-ft"/>    <!-- shadow without rembrandt -->
+  <float n="2" alias="/orientation/pitch-deg"/> <!-- shadow without rembrandt -->
+  <int n="0" alias="/gear/gear[1]/wow"/> <!-- brakewidge -->
+  <int n="1" alias="/controls/gear/brake-parking"/> <!-- brakewidge -->
+  </generic>
+</multiplay>
+
+<!--  only for three views at same time
+  <rendering>
+  <camera-group>
+      <window>
+        <name type="string">main</name>
+        <host-name type="string"></host-name>
+        <display>1</display>
+        <screen>0</screen>
+        <x>0</x>
+        <y>0</y>
+        <width>650</width>
+        <height>600</height>
+        <decoration type = "bool">true</decoration>
+        <fullscreen type = "bool">false</fullscreen>
+      </window>
+      <window>
+        <name type="string">secondary</name>
+        <host-name type="string"></host-name>
+        <display>1</display>
+        <screen>0</screen>
+        <x>650</x>
+        <y>0</y>
+        <width>650</width>
+        <height>600</height>
+        <decoration type = "bool">true</decoration>
+        <fullscreen type = "bool">false</fullscreen>
+      </window>
+      <window>
+        <name type="string">third</name>
+        <host-name type="string"></host-name>
+        <display>1</display>
+        <screen>0</screen>
+        <x>-650</x>
+        <y>0</y>
+        <width>650</width>
+        <height>600</height>
+        <decoration type = "bool">true</decoration>
+        <fullscreen type = "bool">false</fullscreen>
+      </window>
+      <camera>
+        <name type="string">middlecamera</name>
+        <window>
+          <name>main</name>
+        </window>
+        <view>
+          <heading-deg type="double">0.0</heading-deg>
+        </view>
+        <frustum>
+          <top>0.133</top>
+          <bottom>-0.133</bottom>
+          <left>-.1668</left>
+          <right>.1668</right>
+          <near>0.4</near>
+          <far>120000.0</far>
+        </frustum>
+      </camera>
+      <camera>
+        <name type="string">leftcamera</name>
+        <window>
+          <name>secondary</name>
+        </window>
+        <view>
+          <heading-deg type="double">45.0</heading-deg>
+        </view>
+        <frustum>
+          <top>0.133</top>
+          <bottom>-0.133</bottom>
+          <left>-.1668</left>
+          <right>.1668</right>
+          <near>0.4</near>
+          <far>120000.0</far>
+        </frustum>
+      </camera>
+      <camera>
+        <name type="string">rightcamera</name>
+        <window>
+          <name>third</name>
+        </window>
+        <view>
+          <heading-deg type="double">-45.0</heading-deg>
+        </view>
+        <frustum>
+          <top>0.133</top>
+          <bottom>-0.133</bottom>
+          <left>-.1668</left>
+          <right>.1668</right>
+          <near>0.4</near>
+          <far>120000.0</far>
+        </frustum>
+      </camera>
+      <gui>
+        <window>
+          <name type="string">main</name>
+        </window>
+      </gui>
+    </camera-group>
+  </rendering>
+-->
+  <aircraft-data>
+    <path>controls/flight/rudder-trim-pos</path>
+    <path>controls/flight/aileron-trim-pos</path>
+    <path>controls/flight/elevator-trim-pos</path>
+    <path>controls/mtp/rpm</path>
+  </aircraft-data>
+
+</sim>
+
+<input>
+  <keyboard include="Systems/keyboard.xml"/>
+</input>
+
+ <controls>
+	<gear>
+		<brake-parking type="double">0.0</brake-parking>
+	</gear>
+	<aerotow>
+	 <find-aircraft type="bool">false</find-aircraft>
+	</aerotow>
+  	<mtp>
+  	  <manu type="bool">false</manu>
+  	  <low type="bool">true</low>
+  	  <rpm type="double">1400</rpm>
+  	</mtp>
+ </controls>
+
+ <autopilot>
+  <settings>
+      <target-speed-kt type="double">200</target-speed-kt>
+      <target-pitch-deg type="double">0</target-pitch-deg>
+      <target-altitude-ft type="int">0</target-altitude-ft>
+      <heading-bug-deg type="int">0</heading-bug-deg>
+      <vertical-speed-fpm type="int">0</vertical-speed-fpm>
+  </settings>
+  <switches>
+    <ap type="bool">0</ap>
+    <hdg type="bool">0</hdg>
+    <alt type="bool">0</alt>
+    <ias type="bool">0</ias>
+    <nav type="bool">0</nav>
+    <appr type="bool">0</appr>
+    <vs type="bool">0</vs>
+  </switches>
+</autopilot>
+
+ <fdm>
+   <jsbsim>
+     <systems>
+       <chute>
+         <chute-size-factor type="double">1.3</chute-size-factor>
+       </chute>
+     </systems>
+   </jsbsim>
+ </fdm>
+ <payload>
+   <weight>
+     <name type="string">Pilot</name>
+     <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[0]"/>
+     <arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[0]"/>
+     <min-lb type="double">0.0</min-lb>
+     <max-lb type="double">300.0</max-lb>
+   </weight>
+   <weight>
+     <name type="string">Co-Pilot</name>
+     <weight-lb alias="/fdm/jsbsim/inertia/pointmass-weight-lbs[1]"/>
+     <arm-in alias="/fdm/jsbsim/inertia/pointmass-location-X-inches[1]"/>
+     <min-lb type="double">0.0</min-lb>
+     <max-lb type="double">300.0</max-lb>
+   </weight>
+ </payload>
+ <nasal>
+    <rraccel>
+      <file>Aircraft/RR-ACCEL/Nasal/rraccel.nas</file>
+      <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>
+      <file>Aircraft/RR-ACCEL/Nasal/doors.nas</file>
+      <file>Aircraft/RR-ACCEL/Nasal/shake.nas</file>
+			<file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
+      <file>Aircraft/RR-ACCEL/Nasal/ap-helper.nas</file>
+    </rraccel>
+    <canvas_epsi570>
+      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/EPSI570/epsi570.nas</file>
+    </canvas_epsi570>
+    <canvas_ddu10>
+      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
+    </canvas_ddu10>
+    <canvas_lcd>
+      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.nas</file>
+    </canvas_lcd>
+    <ar6201>
+      <file>Aircraft/Instruments-3d/ar-6201/ar6201.nas</file>
+    </ar6201>
+    <bxp6401>
+      <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
+    </bxp6401>
+ </nasal>
+
+</PropertyList>

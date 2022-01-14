@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--####################################################################
+Lake of Constance Hangar
+Rolls Royce ACCEL - Spirit of Innovation for Flightgear
+Copyright (C) 2022 M.Kraus
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Every software has a developer, also free software.
+As a gesture of courtesy and respect, I would be delighted
+if you contacted me before making any changes to this software.
+<info (at) marc-kraus.de> Dec, 2021
+########################################################################-->
+<PropertyList>
+
+ <path>alt.ac</path>
+
+ <animation>
+   <type>material</type>
+   <object-name>alt100</object-name>
+   <object-name>alt1000</object-name>
+   <object-name>alt10000</object-name>
+   <object-name>altface</object-name>
+   <object-name>qnhcircle</object-name>
+   <object-name>qnhknob</object-name>
+   <object-name>screws</object-name>
+   <condition>
+     <not><property>/sim/rendering/rembrandt/enabled</property></not>
+     <property>systems/accel-electrical/outputs/cabin-dim</property>
+   </condition>
+   <emission>
+     <red>0.8</red>
+     <green>0.8</green>
+     <blue>0.8</blue>
+     <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+   </emission>
+ </animation>
+
+<!-- needles -->
+  <animation>
+      <type>rotate</type>
+      <object-name>alt10000</object-name>
+      <property>instrumentation/altimeter/indicated-altitude-ft</property>
+      <factor>0.0036</factor>
+      <axis>
+          <x>-1.0</x>
+          <y>0</y>
+          <z>0.0</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>rotate</type>
+      <object-name>alt1000</object-name>
+      <property>instrumentation/altimeter/indicated-altitude-ft</property>
+      <factor>0.036</factor>
+      <axis>
+          <x>-1.0</x>
+          <y>0</y>
+          <z>0.0</z>
+      </axis>
+  </animation>
+
+  <animation>
+      <type>rotate</type>
+      <object-name>alt100</object-name>
+      <property>instrumentation/altimeter/indicated-altitude-ft</property>
+      <factor>0.36</factor>
+      <axis>
+          <x>-1.0</x>
+          <y>0</y>
+          <z>0.0</z>
+      </axis>
+  </animation>
+
+<!-- qnh circle -->
+<animation>
+  <type>rotate</type>
+  <object-name>qnhcircle</object-name>
+  <property>instrumentation/altimeter/setting-hpa</property>
+  <interpolation>
+    <entry><ind>978.0</ind><dep>0.0</dep></entry>
+    <entry><ind>1047.0</ind><dep>-345.0</dep></entry>
+  </interpolation>
+  <center>
+  <x-m> 0</x-m>
+  <y-m> 0</y-m>
+  <z-m> 0</z-m>
+  </center>
+  <axis>
+    <x>  1 </x>
+    <y>  0 </y>
+    <z>  0 </z>
+  </axis>
+</animation>
+
+
+<!-- Hotspots -->
+    <animation>
+      <type>rotate</type>
+      <object-name>qnhknob</object-name>
+      <property>instrumentation/altimeter/setting-hpa</property>
+        <factor>-1000</factor>
+      <center>
+      <x-m> 0</x-m>
+      <y-m>-0.0374</y-m>
+      <z-m>-0.0409</z-m>
+      </center>
+      <axis>
+        <x> -1 </x>
+        <y>  0 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+      	<object-name>qnhknob</object-name>
+        <object-name>altface</object-name>
+        <visible>true</visible>
+        <action>
+            <button>3</button>
+            <binding>
+	          <condition>
+	              <not><property>devices/status/keyboard/shift</property></not>
+	              <not><property>devices/status/keyboard/super</property></not>
+	          </condition>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-hpa</property>
+            <step>0.1</step>
+            <min>978</min>
+            <max>1047</max>
+            <wrap>false</wrap>
+            </binding>
+            <binding>
+	          <condition>
+	  	         <or>
+	  	          <property>devices/status/keyboard/shift</property>
+	  	          <property>devices/status/keyboard/super</property>
+	  	         </or>
+	          </condition>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-hpa</property>
+            <step>1</step>
+            <min>978</min>
+            <max>1047</max>
+            <wrap>false</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>4</button>
+            <binding>
+  	          <condition>
+  	              <not><property>devices/status/keyboard/shift</property></not>
+  	              <not><property>devices/status/keyboard/super</property></not>
+  	          </condition>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-hpa</property>
+            <step>-0.1</step>
+            <min>978</min>
+            <max>1047</max>
+            <wrap>false</wrap>
+            </binding>
+            <binding>
+	          <condition>
+	  	         <or>
+	  	          <property>devices/status/keyboard/shift</property>
+	  	          <property>devices/status/keyboard/super</property>
+	  	         </or>
+	          </condition>
+            <command>property-adjust</command>
+            <property>instrumentation/altimeter/setting-hpa</property>
+            <step>-1</step>
+            <min>978</min>
+            <max>1047</max>
+            <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+</PropertyList>
