@@ -34,6 +34,7 @@ if you contacted me before making any changes to this software.
 <animation>
   <type>material</type>
   <object-name>lcd.face</object-name>
+  <object-name>hdg.knob</object-name>
   <condition>
     <not><property>/sim/rendering/rembrandt/enabled</property></not>
     <property>systems/accel-electrical/outputs/cabin-dim</property>
@@ -213,6 +214,22 @@ if you contacted me before making any changes to this software.
     </action>
 	</animation>
 
-
+  <!-- Cabin light -->
+<animation>
+  <type>rotate</type>
+  <object-name>hdg.knob</object-name>
+  <property>autopilot/settings/heading-bug-deg</property>
+  <factor>-1</factor>
+  <center>
+    <x-m> 0.0</x-m>
+    <y-m>-0.09228</y-m>
+    <z-m>-0.06627</z-m>
+  </center>
+  <axis>
+    <x>1.0</x>
+    <y>0.0</y>
+    <z>0.0</z>
+  </axis>
+</animation>
 
 </PropertyList>

@@ -188,7 +188,7 @@ var update_electrical = func () {
 	var iohp = 0;
 	var iokw = 0;
 
-	if( start_v == 1  and throttle_v > 0){
+	if( start_v == 1){
 
 		var min_volts = internal_battery.ideal_volts - 50;
 
@@ -229,12 +229,7 @@ var update_electrical = func () {
 		inst_output_eng_rpm.setDoubleValue(ioer);
 		inst_output_hp.setDoubleValue(iohp);
 		inst_output_kw.setDoubleValue(iokw);
-
-
-	print(engine_consumption);
-
 	}
-
 
 	if( bus_volts_v > battery_volts ){						# The engine electrical system is fed from the avionics bus
 		if ( charge_v < 1.0 ){
@@ -271,21 +266,21 @@ var elec_ls = setlistener("/sim/signals/fdm-initialized", func {
 setlistener("/controls/mtp/low", func(state){
 	var state = state.getValue() or 0;
 	if(state){
-		setprop("/systems/accel-electrical/battery/engine-limit",1);
+		setprop("/systems/accel-electrical/battery/engine-limit",1.5);
 		setprop("/systems/accel-electrical/buttons/b[5]",0);
 	}else{
-		interpolate("/systems/accel-electrical/battery/engine-limit",4,4);
+		interpolate("/systems/accel-electrical/battery/engine-limit",2.8,4);
 	}
 },0,0);
 
 setlistener("/systems/accel-electrical/buttons/b[5]", func(state){
 	var state = state.getValue() or 0;
 	if(state){
-		interpolate("/systems/accel-electrical/battery/engine-limit",20,3);
+		interpolate("/systems/accel-electrical/battery/engine-limit",5,3);
 	}else{
 		var mtp = getprop("/controls/mtp/low");
 		if(mtp == 1){
-			setprop("/systems/accel-electrical/battery/engine-limit",1);
+			setprop("/systems/accel-electrical/battery/engine-limit",1.5);
 		}else{
 			setprop("/systems/accel-electrical/battery/engine-limit",4);
 		}
@@ -295,7 +290,7 @@ setlistener("/systems/accel-electrical/buttons/b[5]", func(state){
 setlistener("/systems/accel-electrical/start", func(state){
 	var state = state.getValue() or 0;
 	if(state){
-		setprop("/systems/accel-electrical/battery/engine-limit",1);
+		setprop("/systems/accel-electrical/battery/engine-limit",1.5);
 	}else{
 		setprop("/systems/accel-electrical/battery/engine-limit",0);
 	}

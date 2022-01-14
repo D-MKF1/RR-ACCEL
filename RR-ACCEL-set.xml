@@ -320,9 +320,6 @@
 			<file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
       <file>Aircraft/RR-ACCEL/Nasal/ap-helper.nas</file>
     </rraccel>
-    <canvas_epsi570>
-      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/EPSI570/epsi570.nas</file>
-    </canvas_epsi570>
     <canvas_ddu10>
       <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
     </canvas_ddu10>

@@ -185,8 +185,22 @@ settimer(func()
    help_win.write(sprintf("MT Propeller RPM Setting: %.0f", rdt) );
  }
 
+ var h_vs = func {
+	var press_vs = getprop("autopilot/settings/vertical-speed-fpm");
+	if(  press_vs == nil ) press_vs = 0.0;
+	help_win.write(sprintf("Vertical speed: %.0f ", press_vs) );
+}
+
+var h_tas = func {
+	var press_tas = getprop("autopilot/settings/target-speed-kt");
+	if(  press_tas == nil ) press_tas = 0.0;
+	help_win.write(sprintf("Target speed: %.0f ", press_tas) );
+}
+
 setlistener( "instrumentation/altimeter/setting-hpa", h_altimeter );
 setlistener( "controls/flight/rudder-trim-pos", h_ruddertrim );
 setlistener( "controls/flight/aileron-trim-pos", h_ailerontrim );
 setlistener( "controls/flight/elevator-trim-pos", h_elevatortrim );
 setlistener( "controls/mtp/rpm", h_mtp );
+setlistener( "autopilot/settings/vertical-speed-fpm", h_vs );
+setlistener( "autopilot/settings/target-speed-kt", h_tas );
