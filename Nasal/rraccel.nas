@@ -78,7 +78,9 @@ var ACCELSystem =
         #### is there a ground contact?
         var c = getprop("/fdm/jsbsim/systems/crash-detect/crash-on-ground");
         if(c == 1){
-          setprop("/controls/engines/engine/throttle", 0);
+          setprop("/systems/accel-electrical/battery/battery-charge-percent", 0);
+          setprop("/systems/accel-electrical/battery/engine-limit", 0);
+          setprop("/systems/accel-electrical/battery/engine-volts", 0);
           setprop("/fdm/jsbsim/systems/crash-detect/crash-save", 1);
         }
 
@@ -113,34 +115,6 @@ var ACCELSystem =
         if(ce3 == 0){
           emer3.setBoolValue(0);
         }
-
-        ### The electrical-flight-events
-
-        
-
-
-        #<distance-8nm-287kts-start type="bool">0</distance-8nm-287kts-start>
-        #<distance-8nm-287kts-start-alt type="double">0</distance-8nm-287kts-start-alt>
-        #<distance-8nm-287kts-best-time type="double">0</distance-8nm-287kts-best-time>
-        #<distance-8nm-287kts-last-time type="double">0</distance-8nm-287kts-last-time>
-        #<distance-3min-300kts-start type="bool">0</distance-3min-300kts-start>
-        #<distance-3min-300kts-start-alt type="double">0</distance-3min-300kts-start-alt>
-        #<distance-3min-300kts-best-time type="double">0</distance-3min-300kts-best-time>
-        #<distance-3min-300kts-last-time type="double">0</distance-3min-300kts-last-time>
-        #<highspeed-start type="bool">0</highspeed-start>
-        #<highspeed-start-alt type="double">0</highspeed-start-alt>
-        #<highspeed-best-max type="double">0</highspeed-best-max>
-        #<highspeed-last-max type="double">0</highspeed-last-max>
-        #<climb-9840ft-start type="bool">0</climb-9840ft-start>
-        #<climb-9840ft-start-alt type="double">0</climb-9840ft-start-alt>
-        #<climb-9840ft-best-time type="double">0</climb-9840ft-best-time>
-        #<climb-9840ft-last-time type="double">0</climb-9840ft-last-time>
-
-
-
-
-
-
 
         ### update the main loop
         me.LastSimTime = CurrentTime;

@@ -61,9 +61,79 @@ if you contacted me before making any changes to this software.
 <animation>
   <type>select</type>
   <object-name>ipad.startdisplay</object-name>
+  <object-name>click8nm</object-name>
+  <object-name>click300</object-name>
+  <object-name>clickclimb</object-name>
+  <object-name>clickvmax</object-name>
   <condition>
-    <property>electrical-flight-events/ipad/start</property>
+    <and>
+      <property>electrical-flight-events/ipad/start</property>
+      <equals>
+          <property>electrical-flight-events/ipad/page</property>
+          <value>start</value>
+      </equals>
+    </and>
   </condition>
+</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>clickvmax</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>electrical-flight-events/ipad/page</property>
+        <value>vmax</value>
+      </binding>
+    </action>
+</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>click300</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>electrical-flight-events/ipad/page</property>
+        <value>300on3</value>
+      </binding>
+    </action>
+</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>click8nm</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>electrical-flight-events/ipad/page</property>
+        <value>8nm</value>
+      </binding>
+    </action>
+</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>clickclimb</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>electrical-flight-events/ipad/page</property>
+        <value>climb</value>
+      </binding>
+    </action>
 </animation>
 
 <animation>
@@ -74,10 +144,30 @@ if you contacted me before making any changes to this software.
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-          <command>property-toggle</command>
-          <property>electrical-flight-events/ipad/start</property>
+        <command>nasal</command>
+        <script>canvas_iPad.startipad()</script>
       </binding>
     </action>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>ipad.cable</object-name>
+  <property>/orientation/roll-deg</property>
+  <interpolation>
+    <entry><ind>-90.0</ind><dep>-48.0</dep></entry>
+    <entry><ind> 90.0</ind><dep> 48.0</dep></entry>
+  </interpolation>
+  <axis>
+    <x>0</x>
+    <y>1</y>
+    <z>0</z>
+  </axis>
+  <center>
+    <x-m>0</x-m>
+    <y-m>0</y-m>
+    <z-m>-0.1218</z-m>
+  </center>
 </animation>
 
 </PropertyList>
