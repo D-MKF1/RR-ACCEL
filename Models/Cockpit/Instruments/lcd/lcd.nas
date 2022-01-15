@@ -4,7 +4,7 @@ var LCD_main = nil;
 var LCD_display = nil;
 
 var LCDvolts = props.globals.getNode("systems/accel-electrical/battery/engine-volts", 1);
-var start_prop = props.globals.getNode("systems/accel-electrical/start", 1);
+var start_prop = props.globals.getNode("systems/accel-electrical/startsys", 1);
 
 var instrument_dir = "Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/";
 
@@ -56,7 +56,7 @@ var canvas_LCD_base = {
 	update: func() {
 		var starter = start_prop.getBoolValue();
 
-		if ( starter == 1 ) {
+		if ( starter > 0.94 ) {
 			LCD_main.page.show();
 		} else {
 			LCD_main.page.hide();

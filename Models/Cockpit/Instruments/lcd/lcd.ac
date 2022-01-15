@@ -2,9 +2,10 @@ AC3Db
 MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "lcd" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "display" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "startsys" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__lcd.ac"
-kids 4
+kids 5
 OBJECT poly
 name "hdg.knob"
 data 6
@@ -1373,4 +1374,24 @@ refs 18
 24 0.080192 0.901784
 28 0.080087 0.482607
 29 0.082695 0.475175
+kids 0
+OBJECT poly
+name "lcd.startsys"
+data 9
+Plane.002
+crease 40.0
+texture "startsys.png"
+numvert 4
+-0.00336 -0.0518 0.11525
+-0.00336 -0.0518 -0.11456
+-0.00336 0.07213 0.11525
+-0.00336 0.07213 -0.11456
+numsurf 1
+SURF 0X0
+mat 3
+refs 4
+0 0.00819 0.238515
+1 0.993797 0.238515
+3 0.993797 0.769988
+2 0.00819 0.769988
 kids 0

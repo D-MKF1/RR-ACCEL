@@ -49,6 +49,7 @@ if you contacted me before making any changes to this software.
 	<animation>
 	    <type>material</type>
 	    <object-name>display</object-name>
+	    <object-name>sysstart</object-name>
 	    <emission>
 	        <red>0.8</red>
 	        <green>0.8</green>
@@ -57,19 +58,37 @@ if you contacted me before making any changes to this software.
 	    </emission>
 	</animation>
 
-  <animation>
-    <type>select</type>
-    <object-name>display</object-name>
-    <condition>
-    <and>
-      <greater-than>
-        <property>systems/accel-electrical/battery/engine-volts</property>
-        <value>12</value>
-      </greater-than>
-      <property>systems/accel-electrical/start12v</property>
-    </and>
-    </condition>
-  </animation>
+	<animation>
+	  <type>select</type>
+	  <object-name>sysstart</object-name>
+	  <condition>
+	    <and>
+	      <less-than>
+	        <property>systems/accel-electrical/startsys</property>
+	        <value>0.98</value>
+	      </less-than>
+	      <greater-than>
+	        <property>systems/accel-electrical/startsys</property>
+	        <value>0.05</value>
+	      </greater-than>
+	      <property>systems/accel-electrical/start12v</property>
+	    </and>
+	  </condition>
+	</animation>
+
+	<animation>
+	  <type>select</type>
+	  <object-name>display</object-name>
+	  <condition>
+	  <and>
+	    <greater-than>
+	      <property>systems/accel-electrical/startsys</property>
+	      <value>0.97</value>
+	    </greater-than>
+	    <property>systems/accel-electrical/start12v</property>
+	  </and>
+	  </condition>
+	</animation>
 
 	<animation>
 		<type>pick</type>

@@ -34,7 +34,7 @@ var electrical_base	= property_base.initNode("battery");
 
 var start		= property_base.initNode("start", 0, "BOOL");				#	0 : switched off; 0-1 : starting up; 1: running
 var start12v		= property_base.initNode("start12v", 0, "BOOL");		#	0 : switched off; 0-1 : starting up; 1: running
-
+var startsystems		= property_base.initNode("startsys", 0,"DOUBLE"); 	#create the system start procedere
 var bus_volts		= property_base.initNode("outputs/bus", 0,"DOUBLE"); 	#Current supplied by the aircraft's avionics bus
 var cabin_dim		= property_base.initNode("outputs/cabin-dim", 0,"DOUBLE"); # internal lights
 var cabin_dim_pos	= property_base.initNode("outputs/cabin-dim-pos", 0,"DOUBLE"); # internal lights
@@ -161,6 +161,7 @@ var update_electrical = func () {
 	var start_v = start.getBoolValue();
 	var start12v_v = start12v.getBoolValue();
 	var bus_volts_v = bus_volts.getValue();
+	var startsys_state = startsystems.getValue();
 	var battery_volts = internal_battery.get_output_volts();
 	var charge_v = charge.getValue();
 	var throttle_v = throttle.getValue();
@@ -168,14 +169,17 @@ var update_electrical = func () {
 	var engine_consumption = 0.0;
 
 	####### this lines to feed the Instruments-3d and set the blade-angle from mtp
-	if( start12v_v and battery_volts > 28 ){
+	if( start12v_v){
+		if(startsys_state <= 0){interpolate("/systems/accel-electrical/startsys",1,6);}
 		setprop("/systems/electrical/outputs/comm[0]",28);
 		setprop("/systems/electrical/outputs/transponder",28);
 		cabin_dim.setDoubleValue(cabin_dim_pos.getValue());
+
 	}else{
 		setprop("/systems/electrical/outputs/comm[0]",0);
 		setprop("/systems/electrical/outputs/transponder",0);
 		cabin_dim.setDoubleValue(0.0);
+		startsystems.setDoubleValue(0.0);
 	}
 
   #### listen to propeller pitch setting in the mt-propeller instrument - do not change anything in the thrust, only in view

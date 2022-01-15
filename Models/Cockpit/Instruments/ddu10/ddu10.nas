@@ -4,7 +4,7 @@ var DDU10_main = nil;
 var DDU10_display = nil;
 
 var DDU10 = props.globals.getNode("systems/accel-electrical/battery/engine-volts", 1);
-var start_prop = props.globals.getNode("systems/accel-electrical/start", 1);
+var start_prop = props.globals.getNode("systems/accel-electrical/startsys", 1);
 var rest_time = props.globals.getNode("systems/accel-electrical/battery/crh", 1);
 
 var instrument_dir = "Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/";
@@ -82,7 +82,7 @@ var canvas_DDU10_base = {
 	update: func() {
 		var starter = start_prop.getBoolValue();
 
-		if ( starter == 1 ) {
+		if ( starter > 0.98 ) {
 			DDU10_main.page.show();
 		} else {
 			DDU10_main.page.hide();
