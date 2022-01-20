@@ -2,20 +2,22 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="152mm"
-   height="202mm"
-   viewBox="0 0 152.00002 202.00001"
+   width="1723.4646"
+   height="2290.3938"
+   viewBox="0 0 456 606"
    version="1.1"
    id="svg5"
-   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
+   shape-rendering="crispEdges"
    sodipodi:docname="vmax.svg"
+   inkscape:version="1.1.1 (c3084ef, 2021-09-22)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <sodipodi:namedview
      id="namedview7"
-     pagecolor="#000000"
+     pagecolor="#1e1e1e"
      bordercolor="#666666"
      borderopacity="1.0"
      inkscape:pageshadow="2"
@@ -24,32 +26,243 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:showpageshadow="false"
-     units="mm"
-     inkscape:zoom="0.30009657"
-     inkscape:cx="-281.57603"
-     inkscape:cy="658.12148"
+     inkscape:zoom="0.32"
+     inkscape:cx="848.4375"
+     inkscape:cy="1126.5625"
      inkscape:window-width="1383"
      inkscape:window-height="969"
-     inkscape:window-x="39"
+     inkscape:window-x="199"
      inkscape:window-y="25"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     units="mm" />
   <defs
-     id="defs2" />
+     id="defs2">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 303 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="456 : 303 : 1"
+       inkscape:persp3d-origin="228 : 202 : 1"
+       id="perspective136444" />
+  </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1">
     <text
        xml:space="preserve"
-       style="font-size:35.2777px;line-height:1.25;font-family:sans-serif;stroke-width:0.264583"
-       x="26.341896"
-       y="60.037743"
-       id="text10442"><tspan
+       style="font-size:50.8px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="97.107681"
+       y="50.071228"
+       id="text17838"><tspan
          sodipodi:role="line"
-         id="tspan10440"
-         style="fill:#ffffff;stroke-width:0.264583"
-         x="26.341896"
-         y="60.037743">Vmax</tspan></text>
+         id="tspan17836"
+         style="font-size:50.8px;fill:#ffffff;stroke-width:0.264583"
+         x="97.107681"
+         y="50.071228">Vmax</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:14.1111px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="232.1403"
+       y="31.722364"
+       id="text25792"><tspan
+         sodipodi:role="line"
+         id="tspan25790"
+         style="font-size:14.1111px;fill:#ffffff;stroke-width:0.264583"
+         x="232.1403"
+         y="31.722364">hold altitude and reach</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:14.1111px;fill:#ffffff;stroke-width:0.264583"
+         x="232.1403"
+         y="49.49802"
+         id="tspan30798">the maximal speed ...</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:45.8611px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="171.9884"
+       y="105.82899"
+       id="vmax.digits"><tspan
+         sodipodi:role="line"
+         id="tspan101262"
+         style="font-size:45.8611px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="171.98842"
+         y="105.82899">000.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="145.40898"
+       y="147.84375"
+       id="test.0"><tspan
+         sodipodi:role="line"
+         id="tspan101262-1"
+         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="145.40898"
+         y="147.84375">000.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="145.40898"
+       y="183.84375"
+       id="test.1"><tspan
+         sodipodi:role="line"
+         id="tspan136260"
+         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="145.40898"
+         y="183.84375">000.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="145.40898"
+       y="219.84375"
+       id="test.2"><tspan
+         sodipodi:role="line"
+         id="tspan136264"
+         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="145.40898"
+         y="219.84375">000.00</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       x="145.40898"
+       y="255.84375"
+       id="test.3"><tspan
+         sodipodi:role="line"
+         id="tspan136268"
+         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         x="145.40898"
+         y="255.84375">000.00</tspan></text>
+    <use
+       x="0"
+       y="0"
+       xlink:href="#test.0"
+       id="test.4"
+       width="100%"
+       height="100%"
+       transform="translate(2.2227981e-6,144)" />
+    <use
+       y="0"
+       height="100%"
+       transform="translate(-5.7772019e-6,144)"
+       width="100%"
+       id="test.5"
+       xlink:href="#test.1"
+       x="0" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#test.2"
+       id="test.6"
+       width="100%"
+       height="100%"
+       transform="translate(-5.7772019e-6,144)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#test.2"
+       id="test.7"
+       width="100%"
+       height="100%"
+       transform="translate(-5.7772019e-6,180)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#test.2"
+       id="test.8"
+       width="100%"
+       height="100%"
+       transform="translate(-5.7772019e-6,216)" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#test.2"
+       id="test.9"
+       width="100%"
+       height="100%"
+       transform="translate(-5.7772019e-6,252)" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect5314"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="120.05" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect13148"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="264.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect13150"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="228.05" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect13152"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="300.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15340"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="156.05" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15344"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="192.05" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15350"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="372.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15352"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="336.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15354"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="408.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15356"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="600.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15358"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="444.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect37496"
+       width="413.68353"
+       height="0.83404541"
+       x="24.049999"
+       y="480.04999" />
   </g>
 </svg>

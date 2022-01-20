@@ -223,6 +223,10 @@ if you contacted me before making any changes to this software.
 						<max>2400</max>
 						<wrap>false</wrap>
 						</binding>
+						<binding>
+							<command>nasal</command>
+							<script>rraccel.h_mtp()</script>
+						</binding>
 				</action>
 				<action>
 						<button>4</button>
@@ -251,6 +255,10 @@ if you contacted me before making any changes to this software.
 						<min>1400</min>
 						<max>2400</max>
 						<wrap>false</wrap>
+						</binding>
+						<binding>
+							<command>nasal</command>
+							<script>rraccel.h_mtp()</script>
 						</binding>
 				</action>
 		</animation>

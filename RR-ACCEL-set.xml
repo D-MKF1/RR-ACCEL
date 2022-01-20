@@ -256,7 +256,6 @@
     <path>electrical-flight-events/vmax/vmax[8]</path>
     <path>electrical-flight-events/vmax/vmax[9]</path>
   </aircraft-data>
-
 </sim>
 
 <input>
@@ -328,7 +327,7 @@
       <file>Aircraft/RR-ACCEL/Nasal/doors.nas</file>
       <file>Aircraft/RR-ACCEL/Nasal/shake.nas</file>
 			<file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
-      <file>Aircraft/RR-ACCEL/Nasal/ap-helper.nas</file>
+      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-helper.nas</file>
     </rraccel>
     <canvas_ddu10>
       <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>

@@ -210,6 +210,10 @@ if you contacted me before making any changes to this software.
         <max>1.0</max>
         <wrap>false</wrap>
         </binding>
+				<binding>
+					<command>nasal</command>
+					<script>rraccel.h_ruddertrim()</script>
+				</binding>
     </action>
     <action>
         <button>4</button>
@@ -239,6 +243,10 @@ if you contacted me before making any changes to this software.
         <max>1.0</max>
         <wrap>false</wrap>
         </binding>
+				<binding>
+					<command>nasal</command>
+					<script>rraccel.h_ruddertrim()</script>
+				</binding>
     </action>
 </animation>
 
@@ -295,6 +303,10 @@ if you contacted me before making any changes to this software.
       <max>1.0</max>
       <wrap>false</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_ailerontrim()</script>
+			</binding>
   </action>
   <action>
       <button>4</button>
@@ -324,6 +336,10 @@ if you contacted me before making any changes to this software.
       <max>1.0</max>
       <wrap>false</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_ailerontrim()</script>
+			</binding>
   </action>
 </animation>
 
@@ -381,6 +397,10 @@ if you contacted me before making any changes to this software.
       <max>1.0</max>
       <wrap>false</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_elevatortrim()</script>
+			</binding>
   </action>
   <action>
       <button>4</button>
@@ -410,6 +430,10 @@ if you contacted me before making any changes to this software.
       <max>1.0</max>
       <wrap>false</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_elevatortrim()</script>
+			</binding>
   </action>
 </animation>
 

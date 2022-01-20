@@ -96,6 +96,10 @@ if you contacted me before making any changes to this software.
       <max>10000</max>
       <wrap>1</wrap>
     </binding>
+		<binding>
+			<command>nasal</command>
+			<script>rraccel.h_vs()</script>
+		</binding>
   </action>
   <action>
     <name>small decrease (scrollwheel)</name>
@@ -109,6 +113,10 @@ if you contacted me before making any changes to this software.
       <max>10000</max>
       <wrap>1</wrap>
     </binding>
+		<binding>
+			<command>nasal</command>
+			<script>rraccel.h_vs()</script>
+		</binding>
   </action>
   <action>
     <name>increase</name>
@@ -122,6 +130,10 @@ if you contacted me before making any changes to this software.
       <max>10000</max>
       <wrap>1</wrap>
     </binding>
+		<binding>
+			<command>nasal</command>
+			<script>rraccel.h_vs()</script>
+		</binding>
   </action>
   <action>
     <name>decrease</name>
@@ -135,6 +147,10 @@ if you contacted me before making any changes to this software.
       <max>10000</max>
       <wrap>1</wrap>
     </binding>
+		<binding>
+			<command>nasal</command>
+			<script>rraccel.h_vs()</script>
+		</binding>
   </action>
 </animation>
 

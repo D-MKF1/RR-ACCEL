@@ -1,28 +1,31 @@
+############### importand for the fdm-init setlistener at the end of this file ############
 var iPad_Vmax = nil;
 var iPad_8nm = nil;
 var iPad_300on3 = nil;
 var iPad_Climb = nil;
 var iPAD_display = nil;
 
+################ some inits  ##############
 var instrument_dir = "Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ipad/";
 
 var istart = props.globals.initNode("/electrical-flight-events/ipad/start",0,"BOOL");
 var page = props.globals.initNode("/electrical-flight-events/ipad/page","start","STRING");
+var startevent = props.globals.initNode("/electrical-flight-events/start-event",0,"BOOL");
+var startaltitude = props.globals.initNode("/electrical-flight-events/start-altitude",0,"DOUBLE");
+var starthpa = props.globals.initNode("/electrical-flight-events/start-hpa",0,"DOUBLE");
+var startwindfrom = props.globals.initNode("/electrical-flight-events/start-wind-from",0,"DOUBLE");
+var startwindspeed = props.globals.initNode("/electrical-flight-events/start-wind-speed-kt",0,"DOUBLE");
 
-var vmaxstart = props.globals.initNode("/electrical-flight-events/vmax/vmax-start",0,"BOOL");
-var vmaxalt = props.globals.initNode("/electrical-flight-events/vmax/vmax-alt",0,"DOUBLE");
-for(var v=0; v < 9; v+=1){
+var vmaxact = props.globals.initNode("/electrical-flight-events/vmax/vmax-actual",0,"DOUBLE");
+for(var v=0; v <= 9; v+=1){
 	props.globals.initNode("/electrical-flight-events/vmax/vmax["~v~"]",0,"DOUBLE");
 }
 
-var vmaxOther = props.globals.getNode("/electrical-flight-events/vmax").getChildren("vmax");
-var vmaxtrials = size(vmaxOther);
-#print(vmaxtrials);
-
+############# the canvas base class - also switch for the actual shown canvas #################
 var canvas_iPAD_base = {
 	init: func(canvas_group, file) {
 		var font_mapper = func(family, weight) {
-			return "../../../Fonts/monoMMM_5.ttf";
+			return "../Fonts/CaviarDreams.ttf";
 		};
 
 		canvas.parsesvg(canvas_group, file, {'font-mapper': font_mapper});
@@ -104,6 +107,7 @@ var canvas_iPAD_base = {
 	},
 };
 
+########## the possible views on screen, with the logic for the flight events ######################
 
 var canvas_iPAD_Vmax = {
 	new: func(canvas_group, file) {
@@ -113,11 +117,85 @@ var canvas_iPAD_Vmax = {
 		return m;
 	},
 	getKeys: func() {
-		return [];
+		return ["vmax.digits","test.0","test.1","test.2","test.3","test.4","test.5","test.6","test.7","test.8","test.9"];
 	},
 	update: func() {
 
+		var speed = getprop("instrumentation/airspeed-indicator/indicated-speed-kt") or 0;
+		var vmax = vmaxact.getValue();
+		var start = startevent.getValue();
+		var startalt = startaltitude.getValue();
+		var actalt = getprop("instrumentation/altimeter/indicated-altitude-ft") or 0;
+		var hpa = getprop("instrumentation/altimeter/setting-hpa") or 0;
+		var windkts = getprop("environment/wind-speed-kt") or 0;
+		var windfrom = getprop("environment/wind-from-heading-deg") or 0;
+		var pitchdeg = getprop("orientation/pitch-deg") or 0;
 
+		if(start == 1){
+			if(startalt == 0){
+				startaltitude.setValue(actalt);
+				starthpa.setValue(hpa);
+				startwindfrom.setValue(windfrom);
+				startwindspeed.setValue(windkts);
+			}
+
+			# show last 10 tests
+			var vmaxOther = props.globals.getNode("/electrical-flight-events/vmax").getChildren("vmax");
+			var vmaxtrials = size(vmaxOther);
+			var speedtest_list = {};
+
+			for(var i=0; i < vmaxtrials; i+=1){
+				me["test."~i].setText(sprintf("%.2f", getprop("/electrical-flight-events/vmax/vmax["~i~"]") or 0));
+			}
+
+			# monitor the valid tests
+			if(speed > vmax and pitchdeg >= -1.8 and actalt >= (startalt-100) and windkts <= 20){
+				vmaxact.setValue(speed);
+				me["vmax.digits"].setText(sprintf("%.2f", speed));
+			}
+
+		}else{
+
+			# test is finished, but the last vamx isn't deleted - that's the right point to save this test.
+			if(vmaxact.getValue() != 0){
+
+				# sort the last 10 speedtests
+				var vmaxOther = props.globals.getNode("/electrical-flight-events/vmax").getChildren("vmax");
+				var vmaxtrials = size(vmaxOther);
+				var speedtest_list = {};
+				for(var i=0; i < vmaxtrials; i+=1){
+					speedtest_list[i] = {s: getprop("/electrical-flight-events/vmax/vmax["~i~"]")};
+				}
+				speedtest_list[10] = {s: vmaxact.getValue()}; # fill the hash with the actual test
+
+				var sortedspeedtest_list = sort(keys(speedtest_list), func (a,b) { speedtest_list[b].s - speedtest_list[a].s;});
+				pop(sortedspeedtest_list);  #cut the slowest test
+				var sortnr = size(sortedspeedtest_list);
+
+				if(sortedspeedtest_list != nil){
+					for(var n=0; n < sortnr; n+=1){
+						me["test."~n].setText(sprintf("%.2f", speedtest_list[sortedspeedtest_list[n]].s));
+						setprop("/electrical-flight-events/vmax/vmax["~n~"]", speedtest_list[sortedspeedtest_list[n]].s)
+					}
+				}
+				me["vmax.digits"].setText(sprintf("%.2f", vmaxact.getValue()));
+			}else{
+
+				# show last 10 tests
+				var vmaxOther = props.globals.getNode("/electrical-flight-events/vmax").getChildren("vmax");
+				var vmaxtrials = size(vmaxOther);
+				for(var i=0; i < vmaxtrials; i+=1){
+					me["test."~i].setText(sprintf("%.2f", getprop("/electrical-flight-events/vmax/vmax["~i~"]") or 0));
+				}
+
+			}
+
+			vmaxact.setValue(0.0);
+			startaltitude.setValue(0.0);
+			starthpa.setValue(0.0);
+			startwindfrom.setValue(0.0);
+			startwindspeed.setValue(0.0);
+		}
 
 	}
 
@@ -177,12 +255,13 @@ var canvas_iPAD_Climb = {
 
 };
 
+############ the init setlistener #################
 
 setlistener("sim/signals/fdm-initialized", func {
 	iPAD_display = canvas.new({
 		"name": "iPad",
-		"size": [152, 202],    #in mm
-		"view": [152, 202],		 #in mm
+		"size": [456, 606],    #in mm
+		"view": [456, 606],		 #in mm
 		"mipmapping": 1
 	});
 	iPAD_display.addPlacement({"node": "ipad.display"});
@@ -200,6 +279,8 @@ setlistener("sim/signals/fdm-initialized", func {
 });
 
 
+#########  stuff for the click action on the ipad ###########
+
 var startipad = func {
  	var ipw = getprop("/electrical-flight-events/ipad/start") or 0;
 	var ipage = getprop("/electrical-flight-events/ipad/page") or "";
@@ -213,4 +294,15 @@ var startipad = func {
 	}else{
 		setprop("/electrical-flight-events/ipad/start", 0);
 	}
+}
+
+################ functions ##############
+var sort_rules = func(a, b){
+    if(a < b){
+        return -1; # a should before b in the returned vector
+    }elsif(a == b){
+        return 0; # a is equivalent to b
+    }else{
+        return 1; # a should after b in the returned vector
+    }
 }

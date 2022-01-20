@@ -128,6 +128,10 @@ if you contacted me before making any changes to this software.
           <command>property-toggle</command>
           <property>sim/sound/switch3</property>
         </binding>
+				<binding>
+		      <command>nasal</command>
+		      <script>rraccel.h_tas()</script>
+		    </binding>
     </action>
     <action>
         <button>4</button>
@@ -158,6 +162,10 @@ if you contacted me before making any changes to this software.
         <max>500</max>
         <wrap>1</wrap>
         </binding>
+				<binding>
+		      <command>nasal</command>
+		      <script>rraccel.h_tas()</script>
+		    </binding>
     </action>
     <action>
       <name>increase</name>
@@ -171,6 +179,10 @@ if you contacted me before making any changes to this software.
         <max>500</max>
         <wrap>1</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_tas()</script>
+			</binding>
     </action>
     <action>
       <name>decrease</name>
@@ -184,6 +196,10 @@ if you contacted me before making any changes to this software.
         <max>500</max>
         <wrap>1</wrap>
       </binding>
+			<binding>
+				<command>nasal</command>
+				<script>rraccel.h_tas()</script>
+			</binding>
     </action>
   </animation>
 

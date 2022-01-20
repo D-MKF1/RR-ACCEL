@@ -2,231 +2,127 @@
 
 <PropertyList>
  <fx>
-     <start>
-      <name>start</name>
-      <mode>once</mode>
-      <path>Aircraft/RR-ACCEL/Sounds/propstart.wav</path>
-      <condition>
-       <property>/fdm/jsbsim/gear/wow</property>
-       <not>
-         <greater-than>
-           <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-           <value>300</value>
-         </greater-than>
-       </not>
-      </condition>
-      <volume>
-       <factor>40</factor>
-      </volume>
-      <volume>
-        <property>/controls/doors/canopy/position-norm</property>
-        <factor>40</factor>
-      </volume>
-    </start>
-<!--
-   <crank>
-     <name>engstart</name>
-     <path>Aircraft/RR-ACCEL/Sounds/propstart.wav</path>
-     <property>engines/engine/cranking</property>
-     <volume>
-       <offset>-0.6</offset>
-     </volume>
-   </crank>
-   <crank>
-     <name>crank</name>
-     <mode>looped</mode>
-     <path>Aircraft/RR-ACCEL/Sounds/propstart.wav</path>
-     <condition>
-       <property>engines/engine/cranking</property>
-       <not>
-         <property>engines/engine/running</property>
-       </not>
-     </condition>
-     <volume>
-       <offset>0.9</offset>
-     </volume>
-   </crank>
--->
-<engine>
-  <name>engine</name>
-  <mode>looped</mode>
-  <path>Aircraft/RR-ACCEL/Sounds/electric_engine.wav</path>
-  <property>/engines/engine[0]/rpm</property>
-  <condition>
-    <greater-than>
-      <property>/controls/doors/canopy/position-norm</property>
-      <value>0.045</value>
-    </greater-than>
-  </condition>
-  <volume>
-    <property>/engines/engine[0]/rpm</property>
-    <min>0.0</min>
-    <max>0.1</max>
-    <factor>0.0001</factor>
-  </volume>
-  <volume>
-    <factor>40</factor>
-  </volume>
-  <pitch>
-    <property>/engines/engine[0]/rpm</property>
-    <factor>0.000019</factor>
-    <min>0.0</min>
-    <max>1.0</max>
-    <offset>0.1</offset>
-  </pitch>
-  <position>
-    <x>-2.5</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </position>
-  <reference-dist>2.0</reference-dist>
-  <max-dist>5000.0</max-dist>
-</engine>
-
-<propeller>
-  <name>propeller_with_open_canopy</name>
-  <mode>looped</mode>
-  <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
-  <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-  <condition>
-    <greater-than>
-      <property>/controls/doors/canopy/position-norm</property>
-      <value>0.045</value>
-    </greater-than>
-  </condition>
-  <volume>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-    <min>0.0</min>
-    <max>0.8</max>
-    <factor>0.001</factor>
-  </volume>
-  <pitch>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-    <factor>0.0006</factor>
-    <min>0.0</min>
-    <max>1.0</max>
-    <offset>0.1</offset>
-  </pitch>
-  <position>
-    <x>-2.5</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </position>
-  <reference-dist>2.0</reference-dist>
-  <max-dist>5000.0</max-dist>
-</propeller>
-
-<propeller>
-  <name>propeller_with_closed_canopy</name>
-  <mode>looped</mode>
-  <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
-  <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-  <condition>
-    <less-than>
-      <property>/controls/doors/canopy/position-norm</property>
-      <value>0.05</value>
-    </less-than>
-  </condition>
-  <volume>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-    <min>0.0</min>
-    <max>0.25</max>
-    <factor>0.001</factor>
-  </volume>
-  <pitch>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
-    <factor>0.0006</factor>
-    <min>0.0</min>
-    <max>1.0</max>
-    <offset>0.1</offset>
-  </pitch>
-  <position>
-    <x>-2.5</x>
-    <y>0.0</y>
-    <z>0.0</z>
-  </position>
-  <reference-dist>2.0</reference-dist>
-  <max-dist>5000.0</max-dist>
-</propeller>
-
-<!--
-
-   <propeller>
-     <name>propeller</name>
-     <mode>looped</mode>
-     <path>Sounds/prop.wav</path>
-     <property>/engines/engine[0]/rpm</property>
-     <condition>
+   <start>
+    <name>start</name>
+    <mode>once</mode>
+    <path>Aircraft/RR-ACCEL/Sounds/propstart.wav</path>
+    <condition>
+     <property>/fdm/jsbsim/gear/wow</property>
+     <property>/systems/accel-electrical/start</property>
+     <not>
        <greater-than>
-         <property>/engines/engine/rpm</property>
-         <value>10</value>
+         <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+         <value>1400</value>
        </greater-than>
-     </condition>
-     <volume>
-       <property>/engines/engine/rpm</property>
-       <factor>0.0005</factor>
-       <offset>-0.4</offset>
-       <max>0.25</max>
-     </volume>
-     <volume>
-       <property>/engines/engine/thrust_lb</property>
-       <factor>0.005</factor>
-     </volume>
-     <volume>
-       <property>/sim/current-view/internal</property>
-       <offset>1.0</offset>
-       <factor>-0.2</factor>
-     </volume>
-     <pitch>
-       <property>/engines/engine/rpm</property>
-       <factor>0.0003</factor>
-       <min>0.0</min>
-       <max>2.0</max>
-       <offset>0.01</offset>
-     </pitch>
-     <position>
-       <x>-2.5</x>
-       <y>0.0</y>
-       <z>0.0</z>
-     </position>
-     <reference-dist>2.0</reference-dist>
-     <max-dist>2000.0</max-dist>
-   </propeller>
+     </not>
+    </condition>
+    <volume>
+      <property>/controls/doors/canopy/position-norm</property>
+      <factor>80</factor>
+    </volume>
+  </start>
 
+  <engine>
+    <name>engine</name>
+    <mode>looped</mode>
+    <path>Aircraft/RR-ACCEL/Sounds/electric_engine.wav</path>
+    <property>/engines/engine[0]/rpm</property>
+    <condition>
+      <greater-than>
+        <property>/controls/doors/canopy/position-norm</property>
+        <value>0.045</value>
+      </greater-than>
+    </condition>
+    <volume>
+      <property>/engines/engine[0]/rpm</property>
+      <min>0.0</min>
+      <max>0.1</max>
+      <factor>0.0001</factor>
+    </volume>
+    <volume>
+      <factor>40</factor>
+    </volume>
+    <pitch>
+      <property>/engines/engine[0]/rpm</property>
+      <factor>0.000019</factor>
+      <min>0.0</min>
+      <max>1.0</max>
+      <offset>0.1</offset>
+    </pitch>
+    <position>
+      <x>-2.5</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </position>
+    <reference-dist>2.0</reference-dist>
+    <max-dist>5000.0</max-dist>
+  </engine>
 
-  <crank>
-   <name>crank</name>
-   <mode>looped</mode>
-   <path>Aircraft/RR-ACCEL/Sounds/crank.wav</path>
-   <condition>
-    <property>/engines/engine/cranking</property>
-    <not>
-     <property>/engines/engine/running</property>
-    </not>
-   </condition>
-   <volume>
-    <offset>-0.5</offset>
-   </volume>
-   <pitch>
-    <property>/engines/engine/cranking</property>
-    <factor>1.0</factor>
-   </pitch>
-  </crank>
+  <propeller>
+    <name>propeller_with_open_canopy</name>
+    <mode>looped</mode>
+    <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
+    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+    <condition>
+      <greater-than>
+        <property>/controls/doors/canopy/position-norm</property>
+        <value>0.045</value>
+      </greater-than>
+    </condition>
+    <volume>
+      <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <min>0.0</min>
+      <max>0.8</max>
+      <factor>0.001</factor>
+    </volume>
+    <pitch>
+      <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <factor>0.0006</factor>
+      <min>0.0</min>
+      <max>1.0</max>
+      <offset>0.1</offset>
+    </pitch>
+    <position>
+      <x>-2.5</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </position>
+    <reference-dist>2.0</reference-dist>
+    <max-dist>5000.0</max-dist>
+  </propeller>
 
-  <crank>
-   <name>cough</name>
-   <path>Aircraft/RR-ACCEL/Sounds/crank.wav</path>
-   <property>/engines/engine/thruster/torque</property>
-   <volume>
-    <offset>-0.50</offset>
-   </volume>
-   <pitch>
-   <property>/engines/engine/thruster/torque</property>
-    <factor>1.0</factor>
-   </pitch>
-  </crank>
-
--->
+  <propeller>
+    <name>propeller_with_closed_canopy</name>
+    <mode>looped</mode>
+    <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
+    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+    <condition>
+      <less-than>
+        <property>/controls/doors/canopy/position-norm</property>
+        <value>0.05</value>
+      </less-than>
+    </condition>
+    <volume>
+      <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <min>0.0</min>
+      <max>0.25</max>
+      <factor>0.001</factor>
+    </volume>
+    <pitch>
+      <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <factor>0.0006</factor>
+      <min>0.0</min>
+      <max>1.0</max>
+      <offset>0.1</offset>
+    </pitch>
+    <position>
+      <x>-2.5</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </position>
+    <reference-dist>2.0</reference-dist>
+    <max-dist>5000.0</max-dist>
+  </propeller>
 
   <flap>
    <name>flaps</name>
@@ -237,41 +133,6 @@
     <factor>40</factor>
    </volume>
   </flap>
-
-<!--
-
-  <squeal>
-   <name>squeal</name>
-   <path>Sounds/squeal.wav</path>
-   <condition>
-    <or>
-     <property>/gear/gear[0]/wow</property>
-     <property>/gear/gear[1]/wow</property>
-    </or>
-   </condition>
-   <volume>
-    <property>/velocities/speed-down-fps</property>
-    <factor>0.5</factor>
-    <max>1.0</max>
-   </volume>
-   <volume>
-    <property>/velocities/groundspeed-kt</property>
-    <factor>0.01</factor>
-    <max>1.0</max>
-   </volume>
-   <volume>
-    <internal>dt_stop</internal>
-    <factor>0.05</factor>
-    <max>1.0</max>
-   </volume>
-   <pitch>
-    <property>/velocities/groundspeed-kt</property>
-    <factor>0.0025</factor>
-    <offset>0.5</offset>
-    <max>1.0</max>
-   </pitch>
-  </squeal>
--->
 
   <rumble>
    <name>rumble</name>
@@ -326,7 +187,6 @@
     </volume>
   </gear>
 
-
   <wind>
    <name>wind</name>
    <mode>looped</mode>
@@ -336,11 +196,11 @@
      <property>/velocities/airspeed-kt</property>
      <factor>0.0025</factor>
      <min>0.00</min>
-     <max>0.5</max>
+     <max>0.3</max>
    </volume>
    <volume>
      <property>/controls/doors/canopy/position-norm</property>
-     <offset>0.3</offset>
+     <offset>0.1</offset>
      <factor>-0.99</factor>
    </volume>
    <pitch>
@@ -410,7 +270,7 @@
       </and>
     </condition>
     <volume>
-        <factor>1</factor>
+        <factor>3</factor>
     </volume>
     <pitch>
         <factor>1</factor>
@@ -432,7 +292,7 @@
       </and>
     </condition>
     <volume>
-        <factor>1</factor>
+        <factor>2</factor>
     </volume>
     <pitch>
         <factor>1</factor>
@@ -542,7 +402,6 @@
     <max-dist> 4.0 </max-dist>
   </brake>
 
-
   <waltz>
     <name>Jack Sparrow Theme</name>
     <mode>looped</mode>
@@ -556,7 +415,7 @@
       <volume>
         <max>1</max>
       </volume>
-    </waltz>
+  </waltz>
 
- </fx>
+  </fx>
 </PropertyList>

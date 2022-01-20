@@ -10,6 +10,7 @@ setlistener("/sim/signals/fdm-initialized", func {
       setprop("/autopilot/switches/hdg", 0);
       setprop("/autopilot/switches/alt", 0);
       setprop("/autopilot/switches/ias", 0);
+      setprop("/autopilot/switches/gps", 0);
       setprop("/autopilot/switches/nav", 0);
       setprop("/autopilot/switches/appr", 0);
       setprop("/autopilot/switches/vs", 0);
@@ -24,8 +25,9 @@ setlistener("/autopilot/switches/ap", func (ap){
       var navSet = getprop("/autopilot/switches/nav");
       var apprSet = getprop("/autopilot/switches/appr");
       var vsSet = getprop("/autopilot/switches/vs");
+      var hdgGps = getprop("/autopilot/switches/gps");
 
-      if((!hdgSet and !altSet and !iasSet and !navSet and !apprSet and !vsSet)){
+      if((!hdgSet and !altSet and !iasSet and !navSet and !apprSet and !vsSet and !hdgGps)){
         setprop("/autopilot/settings/heading-bug-deg",getprop("/orientation/heading-deg"));
         setprop("/autopilot/locks/heading", "dg-heading-hold");
         setprop("/autopilot/locks/altitude", "vertical-speed-hold");
@@ -50,6 +52,18 @@ setlistener("/autopilot/switches/hdg", func (hdg){
       setprop("/autopilot/switches/ap", 1);
       setprop("/autopilot/switches/nav", 0);
       setprop("/autopilot/locks/heading", "dg-heading-hold");
+    }else{
+      setprop("/autopilot/locks/heading", "");
+    }
+});
+
+setlistener("/autopilot/switches/gps", func (gps){
+    var gps = gps.getValue();
+    if (gps == 1){
+      setprop("/autopilot/switches/ap", 1);
+      setprop("/autopilot/switches/nav", 0);
+      setprop("/autopilot/switches/appr", 0);
+      setprop("/autopilot/locks/heading", "true-heading-hold");
     }else{
       setprop("/autopilot/locks/heading", "");
     }

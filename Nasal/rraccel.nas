@@ -146,63 +146,60 @@ settimer(func()
 
 
 
+################## Little Help Window on bottom of screen #################
+# called from the instruments knobs, switches or levers
+#<binding>
+#  <command>nasal</command>
+#  <script>rraccel.h_altimeter()</script>
+#</binding>
 
- ################## Little Help Window on bottom of screen #################
- var help_win = screen.window.new( 0, 0, 1, 5 );
- help_win.fg = [1,1,1,1];
+var help_win = screen.window.new( 0, 0, 1, 5 );
+help_win.fg = [1,1,1,1];
 
- var messenger = func{
- help_win.write(arg[0]);
- }
+var messenger = func{
+help_win.write(arg[0]);
+}
 
- var h_altimeter = func {
- 	var press_inhg = getprop("instrumentation/altimeter/setting-inhg");
- 	var press_qnh = getprop("instrumentation/altimeter/setting-hpa");
- 	if(  press_inhg == nil ) press_inhg = 0.0;
- 	if(  press_qnh == nil ) press_qnh = 0.0;
- 	help_win.write(sprintf("Baro alt pressure: %.0f hpa %.2f inhg ", press_qnh, press_inhg) );
- }
+var h_altimeter = func {
+	var press_inhg = getprop("instrumentation/altimeter/setting-inhg");
+	var press_qnh = getprop("instrumentation/altimeter/setting-hpa");
+	if(  press_inhg == nil ) press_inhg = 0.0;
+	if(  press_qnh == nil ) press_qnh = 0.0;
+	help_win.write(sprintf("Baro alt pressure: %.0f hpa %.2f inhg ", press_qnh, press_inhg) );
+}
 
- var h_ruddertrim = func {
-   var rdt = getprop("controls/flight/rudder-trim-pos");
-   if(  rdt == nil ) rdt = 0.0;
-   help_win.write(sprintf("Rudder trim pos: %.2f", rdt) );
- }
+var h_ruddertrim = func {
+ var rdt = getprop("controls/flight/rudder-trim-pos");
+ if(  rdt == nil ) rdt = 0.0;
+ help_win.write(sprintf("Rudder trim pos: %.2f", rdt) );
+}
 
- var h_ailerontrim = func {
-   var rdt = getprop("controls/flight/aileron-trim-pos");
-   if(  rdt == nil ) rdt = 0.0;
-   help_win.write(sprintf("Aileron trim pos: %.2f", rdt) );
- }
+var h_ailerontrim = func {
+ var rdt = getprop("controls/flight/aileron-trim-pos");
+ if(  rdt == nil ) rdt = 0.0;
+ help_win.write(sprintf("Aileron trim pos: %.2f", rdt) );
+}
 
- var h_elevatortrim = func {
-   var rdt = getprop("controls/flight/elevator-trim-pos");
-   if(  rdt == nil ) rdt = 0.0;
-   help_win.write(sprintf("Elevator trim pos: %.2f", rdt) );
- }
+var h_elevatortrim = func {
+ var rdt = getprop("controls/flight/elevator-trim-pos");
+ if(  rdt == nil ) rdt = 0.0;
+ help_win.write(sprintf("Elevator trim pos: %.2f", rdt) );
+}
 
- var h_mtp = func {
-   var rdt = getprop("controls/mtp/rpm");
-   if(  rdt == nil ) rdt = 0.0;
-   help_win.write(sprintf("MT Propeller RPM Setting: %.0f", rdt) );
- }
+var h_mtp = func {
+ var rdt = getprop("controls/mtp/rpm");
+ if(  rdt == nil ) rdt = 0.0;
+ help_win.write(sprintf("MT Propeller RPM Setting: %.0f", rdt) );
+}
 
- var h_vs = func {
-	var press_vs = getprop("autopilot/settings/vertical-speed-fpm");
-	if(  press_vs == nil ) press_vs = 0.0;
-	help_win.write(sprintf("Vertical speed: %.0f ", press_vs) );
+var h_vs = func {
+var press_vs = getprop("autopilot/settings/vertical-speed-fpm");
+if(  press_vs == nil ) press_vs = 0.0;
+help_win.write(sprintf("Vertical speed: %.0f ", press_vs) );
 }
 
 var h_tas = func {
-	var press_tas = getprop("autopilot/settings/target-speed-kt");
-	if(  press_tas == nil ) press_tas = 0.0;
-	help_win.write(sprintf("Target speed: %.0f ", press_tas) );
+var press_tas = getprop("autopilot/settings/target-speed-kt");
+if(  press_tas == nil ) press_tas = 0.0;
+help_win.write(sprintf("Target speed: %.0f ", press_tas) );
 }
-
-setlistener( "instrumentation/altimeter/setting-hpa", h_altimeter );
-setlistener( "controls/flight/rudder-trim-pos", h_ruddertrim );
-setlistener( "controls/flight/aileron-trim-pos", h_ailerontrim );
-setlistener( "controls/flight/elevator-trim-pos", h_elevatortrim );
-setlistener( "controls/mtp/rpm", h_mtp );
-setlistener( "autopilot/settings/vertical-speed-fpm", h_vs );
-setlistener( "autopilot/settings/target-speed-kt", h_tas );

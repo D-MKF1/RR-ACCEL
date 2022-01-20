@@ -74,14 +74,24 @@ var canvas_LCD_main = {
 		return m;
 	},
 	getKeys: func() {
-		return ["horizon","lcd.hdg", "lcd.rpm", "lcd.rpm-prop", "lcd.hp", "lcd.kw"];
+		return ["horizon","lcd.hdg", "lcd.rpm", "lcd.rpm-prop", "lcd.hp", "lcd.kw", "lcd.agl"];
 	},
 	update: func() {
 
     #Attitude Indicator
     var pitch = AI_pitch.getValue();
     var roll =  AI_roll.getValue();
-		var hdg = getprop("autopilot/settings/heading-bug-deg") or 0;
+		var hdg = 0;
+		var hdglock = getprop("/autopilot/locks/heading") or "";
+		if (hdglock != ""){
+			hdg = getprop("/autopilot/settings/heading-bug-deg") or 0
+		}else{
+			hdg = getprop("/orientation/true-heading-deg") or 0;
+		}
+
+		var agl = getprop("/position/altitude-agl-ft") or 0;
+		agl = agl - 4.08;  # gear correction
+
 		var hp = getprop("systems/accel-electrical/fake-outputs/hp") or 0;
 		var kw = getprop("systems/accel-electrical/fake-outputs/kw") or 0;
 		var rpm_prop = getprop("systems/accel-electrical/fake-outputs/proppeller-rotation") or 0;
@@ -91,6 +101,7 @@ var canvas_LCD_main = {
     me.h_rot.setRotation(-roll*D2R,me["horizon"].getCenter());
 
 		me["lcd.hdg"].setText(sprintf("%3d", hdg));
+		me["lcd.agl"].setText(sprintf("%5d", agl));
 		me["lcd.rpm"].setText(sprintf("%3d", rpm));
 		me["lcd.rpm-prop"].setText(sprintf("%3d", rpm_prop));
 		me["lcd.hp"].setText(sprintf("%3d", hp));

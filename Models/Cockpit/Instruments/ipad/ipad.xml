@@ -35,6 +35,8 @@ if you contacted me before making any changes to this software.
   <type>material</type>
   <object-name>ipad</object-name>
   <object-name>ipad.startdisplay</object-name>
+  <object-name>startbtn</object-name>
+  <object-name>stopbtn</object-name>
   <condition>
     <not><property>/sim/rendering/rembrandt/enabled</property></not>
     <property>systems/accel-electrical/outputs/cabin-dim</property>
@@ -74,6 +76,52 @@ if you contacted me before making any changes to this software.
       </equals>
     </and>
   </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>startbtn</object-name>
+  <condition>
+    <and>
+      <property>electrical-flight-events/ipad/start</property>
+      <not>
+        <property>electrical-flight-events/start-event</property>
+      </not>
+      <not-equals>
+          <property>electrical-flight-events/ipad/page</property>
+          <value>start</value>
+      </not-equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>stopbtn</object-name>
+  <condition>
+    <and>
+      <property>electrical-flight-events/ipad/start</property>
+      <property>electrical-flight-events/start-event</property>
+      <not-equals>
+          <property>electrical-flight-events/ipad/page</property>
+          <value>start</value>
+      </not-equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+    <type>pick</type>
+    <object-name>startbtn</object-name>
+    <object-name>stopbtn</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>electrical-flight-events/start-event</property>
+      </binding>
+    </action>
 </animation>
 
 <animation>
