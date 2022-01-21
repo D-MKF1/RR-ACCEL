@@ -255,6 +255,16 @@
     <path>electrical-flight-events/vmax/vmax[7]</path>
     <path>electrical-flight-events/vmax/vmax[8]</path>
     <path>electrical-flight-events/vmax/vmax[9]</path>
+    <path>electrical-flight-events/vmax/vmax-string</path>
+    <path>electrical-flight-events/vmax/vmax-string[1]</path>
+    <path>electrical-flight-events/vmax/vmax-string[2]</path>
+    <path>electrical-flight-events/vmax/vmax-string[3]</path>
+    <path>electrical-flight-events/vmax/vmax-string[4]</path>
+    <path>electrical-flight-events/vmax/vmax-string[5]</path>
+    <path>electrical-flight-events/vmax/vmax-string[6]</path>
+    <path>electrical-flight-events/vmax/vmax-string[7]</path>
+    <path>electrical-flight-events/vmax/vmax-string[8]</path>
+    <path>electrical-flight-events/vmax/vmax-string[9]</path>
   </aircraft-data>
 </sim>
 

@@ -19,6 +19,7 @@ var startwindspeed = props.globals.initNode("/electrical-flight-events/start-win
 var vmaxact = props.globals.initNode("/electrical-flight-events/vmax/vmax-actual",0,"DOUBLE");
 for(var v=0; v <= 9; v+=1){
 	props.globals.initNode("/electrical-flight-events/vmax/vmax["~v~"]",0,"DOUBLE");
+	props.globals.initNode("/electrical-flight-events/vmax/vmax-string["~v~"]","","STRING");
 }
 
 ############# the canvas base class - also switch for the actual shown canvas #################
@@ -117,7 +118,7 @@ var canvas_iPAD_Vmax = {
 		return m;
 	},
 	getKeys: func() {
-		return ["vmax.digits","test.0","test.1","test.2","test.3","test.4","test.5","test.6","test.7","test.8","test.9"];
+		return ["vmax.digits","test.0","test.1","test.2","test.3","test.4","test.5","test.6","test.7","test.8","test.9","info.0","info.1","info.2","info.3","info.4","info.5","info.6","info.7","info.8","info.9"];
 	},
 	update: func() {
 
@@ -127,9 +128,12 @@ var canvas_iPAD_Vmax = {
 		var startalt = startaltitude.getValue();
 		var actalt = getprop("instrumentation/altimeter/indicated-altitude-ft") or 0;
 		var hpa = getprop("instrumentation/altimeter/setting-hpa") or 0;
+		var inhg = getprop("environment/pressure-inhg") or 0;
 		var windkts = getprop("environment/wind-speed-kt") or 0;
 		var windfrom = getprop("environment/wind-from-heading-deg") or 0;
 		var pitchdeg = getprop("orientation/pitch-deg") or 0;
+		var temp_c = getprop("environment/temperature-degc") or 0;
+		var timestring =  getprop("time/gmt") or "";
 
 		if(start == 1){
 			if(startalt == 0){
@@ -146,6 +150,7 @@ var canvas_iPAD_Vmax = {
 
 			for(var i=0; i < vmaxtrials; i+=1){
 				me["test."~i].setText(sprintf("%.2f", getprop("/electrical-flight-events/vmax/vmax["~i~"]") or 0));
+				me["info."~i].setText(sprintf("%s", getprop("/electrical-flight-events/vmax/vmax-string["~i~"]") or "-"));
 			}
 
 			# monitor the valid tests
@@ -164,9 +169,12 @@ var canvas_iPAD_Vmax = {
 				var vmaxtrials = size(vmaxOther);
 				var speedtest_list = {};
 				for(var i=0; i < vmaxtrials; i+=1){
-					speedtest_list[i] = {s: getprop("/electrical-flight-events/vmax/vmax["~i~"]")};
+					speedtest_list[i] = {s: getprop("/electrical-flight-events/vmax/vmax["~i~"]"),e: getprop("/electrical-flight-events/vmax/vmax-string["~i~"]")};
 				}
-				speedtest_list[10] = {s: vmaxact.getValue()}; # fill the hash with the actual test
+
+				# write the info text for this speedtest
+				var infotext = "kts  "~sprintf("%.0f", actalt)~"ft/ "~sprintf("%.2f", inhg)~"/ "~sprintf("%.1f", temp_c)~"°C/ Wind "~sprintf("%.0f", windkts)~"kts/ "~timestring;
+				speedtest_list[10] = {s: vmaxact.getValue(), e: infotext}; # fill the hash with the actual test
 
 				var sortedspeedtest_list = sort(keys(speedtest_list), func (a,b) { speedtest_list[b].s - speedtest_list[a].s;});
 				pop(sortedspeedtest_list);  #cut the slowest test
@@ -175,7 +183,8 @@ var canvas_iPAD_Vmax = {
 				if(sortedspeedtest_list != nil){
 					for(var n=0; n < sortnr; n+=1){
 						me["test."~n].setText(sprintf("%.2f", speedtest_list[sortedspeedtest_list[n]].s));
-						setprop("/electrical-flight-events/vmax/vmax["~n~"]", speedtest_list[sortedspeedtest_list[n]].s)
+						setprop("/electrical-flight-events/vmax/vmax["~n~"]", speedtest_list[sortedspeedtest_list[n]].s);
+						setprop("/electrical-flight-events/vmax/vmax-string["~n~"]", speedtest_list[sortedspeedtest_list[n]].e);
 					}
 				}
 				me["vmax.digits"].setText(sprintf("%.2f", vmaxact.getValue()));
@@ -186,6 +195,7 @@ var canvas_iPAD_Vmax = {
 				var vmaxtrials = size(vmaxOther);
 				for(var i=0; i < vmaxtrials; i+=1){
 					me["test."~i].setText(sprintf("%.2f", getprop("/electrical-flight-events/vmax/vmax["~i~"]") or 0));
+					me["info."~i].setText(sprintf("%s", getprop("/electrical-flight-events/vmax/vmax-string["~i~"]") or "-"));
 				}
 
 			}

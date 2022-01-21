@@ -186,7 +186,7 @@ if you contacted me before making any changes to this software.
   <type>rotate</type>
   <object-name>flapslever</object-name>
   <property>controls/flight/flaps</property>
-  <factor>24</factor>
+  <factor>-45</factor>
   <center>
     <x-m> 0.2818</x-m>
     <y-m>-0.4928</y-m>
