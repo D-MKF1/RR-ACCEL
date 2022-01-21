@@ -26,9 +26,9 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:showpageshadow="false"
-     inkscape:zoom="0.36"
-     inkscape:cx="1079.1667"
-     inkscape:cy="1031.9444"
+     inkscape:zoom="0.34"
+     inkscape:cx="877.94118"
+     inkscape:cy="1248.5294"
      inkscape:window-width="1383"
      inkscape:window-height="969"
      inkscape:window-x="199"
@@ -72,58 +72,58 @@
     <text
        xml:space="preserve"
        style="font-size:45.8611px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
-       x="171.9884"
+       x="159.9884"
        y="105.82899"
        id="vmax.digits"><tspan
          sodipodi:role="line"
          id="tspan101262"
          style="font-size:45.8611px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
-         x="171.98842"
+         x="159.98842"
          y="105.82899">000.00</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       style="font-size:35.2778px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
        x="145.40898"
-       y="147.84375"
+       y="157.56078"
        id="test.0"><tspan
          sodipodi:role="line"
          id="tspan101262-1"
-         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         style="font-size:35.2778px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
          x="145.40898"
-         y="147.84375">000.00</tspan></text>
+         y="157.56078">000.00</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       style="font-size:35.2778px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
        x="145.40898"
-       y="183.84375"
+       y="202.56078"
        id="test.1"><tspan
          sodipodi:role="line"
          id="tspan136260"
-         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         style="font-size:35.2778px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
          x="145.40898"
-         y="183.84375">000.00</tspan></text>
+         y="202.56078">000.00</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       style="font-size:35.2778px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
        x="145.40898"
-       y="219.84375"
+       y="247.56078"
        id="test.2"><tspan
          sodipodi:role="line"
          id="tspan136264"
-         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         style="font-size:35.2778px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
          x="145.40898"
-         y="219.84375">000.00</tspan></text>
+         y="247.56078">000.00</tspan></text>
     <text
        xml:space="preserve"
-       style="font-size:25.4px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
+       style="font-size:35.2778px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
        x="145.40898"
-       y="255.84375"
+       y="292.56079"
        id="test.3"><tspan
          sodipodi:role="line"
          id="tspan136268"
-         style="font-size:25.4px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
+         style="font-size:35.2778px;text-align:end;text-anchor:end;fill:#ffffff;stroke-width:0.264583"
          x="145.40898"
-         y="255.84375">000.00</tspan></text>
+         y="292.56079">000.00</tspan></text>
     <use
        x="0"
        y="0"
@@ -131,11 +131,11 @@
        id="test.4"
        width="100%"
        height="100%"
-       transform="translate(2.2227981e-6,144)" />
+       transform="translate(2.2227981e-6,180.00001)" />
     <use
        y="0"
        height="100%"
-       transform="translate(-5.7772019e-6,144)"
+       transform="translate(-5.7772019e-6,180.00001)"
        width="100%"
        id="test.5"
        xlink:href="#test.1"
@@ -147,7 +147,7 @@
        id="test.6"
        width="100%"
        height="100%"
-       transform="translate(-5.7772019e-6,144)" />
+       transform="translate(-5.7772019e-6,180.00001)" />
     <use
        x="0"
        y="0"
@@ -155,7 +155,7 @@
        id="test.7"
        width="100%"
        height="100%"
-       transform="translate(-5.7772019e-6,180)" />
+       transform="translate(-5.7772019e-6,225.00001)" />
     <use
        x="0"
        y="0"
@@ -163,7 +163,7 @@
        id="test.8"
        width="100%"
        height="100%"
-       transform="translate(-5.7772019e-6,216)" />
+       transform="translate(-5.7772019e-6,270.00001)" />
     <use
        x="0"
        y="0"
@@ -171,181 +171,321 @@
        id="test.9"
        width="100%"
        height="100%"
-       transform="translate(-5.7772019e-6,252)" />
+       transform="translate(-5.7772019e-6,315.00001)" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect5314"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
+       x="0.050000001"
        y="120.05" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect13148"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="264.04999" />
-    <rect
-       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
-       id="rect13150"
-       width="413.68353"
-       height="0.83404541"
-       x="24.049999"
-       y="228.05" />
-    <rect
-       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
-       id="rect13152"
-       width="413.68353"
-       height="0.83404541"
-       x="24.049999"
+       x="0.050000001"
        y="300.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
-       id="rect15340"
-       width="413.68353"
+       id="rect13150"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="156.05" />
+       x="0.050000001"
+       y="255.05" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect13152"
+       width="454.89999"
+       height="0.83404541"
+       x="0.050000001"
+       y="345.04999" />
+    <rect
+       style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
+       id="rect15340"
+       width="454.89999"
+       height="0.83404541"
+       x="0.050000001"
+       y="165.05" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15344"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="192.05" />
+       x="0.050000001"
+       y="210.05" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15350"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="372.04999" />
+       x="0.050000001"
+       y="435.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15352"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="336.04999" />
+       x="0.050000001"
+       y="390.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15354"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="408.04999" />
+       x="0.050000001"
+       y="480.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15356"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
+       x="0.050000001"
        y="600.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect15358"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="444.04999" />
+       x="0.050000001"
+       y="525.04999" />
     <rect
        style="fill:#808080;fill-rule:evenodd;stroke:#99ffa4;stroke-width:0.1;stroke-miterlimit:1;stroke-dasharray:0.1, 0.1"
        id="rect37496"
-       width="413.68353"
+       width="454.89999"
        height="0.83404541"
-       x="24.049999"
-       y="480.04999" />
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="141.92188"
-       id="info.0"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan122348">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="177.92188"
-       id="info.1"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133436">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="213.92188"
-       id="info.2"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133442">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="249.92188"
-       id="info.3"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133448">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="285.92188"
-       id="info.4"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133454">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="321.92188"
-       id="info.5"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133460">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="357.92188"
-       id="info.6"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133466">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="393.92188"
-       id="info.7"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133472">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="429.92188"
-       id="info.8"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133478">Dies ist eine Information zu dem durchgeführten </tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:12.7px;line-height:1.25;font-family:monoMMM_5;-inkscape-font-specification:monoMMM_5;fill:#ffffff;stroke-width:0.264583"
-       x="150.19481"
-       y="465.92188"
-       id="info.9"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-         id="tspan133484">Dies ist eine Information zu dem durchgeführten </tspan></text>
+       x="0.050000001"
+       y="570.04999" />
     <text
        xml:space="preserve"
        style="font-size:50.8px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:monoMMM_5;stroke-width:0.264583"
-       x="187.06607"
+       x="162.72473"
        y="104.4578"
        id="text963"><tspan
          sodipodi:role="line"
          id="tspan961"
          style="font-size:50.8px;fill:#ffffff;stroke-width:0.264583"
-         x="187.06607"
+         x="162.72473"
          y="104.4578">kts</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.6389px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="140.53648"
+       id="info.0"><tspan
+         sodipodi:role="line"
+         id="tspan74355"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="140.53648">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.6389px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="159.73285"
+       id="zus.0"><tspan
+         sodipodi:role="line"
+         id="tspan78301"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="159.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="185.53648"
+       id="info.1"><tspan
+         sodipodi:role="line"
+         id="tspan82277"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="185.53648">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="204.73285"
+       id="zus.1"><tspan
+         sodipodi:role="line"
+         id="tspan82281"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="204.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="230.53648"
+       id="info.2"><tspan
+         sodipodi:role="line"
+         id="tspan82285"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="230.53648">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="249.73285"
+       id="zus.2"><tspan
+         sodipodi:role="line"
+         id="tspan82289"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="249.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="275.5365"
+       id="info.3"><tspan
+         sodipodi:role="line"
+         id="tspan82293"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="275.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="294.73285"
+       id="zus.3"><tspan
+         sodipodi:role="line"
+         id="tspan82297"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="294.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="320.5365"
+       id="info.4"><tspan
+         sodipodi:role="line"
+         id="tspan82301"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="320.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="339.73285"
+       id="zus.4"><tspan
+         sodipodi:role="line"
+         id="tspan82305"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="339.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="365.5365"
+       id="info.5"><tspan
+         sodipodi:role="line"
+         id="tspan82309"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="365.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="384.73285"
+       id="zus.5"><tspan
+         sodipodi:role="line"
+         id="tspan82313"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="384.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="410.5365"
+       id="info.6"><tspan
+         sodipodi:role="line"
+         id="tspan82317"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="410.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="429.73285"
+       id="zus.6"><tspan
+         sodipodi:role="line"
+         id="tspan82321"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="429.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="455.5365"
+       id="info.7"><tspan
+         sodipodi:role="line"
+         id="tspan82325"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="455.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="474.73285"
+       id="zus.7"><tspan
+         sodipodi:role="line"
+         id="tspan82329"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="474.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="500.5365"
+       id="info.8"><tspan
+         sodipodi:role="line"
+         id="tspan82333"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="500.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="519.73285"
+       id="zus.8"><tspan
+         sodipodi:role="line"
+         id="tspan82337"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="519.73285">durchgefuehrten Speedtest.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="545.5365"
+       id="info.9"><tspan
+         sodipodi:role="line"
+         id="tspan82341"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="545.5365">Dies ist eine Information zu dem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:17.63888889px;line-height:1.25;font-family:'Caviar Dreams';-inkscape-font-specification:'Caviar Dreams, Normal';fill:#ffffff;stroke-width:0.264583;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="153.30269"
+       y="564.73285"
+       id="zus.9"><tspan
+         sodipodi:role="line"
+         id="tspan82345"
+         style="fill:#ffffff;stroke-width:0.264583;-inkscape-font-specification:'Caviar Dreams, Normal';font-family:'Caviar Dreams';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;font-size:17.63888889px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="153.30269"
+         y="564.73285">durchgefuehrten Speedtest.</tspan></text>
   </g>
 </svg>
