@@ -168,7 +168,7 @@ var update_electrical = func () {
 
 	var engine_consumption = 0.0;
 
-	####### this lines to feed the Instruments-3d and set the blade-angle from mtp
+	####### this lines to feed the Instruments-3d
 	if( start12v_v){
 		if(startsys_state <= 0){interpolate("/systems/accel-electrical/startsys",1,6);}
 		setprop("/systems/electrical/outputs/comm[0]",28);
@@ -182,7 +182,7 @@ var update_electrical = func () {
 		startsystems.setDoubleValue(0.0);
 	}
 
-  #### listen to propeller pitch setting in the mt-propeller instrument - do not change anything in the thrust, only in view
+  #### listen to propeller pitch setting in the mt-propeller instrument - do not change anything in the thrust, only in view and sound
   var mtrpm = getprop("/controls/mtp/rpm");   #range from 1400 to 2400 / Propeller pitch from 2 to 85 degree
   var mtba = 85-((mtrpm - 1400) * 0.083);
   blade_angle_pos.setDoubleValue(mtba);

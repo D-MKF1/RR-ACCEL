@@ -82,6 +82,9 @@ var ACCELSystem =
           setprop("/systems/accel-electrical/battery/engine-limit", 0);
           setprop("/systems/accel-electrical/battery/engine-volts", 0);
           setprop("/fdm/jsbsim/systems/crash-detect/crash-save", 1);
+          setprop("/controls/mtp/rpm",0);
+          setprop("/controls/mtp/manu",1);
+          setprop("/controls/gear/gear-down",0);
         }
 
         ####  trim setting
