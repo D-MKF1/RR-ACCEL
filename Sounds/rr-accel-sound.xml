@@ -22,6 +22,24 @@
     </volume>
   </start>
 
+  <crank>
+    <name>cough</name>
+    <path>Aircraft/RR-ACCEL/Sounds/crank.wav</path>
+    <property>/engines/engine/running</property>
+    <volume>
+      <property>/orientation/alpha-deg</property>
+      <type>log</type>
+      <min>0.5</min>
+      <max>1.0</max>
+    </volume>
+    <volume>
+      <factor>1.2</factor>
+      <max>1.0</max>
+    </volume>
+    <reference-dist>100</reference-dist>
+    <max-dist>1000</max-dist>
+  </crank>
+
   <engine>
     <name>engine</name>
     <mode>looped</mode>
@@ -62,7 +80,6 @@
     <name>propeller_with_open_canopy</name>
     <mode>looped</mode>
     <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
     <condition>
       <greater-than>
         <property>/controls/doors/canopy/position-norm</property>
@@ -95,7 +112,6 @@
     <name>propeller_with_closed_canopy</name>
     <mode>looped</mode>
     <path>Aircraft/RR-ACCEL/Sounds/prop.wav</path>
-    <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
     <condition>
       <less-than>
         <property>/controls/doors/canopy/position-norm</property>
@@ -113,7 +129,7 @@
       <factor>0.0006</factor>
       <min>0.0</min>
       <max>1.0</max>
-      <offset>0.1</offset>
+      <offset>0.05</offset>
     </pitch>
     <position>
       <x>-2.5</x>

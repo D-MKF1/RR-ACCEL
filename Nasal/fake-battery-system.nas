@@ -270,7 +270,7 @@ var elec_ls = setlistener("/sim/signals/fdm-initialized", func {
 setlistener("/controls/mtp/low", func(state){
 	var state = state.getValue() or 0;
 	if(state){
-		setprop("/systems/accel-electrical/battery/engine-limit",1.5);
+		setprop("/systems/accel-electrical/battery/engine-limit",1.6);
 		setprop("/systems/accel-electrical/buttons/b[5]",0);
 	}else{
 		interpolate("/systems/accel-electrical/battery/engine-limit",2.8,4);
@@ -284,7 +284,7 @@ setlistener("/systems/accel-electrical/buttons/b[5]", func(state){
 	}else{
 		var mtp = getprop("/controls/mtp/low");
 		if(mtp == 1){
-			setprop("/systems/accel-electrical/battery/engine-limit",1.5);
+			setprop("/systems/accel-electrical/battery/engine-limit",1.6);
 		}else{
 			setprop("/systems/accel-electrical/battery/engine-limit",4);
 		}
@@ -294,7 +294,7 @@ setlistener("/systems/accel-electrical/buttons/b[5]", func(state){
 setlistener("/systems/accel-electrical/start", func(state){
 	var state = state.getValue() or 0;
 	if(state){
-		setprop("/systems/accel-electrical/battery/engine-limit",1.5);
+		setprop("/systems/accel-electrical/battery/engine-limit",1.6);
 	}else{
 		setprop("/systems/accel-electrical/battery/engine-limit",0);
 	}

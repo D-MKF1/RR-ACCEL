@@ -27,9 +27,9 @@ if you contacted me before making any changes to this software.
     <size>1.0</size>
     <alignment>xz-plane</alignment>
     <color>
-     <red   type="double">0.26</red>
-     <green type="double">0.24</green>
-     <blue  type="double">0.18</blue>
+     <red   type="double">0.07</red>
+     <green type="double">0.07</green>
+     <blue  type="double">0.07</blue>
     </color>
   </params>
 

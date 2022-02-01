@@ -121,7 +121,8 @@ var canvas_iPAD_Vmax = {
 	getKeys: func() {
 		return ["vmax.digits","test.0","test.1","test.2","test.3","test.4","test.5","test.6","test.7","test.8","test.9",
 		"zus.0","zus.1","zus.2","zus.3","zus.4","zus.5","zus.6","zus.7","zus.8","zus.9",
-		"info.0","info.1","info.2","info.3","info.4","info.5","info.6","info.7","info.8","info.9"];
+		"info.0","info.1","info.2","info.3","info.4","info.5","info.6","info.7","info.8","info.9",
+		"abort.0","abort.1"];
 	},
 	update: func() {
 
@@ -164,10 +165,41 @@ var canvas_iPAD_Vmax = {
 				me["zus."~i].setText(sprintf("%s", getprop("/electrical-flight-events/vmax/vmax-str["~i~"]") or "-"));
 			}
 
+			var notetest = 1;
+			# warning messages
+			if(pitchdeg < -1.8){
+				me["abort.0"].setText(sprintf("%s", "HOLD ALTITUDE!"));
+				startaltitude.setValue(0.0);
+				starthpa.setValue(0.0);
+				startwindfrom.setValue(0.0);
+				startwindspeed.setValue(0.0);
+				notetest = 0;
+			}
+			if(actalt <= (startalt-100)){
+				me["abort.0"].setText(sprintf("%s", "ALTITUDE MISMATCH!"));
+				startaltitude.setValue(0.0);
+				starthpa.setValue(0.0);
+				startwindfrom.setValue(0.0);
+				startwindspeed.setValue(0.0);
+				notetest = 0;
+			}
+			if(windkts > 18){
+				me["abort.0"].setText(sprintf("%s", "TOO STRONG WINDS!"));
+				vmaxact.setValue(0.0);
+				startaltitude.setValue(0.0);
+				starthpa.setValue(0.0);
+				startwindfrom.setValue(0.0);
+				startwindspeed.setValue(0.0);
+				notetest = 0;
+				startevent.setBoolValue(0);
+			}
+
+
 			# monitor the valid tests
-			if(speed > vmax and pitchdeg >= -1.8 and actalt >= (startalt-100) and windkts <= 20){
+			if(speed > vmax and notetest == 1){
 				vmaxact.setValue(speed);
 				me["vmax.digits"].setText(sprintf("%.2f", speed));
+				me["abort.0"].setText(sprintf("%s", ""));
 			}
 
 		}else{

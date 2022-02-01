@@ -10,9 +10,17 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Official</name>
-            <texture>Liveries/official.png</texture>
+          <file type="string">Official</file>
+          <name type="string">Official</name>
+          <texture type="string">Liveries/Official.png</texture>
         </livery>
     </model>
+    <multiplay>
+    	<generic>
+    		<float n="3">0.012</float>   <!-- red immat -->
+    		<float n="4">0.035</float>   <!-- green immat-->
+    		<float n="5">0.11</float>  <!-- blue immat-->
+    	</generic>
+    </multiplay>
 </sim>
 </PropertyList>

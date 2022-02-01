@@ -36,6 +36,16 @@
     </preview>
     <preview>
       <type>exterior</type>
+      <path>Splash/flightgear-RRAccel3.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>exterior</type>
+      <path>Splash/flightgear-RRAccel4.jpg</path>
+      <splash type="bool">true</splash>
+    </preview>
+    <preview>
+      <type>exterior</type>
       <path>Splash/baukasten.jpg</path>
       <splash type="bool">true</splash>
     </preview>
@@ -58,6 +68,8 @@
     <path>Aircraft/RR-ACCEL/Models/RR-ACCEL.xml</path>
     <livery>
       <file type="string">Official</file>
+      <name type="string">Official</name>
+      <texture type="string">Liveries/Official.png</texture>
     </livery>
   </model>
 
@@ -137,6 +149,9 @@
   <float n="0" alias="/controls/doors/canopy/position-norm"/>
   <float n="1" alias="/position/altitude-agl-ft"/>    <!-- shadow without rembrandt -->
   <float n="2" alias="/orientation/pitch-deg"/> <!-- shadow without rembrandt -->
+  <float n="3" alias="/flightnumber/red"/> <!-- flightnumber -->
+  <float n="4" alias="/flightnumber/green"/> <!-- flightnumber -->
+  <float n="5" alias="/flightnumber/blue"/> <!-- flightnumber -->
   <int n="0" alias="/gear/gear[1]/wow"/> <!-- brakewidge -->
   <int n="1" alias="/controls/gear/brake-parking"/> <!-- brakewidge -->
   </generic>
@@ -295,6 +310,12 @@
   	  <rpm type="double">1400</rpm>
   	</mtp>
  </controls>
+
+ <flightnumber>
+   <red type="double">0.012</red>
+   <green type="double">0.035</green>
+   <blue type="double">0.11</blue>
+ </flightnumber>
 
  <autopilot>
   <settings>

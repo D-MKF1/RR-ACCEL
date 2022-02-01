@@ -80,8 +80,8 @@ if you contacted me before making any changes to this software.
 		<object-name>gknob_10</object-name>
 		<emission>
 			<red>   0.1 </red>
-			<green> 0.2 </green>
-			<blue>  0.1 </blue>
+			<green> 0.3 </green>
+			<blue>  1.0 </blue>
 		</emission>
 	</animation>
 
