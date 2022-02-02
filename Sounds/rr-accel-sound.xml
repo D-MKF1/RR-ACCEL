@@ -363,7 +363,7 @@
     <mode>once</mode>
     <path>Aircraft/RR-ACCEL/Sounds/click2.wav</path>
     <condition>
-      <property>/sim/sound/switch2</property>
+      <property>sim/sound/switch2</property>
     </condition>
   </switch>
 
@@ -373,7 +373,7 @@
     <path>Aircraft/RR-ACCEL/Sounds/click2.wav</path>
     <condition>
       <not>
-        <property>/sim/sound/switch2</property>
+        <property>sim/sound/switch2</property>
       </not>
     </condition>
   </switch>

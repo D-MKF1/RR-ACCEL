@@ -17,9 +17,7 @@
     </model>
     <multiplay>
     	<generic>
-    		<float n="3">0.012</float>   <!-- red immat -->
-    		<float n="4">0.035</float>   <!-- green immat-->
-    		<float n="5">0.11</float>  <!-- blue immat-->
+    		<int n="3">0</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black -->
     	</generic>
     </multiplay>
 </sim>

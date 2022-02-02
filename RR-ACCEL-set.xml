@@ -149,11 +149,14 @@
   <float n="0" alias="/controls/doors/canopy/position-norm"/>
   <float n="1" alias="/position/altitude-agl-ft"/>    <!-- shadow without rembrandt -->
   <float n="2" alias="/orientation/pitch-deg"/> <!-- shadow without rembrandt -->
-  <float n="3" alias="/flightnumber/red"/> <!-- flightnumber -->
-  <float n="4" alias="/flightnumber/green"/> <!-- flightnumber -->
-  <float n="5" alias="/flightnumber/blue"/> <!-- flightnumber -->
+  <float n="3" alias="/fdm/jsbsim/propulsion/engine/propeller-rpm"/>
+  <float n="4" alias="/fdm/jsbsim/propulsion/engine/blade-angle"/> <!-- flightnumber -->
+  <float n="5" alias="/gear/gear[1]/rollspeed-ms"/> <!-- wheel animation -->
+  <float n="6" alias="/gear/gear[2]/rollspeed-ms"/> <!-- wheel animation -->
   <int n="0" alias="/gear/gear[1]/wow"/> <!-- brakewidge -->
   <int n="1" alias="/controls/gear/brake-parking"/> <!-- brakewidge -->
+  <int n="2" alias="/fdm/jsbsim/systems/crash-detect/crash-save"/> <!-- show the world the deformation -->
+  <int n="3">0</int> <!-- the registry number  -->
   </generic>
 </multiplay>
 

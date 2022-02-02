@@ -170,7 +170,7 @@ if you contacted me before making any changes to this software.
   <object-name>propdisc</object-name>
   <condition>
     <greater-than>
-      <property>engines/engine[0]/rpm</property>
+      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
       <value>1500</value>
     </greater-than>
   </condition>
@@ -182,11 +182,11 @@ if you contacted me before making any changes to this software.
   <condition>
   <and>
     <greater-than>
-      <property>engines/engine[0]/rpm</property>
+      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
       <value>600.000</value>
     </greater-than>
     <less-than>
-      <property>engines/engine[0]/rpm</property>
+      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
       <value>1500.001</value>
     </less-than>
   </and>
@@ -200,7 +200,7 @@ if you contacted me before making any changes to this software.
   <object-name>prop_3</object-name>
   <condition>
    <less-than>
-    <property>/engines/engine[0]/rpm</property>
+    <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
     <value>1000</value>
    </less-than>
   </condition>
@@ -214,7 +214,7 @@ if you contacted me before making any changes to this software.
   <object-name>prop_2</object-name>
   <object-name>prop_3</object-name>
   <object-name>propnose</object-name>
-  <property>/fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+  <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
   <factor>-0.479</factor>
   <center>
    <x-m>3.30</x-m>
@@ -232,7 +232,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_1</object-name>
-   <property>/fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>
@@ -247,7 +247,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_2</object-name>
-   <property>/fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>
@@ -262,7 +262,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_3</object-name>
-   <property>/fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>
@@ -536,7 +536,7 @@ if you contacted me before making any changes to this software.
    <type>spin</type>
    <object-name>wheel-right</object-name>
    <object-name>wheel-right-disk</object-name>
-   <property>gear/gear[2]/rollspeed-ms</property>
+   <property>sim/multiplay/generic/float[6]</property>
    <factor> 30 </factor>
    <center>
      <x-m> -1.434 </x-m>
@@ -556,7 +556,7 @@ if you contacted me before making any changes to this software.
     <type>spin</type>
     <object-name>wheel-left</object-name>
     <object-name>wheel-left-disk</object-name>
-    <property>gear/gear[1]/rollspeed-ms</property>
+    <property>sim/multiplay/generic/float[5]</property>
     <factor> 30 </factor>
     <center>
       <x-m> -1.434 </x-m>
@@ -575,7 +575,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>spin</type>
    <object-name>wheel-tail</object-name>
-   <property>gear/gear[0]/rollspeed-ms</property>
+   <property>sim/multiplay/generic/float[5]</property>
    <factor> 30 </factor>
    <center>
      <x-m>  3.504 </x-m>
@@ -592,7 +592,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-left</object-name>
-   <property>/controls/flight/aileron</property>
+   <property>controls/flight/aileron</property>
    <factor> 20 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
@@ -607,7 +607,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-right</object-name>
-   <property>/controls/flight/aileron</property>
+   <property>controls/flight/aileron</property>
    <factor> -20 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
@@ -653,7 +653,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>elevator</object-name>
-   <property>/controls/flight/elevator</property>
+   <property>controls/flight/elevator</property>
    <factor> 20 </factor>
    <center>
      <x-m> 3.141 </x-m>
@@ -671,7 +671,7 @@ if you contacted me before making any changes to this software.
    <type>rotate</type>
    <object-name>rudder</object-name>
    <object-name>wheel-tail</object-name>
-   <property>/controls/flight/rudder</property>
+   <property>controls/flight/rudder</property>
    <factor> 20 </factor>
    <center>
      <x-m> 3.414 </x-m>
@@ -722,10 +722,25 @@ if you contacted me before making any changes to this software.
    </action>
   </animation>
 
+  <animation>
+   <type>pick</type>
+   <object-name>emergency-opener</object-name>
+   <visible>false</visible>
+   <action>
+     <button>0</button>
+     <repeatable>true</repeatable>
+     <interval-sec>0.2</interval-sec>
+     <binding>
+      <command>nasal</command>
+      <script>rraccel.doorsystem.canopyopener();</script>
+     </binding>
+   </action>
+  </animation>
+
   <!-- Registration -->
-  <!-- first set the color -->
+  <!-- blue registration number -->
   <model>
-  	<name>registrationRight</name>
+  	<name>registrationRightBlue</name>
     <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
     <offsets>
       <x-m>1.704</x-m>
@@ -747,7 +762,7 @@ if you contacted me before making any changes to this software.
   </model>
 
   <model>
-  	<name>registrationLeft</name>
+  	<name>registrationLeftBlue</name>
     <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
     <offsets>
       <x-m>1.704</x-m>
@@ -769,7 +784,7 @@ if you contacted me before making any changes to this software.
   </model>
 
   <model>
-    <name>registrationWingBottom</name>
+    <name>registrationWingBottomBlue</name>
     <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing.xml</path>
     <offsets>
       <x-m>-0.98</x-m>
@@ -792,6 +807,265 @@ if you contacted me before making any changes to this software.
     </overlay>
   </model>
 
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomBlue</object-name>
+    <object-name>registrationLeftBlue</object-name>
+    <object-name>registrationRightBlue</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- golden registration number -->
+  <model>
+  	<name>registrationRightGolden</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>-11.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.18</red>
+          <green type="double">0.16</green>
+          <blue type="double">0.1</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+  	<name>registrationLeftGolden</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>-0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>191.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.18</red>
+          <green type="double">0.16</green>
+          <blue type="double">0.1</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+    <name>registrationWingBottomGolden</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing.xml</path>
+    <offsets>
+      <x-m>-0.98</x-m>
+      <y-m>-2.3</y-m>
+      <z-m>-0.25</z-m>
+      <roll-deg>-2</roll-deg>
+      <pitch-deg>4</pitch-deg>
+      <heading-deg> 90</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.5</size>
+        <alignment>reversed-xy-plane</alignment>
+        <color>
+          <red type="double">0.18</red>
+          <green type="double">0.16</green>
+          <blue type="double">0.1</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomGolden</object-name>
+    <object-name>registrationLeftGolden</object-name>
+    <object-name>registrationRightGolden</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- red registration number -->
+  <model>
+  	<name>registrationRightRed</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>-11.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.1</red>
+          <green type="double">0.05</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+  	<name>registrationLeftRed</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>-0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>191.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.1</red>
+          <green type="double">0.05</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+    <name>registrationWingBottomRed</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing.xml</path>
+    <offsets>
+      <x-m>-0.98</x-m>
+      <y-m>-2.3</y-m>
+      <z-m>-0.25</z-m>
+      <roll-deg>-2</roll-deg>
+      <pitch-deg>4</pitch-deg>
+      <heading-deg> 90</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.5</size>
+        <alignment>reversed-xy-plane</alignment>
+        <color>
+          <red type="double">0.1</red>
+          <green type="double">0.05</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomRed</object-name>
+    <object-name>registrationLeftRed</object-name>
+    <object-name>registrationRightRed</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>2</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- black registration number -->
+  <model>
+  	<name>registrationRightBlack</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>-11.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.00</red>
+          <green type="double">0.0</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+  	<name>registrationLeftBlack</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>-0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>191.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.24</size>
+        <alignment>reversed-xz-plane</alignment>
+        <color>
+          <red type="double">0.0</red>
+          <green type="double">0.0</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+    <name>registrationWingBottomBlack</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing.xml</path>
+    <offsets>
+      <x-m>-0.98</x-m>
+      <y-m>-2.3</y-m>
+      <z-m>-0.25</z-m>
+      <roll-deg>-2</roll-deg>
+      <pitch-deg>4</pitch-deg>
+      <heading-deg> 90</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.5</size>
+        <alignment>reversed-xy-plane</alignment>
+        <color>
+          <red type="double">0.0</red>
+          <green type="double">0.0</green>
+          <blue type="double">0.0</blue>
+        </color>
+      </params>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomBlack</object-name>
+    <object-name>registrationLeftBlack</object-name>
+    <object-name>registrationRightBlack</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>3</value>
+      </equals>
+    </condition>
+  </animation>
+
     <!-- shadow without rembrandt -->
     <model>
       <name>NewShadow</name>
@@ -807,7 +1081,7 @@ if you contacted me before making any changes to this software.
               <property>fdm/jsbsim/systems/crash-detect/crash-save</property>
               <value>1</value>
             </not>
-          <not><property>/sim/rendering/rembrandt/enabled</property></not>
+          <not><property>sim/rendering/rembrandt/enabled</property></not>
         </and>
       </condition>
     </animation>
@@ -823,7 +1097,7 @@ if you contacted me before making any changes to this software.
       <object-name>aileron-right</object-name>
       <condition>
         <not>
-          <property>fdm/jsbsim/systems/crash-detect/crash-save</property>
+          <property>sim/multiplay/generic/int[2]</property>
           <value>1</value>
         </not>
       </condition>
