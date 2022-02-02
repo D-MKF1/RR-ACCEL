@@ -363,8 +363,8 @@
  </payload>
  <nasal>
     <rraccel>
-      <file>Aircraft/RR-ACCEL/Nasal/rraccel.nas</file>
       <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>
+      <file>Aircraft/RR-ACCEL/Nasal/rraccel.nas</file>
       <file>Aircraft/RR-ACCEL/Nasal/doors.nas</file>
       <file>Aircraft/RR-ACCEL/Nasal/shake.nas</file>
 			<file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
