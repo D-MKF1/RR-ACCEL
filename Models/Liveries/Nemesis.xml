@@ -10,14 +10,14 @@
 <sim>
     <model>
         <livery>
-          <file type="string">Official</file>
-          <name type="string">Official</name>
-          <texture type="string">Liveries/Official.png</texture>
+          <file type="string">Nemesis</file>
+          <name type="string">Nemesis</name>
+          <texture type="string">Liveries/Nemesis.png</texture>
         </livery>
     </model>
     <multiplay>
     	<generic>
-    		<int n="3">0</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black / 4 terran outline / 5 special Nemesis red -->
+    		<int n="3">5</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black / 4 terran outline / 5 special Nemesis red -->
     	</generic>
     </multiplay>
 </sim>

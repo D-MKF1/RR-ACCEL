@@ -39,12 +39,12 @@ if you contacted me before making any changes to this software.
     <type type="string">text-value</type>
     <property type="string">sim/multiplay/callsign</property>
     <format type="string">%s</format>
-    <font>../Aircraft/RR-ACCEL/Fonts/TypoQuik_Regular.ttf</font>
+    <font>../Aircraft/RR-ACCEL/Fonts/BebasNeue-Regular.ttf</font>
     <character-size alias="../../params/size"/>
     <character-aspect-ratio type="double">1.0</character-aspect-ratio>
     <draw-alignment type="bool">false</draw-alignment>
     <font-resolution>
-      <width type="int">45</width>
+      <width type="int">50</width>
       <height type="int">40</height>
     </font-resolution>
   </text>

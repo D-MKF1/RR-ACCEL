@@ -1066,6 +1066,140 @@ if you contacted me before making any changes to this software.
     </condition>
   </animation>
 
+  <!-- terran registration number -->
+  <model>
+  	<name>registrationRightTerran</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-terran.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>-11.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.3</size>
+        <alignment>reversed-xz-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+  	<name>registrationLeftTerran</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-terran.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>-0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>191.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.3</size>
+        <alignment>reversed-xz-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+    <name>registrationWingBottomTerran</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing-terran.xml</path>
+    <offsets>
+      <x-m>-0.98</x-m>
+      <y-m>-2.3</y-m>
+      <z-m>-0.25</z-m>
+      <roll-deg>-2</roll-deg>
+      <pitch-deg>4</pitch-deg>
+      <heading-deg> 90</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.4</size>
+        <alignment>reversed-xy-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomTerran</object-name>
+    <object-name>registrationLeftTerran</object-name>
+    <object-name>registrationRightTerran</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>4</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <!-- nemesis outline Nemesis registration number -->
+  <model>
+  	<name>registrationRightNemesis</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-nemesis.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>-11.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.3</size>
+        <alignment>reversed-xz-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+  	<name>registrationLeftNemesis</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-nemesis.xml</path>
+    <offsets>
+      <x-m>1.704</x-m>
+      <y-m>-0.37</y-m>
+      <z-m>0.0208</z-m>
+      <heading-deg>191.7</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.3</size>
+        <alignment>reversed-xz-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <model>
+    <name>registrationWingBottomNemesis</name>
+    <path>Aircraft/RR-ACCEL/Registration/flightnumber-wing-nemesis.xml</path>
+    <offsets>
+      <x-m>-0.98</x-m>
+      <y-m>-2.3</y-m>
+      <z-m>-0.25</z-m>
+      <roll-deg>-2</roll-deg>
+      <pitch-deg>4</pitch-deg>
+      <heading-deg> 90</heading-deg>
+    </offsets>
+    <overlay>
+      <params>
+        <size>0.4</size>
+        <alignment>reversed-xy-plane</alignment>
+      </params>
+    </overlay>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>registrationWingBottomNemesis</object-name>
+    <object-name>registrationLeftNemesis</object-name>
+    <object-name>registrationRightNemesis</object-name>
+    <condition>
+      <equals>
+        <property>sim/multiplay/generic/int[3]</property>
+        <value>5</value>
+      </equals>
+    </condition>
+  </animation>
+
     <!-- shadow without rembrandt -->
     <model>
       <name>NewShadow</name>

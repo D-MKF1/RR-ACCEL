@@ -17,7 +17,7 @@
     </model>
     <multiplay>
     	<generic>
-    		<int n="3">1</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black -->
+    		<int n="3">1</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black / 4 terran outline / 5 special Nemesis red -->
     	</generic>
     </multiplay>
 </sim>
