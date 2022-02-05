@@ -170,7 +170,7 @@ if you contacted me before making any changes to this software.
   <object-name>propdisc</object-name>
   <condition>
     <greater-than>
-      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <property>sim/multiplay/generic/float[3]</property>
       <value>1500</value>
     </greater-than>
   </condition>
@@ -182,11 +182,11 @@ if you contacted me before making any changes to this software.
   <condition>
   <and>
     <greater-than>
-      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <property>sim/multiplay/generic/float[3]</property>
       <value>600.000</value>
     </greater-than>
     <less-than>
-      <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+      <property>sim/multiplay/generic/float[3]</property>
       <value>1500.001</value>
     </less-than>
   </and>
@@ -200,7 +200,7 @@ if you contacted me before making any changes to this software.
   <object-name>prop_3</object-name>
   <condition>
    <less-than>
-    <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+    <property>sim/multiplay/generic/float[3]</property>
     <value>1000</value>
    </less-than>
   </condition>
@@ -214,7 +214,7 @@ if you contacted me before making any changes to this software.
   <object-name>prop_2</object-name>
   <object-name>prop_3</object-name>
   <object-name>propnose</object-name>
-  <property>fdm/jsbsim/propulsion/engine/propeller-rpm</property>
+  <property>sim/multiplay/generic/float[3]</property>
   <factor>-0.479</factor>
   <center>
    <x-m>3.30</x-m>
@@ -262,7 +262,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_3</object-name>
-   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>sim/multiplay/generic/float[4]</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>

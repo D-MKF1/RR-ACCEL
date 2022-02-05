@@ -374,11 +374,10 @@
      <file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-helper.nas</file>
    </rraccel>
-      <!--
    <canvas_ddu10>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
    </canvas_ddu10>
-
+<!--
    <canvas_lcd>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.nas</file>
    </canvas_lcd>
