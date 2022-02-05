@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+	  RR-ACCEL Project for Flightgear Januar 2022
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+          <file type="string">Nemesis-cyan</file>
+          <name type="string">Nemesis-Cyan</name>
+          <texture type="string">Liveries/Nemesis-cyan.png</texture>
+        </livery>
+    </model>
+    <multiplay>
+    	<generic>
+    		<int n="3">5</int>   <!-- 0 blue registration number / 1 golden / 2 red / 3 black / 4 terran outline / 5 special Nemesis red -->
+    	</generic>
+    </multiplay>
+</sim>
+</PropertyList>

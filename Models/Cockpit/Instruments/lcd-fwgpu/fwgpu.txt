@@ -1,0 +1,4 @@
+Canvas ist a nice feature... but won't work for older systems.
+So... what about an old styled lcd display :))
+
+fwgpu is the abbrevation : "for weak gpu"
