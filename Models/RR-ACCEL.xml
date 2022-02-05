@@ -54,7 +54,7 @@ if you contacted me before making any changes to this software.
   <texture-prop>texture</texture-prop>
   <texture>Official.png</texture>
   </animation>
-
+<!--
   <effect>
     <inherits-from>Aircraft/RR-ACCEL/Models/Effects/specular</inherits-from>
     <object-name>aileron-left</object-name>
@@ -74,7 +74,7 @@ if you contacted me before making any changes to this software.
     <object-name>wheel-right-gear-door-w</object-name>
     <object-name>wheel-right-stab</object-name>
   </effect>
-
+-->
   <animation>
     <type>material</type>
     <object-name>canopy-frame-inlet</object-name>
@@ -570,25 +570,6 @@ if you contacted me before making any changes to this software.
     </axis>
   </animation>
 
- <!-- Rotation of the tail wheel -->
-
- <animation>
-   <type>spin</type>
-   <object-name>wheel-tail</object-name>
-   <property>sim/multiplay/generic/float[5]</property>
-   <factor> 30 </factor>
-   <center>
-     <x-m>  3.504 </x-m>
-     <y-m>  0.000 </y-m>
-     <z-m> -0.1046 </z-m>
-   </center>
-   <axis>
-     <x>  0 </x>
-     <y> -1 </y>
-     <z>  0 </z>
-   </axis>
- </animation>
-
  <animation>
    <type>rotate</type>
    <object-name>aileron-left</object-name>
@@ -682,6 +663,25 @@ if you contacted me before making any changes to this software.
      <x>  0 </x>
      <y>  0 </y>
      <z>  1 </z>
+   </axis>
+ </animation>
+
+ <!-- Rotation of the tail wheel after rudder rotate -->
+
+ <animation>
+   <type>spin</type>
+   <object-name>wheel-tail</object-name>
+   <property>sim/multiplay/generic/float[5]</property>
+   <factor> 30 </factor>
+   <center>
+     <x-m>  3.504 </x-m>
+     <y-m>  0.000 </y-m>
+     <z-m> -0.1046 </z-m>
+   </center>
+   <axis>
+     <x>  0 </x>
+     <y> -1 </y>
+     <z>  0 </z>
    </axis>
  </animation>
 

@@ -364,30 +364,33 @@
      <max-lb type="double">300.0</max-lb>
    </weight>
  </payload>
+
  <nasal>
-    <rraccel>
-      <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>
-      <file>Aircraft/RR-ACCEL/Nasal/rraccel.nas</file>
-      <file>Aircraft/RR-ACCEL/Nasal/doors.nas</file>
-      <file>Aircraft/RR-ACCEL/Nasal/shake.nas</file>
-			<file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
-      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-helper.nas</file>
-    </rraccel>
-    <canvas_ddu10>
-      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
-    </canvas_ddu10>
-    <canvas_lcd>
-      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.nas</file>
-    </canvas_lcd>
-    <canvas_iPad>
-      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ipad/ipad.nas</file>
-    </canvas_iPad>
-    <ar6201>
-      <file>Aircraft/Instruments-3d/ar-6201/ar6201.nas</file>
-    </ar6201>
-    <bxp6401>
-      <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
-    </bxp6401>
+   <rraccel>
+     <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>
+     <file>Aircraft/RR-ACCEL/Nasal/rraccel.nas</file>
+     <file>Aircraft/RR-ACCEL/Nasal/doors.nas</file>
+     <file>Aircraft/RR-ACCEL/Nasal/shake.nas</file>
+     <file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-helper.nas</file>
+   </rraccel>
+   <canvas_ddu10>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
+   </canvas_ddu10>
+   <!--
+   <canvas_lcd>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.nas</file>
+   </canvas_lcd>
+   <canvas_iPad>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ipad/ipad.nas</file>
+   </canvas_iPad>
+   <ar6201>
+     <file>Aircraft/Instruments-3d/ar-6201/ar6201.nas</file>
+   </ar6201>
+   <bxp6401>
+     <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
+   </bxp6401>
+ -->
  </nasal>
 
 </PropertyList>
