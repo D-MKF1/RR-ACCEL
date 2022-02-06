@@ -232,7 +232,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_1</object-name>
-   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>sim/multiplay/generic/float[4]</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>
@@ -247,7 +247,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>prop_2</object-name>
-   <property>fdm/jsbsim/propulsion/engine/blade-angle</property>
+   <property>sim/multiplay/generic/float[4]</property>
    <factor> 1 </factor>
    <axis>
      <x1-m>-3.268 </x1-m>
@@ -573,8 +573,8 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-left</object-name>
-   <property>controls/flight/aileron</property>
-   <factor> 20 </factor>
+   <property>surface-positions/left-aileron-pos-norm</property>
+   <factor> -20 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
      <y1-m> -4.032 </y1-m>
@@ -588,8 +588,8 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-right</object-name>
-   <property>controls/flight/aileron</property>
-   <factor> -20 </factor>
+   <property>surface-positions/left-aileron-pos-norm</property>
+   <factor> 20 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
      <y1-m>  1.831 </y1-m>
@@ -604,7 +604,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-left</object-name>
-   <property>/controls/flight/flaps</property>
+   <property>controls/flight/flaps</property>
    <factor> 30 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
@@ -619,7 +619,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-right</object-name>
-   <property>/controls/flight/flaps</property>
+   <property>controls/flight/flaps</property>
    <factor> 30 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
@@ -634,7 +634,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>elevator</object-name>
-   <property>controls/flight/elevator</property>
+   <property>surface-positions/elevator-pos-norm</property>
    <factor> 20 </factor>
    <center>
      <x-m> 3.141 </x-m>

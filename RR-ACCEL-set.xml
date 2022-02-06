@@ -377,7 +377,6 @@
    <canvas_ddu10>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
    </canvas_ddu10>
-<!--
    <canvas_lcd>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.nas</file>
    </canvas_lcd>
@@ -390,7 +389,6 @@
    <bxp6401>
      <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
    </bxp6401>
- -->
  </nasal>
 
 </PropertyList>
