@@ -604,8 +604,8 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-left</object-name>
-   <property>controls/flight/flaps</property>
-   <factor> 30 </factor>
+   <property>surface-positions/flap-pos-norm</property>
+   <factor> -30 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
      <y1-m> -4.032 </y1-m>
@@ -619,7 +619,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>aileron-right</object-name>
-   <property>controls/flight/flaps</property>
+   <property>surface-positions/flap-pos-norm</property>
    <factor> 30 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
@@ -652,7 +652,7 @@ if you contacted me before making any changes to this software.
    <type>rotate</type>
    <object-name>rudder</object-name>
    <object-name>wheel-tail</object-name>
-   <property>controls/flight/rudder</property>
+   <property>surface-positions/rudder-pos-norm</property>
    <factor> 20 </factor>
    <center>
      <x-m> 3.414 </x-m>
