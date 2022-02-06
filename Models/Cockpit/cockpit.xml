@@ -83,7 +83,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>joystick</object-name>
-   <property>/controls/flight/elevator</property>
+   <property>surface-positions/elevator-pos-norm</property>
    <factor> -20 </factor>
    <center>
      <x-m> 0.15 </x-m>
@@ -100,7 +100,7 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>joystick</object-name>
-   <property>/controls/flight/aileron</property>
+   <property>surface-positions/left-aileron-pos-norm</property>
    <factor> -20 </factor>
    <center>
      <x-m> 0.15 </x-m>
@@ -118,7 +118,7 @@ if you contacted me before making any changes to this software.
  	<animation>
  		<type>translate</type>
  		<object-name>pedalL</object-name>
- 		<property>controls/flight/rudder</property>
+ 		<property>surface-positions/rudder-pos-norm</property>
  		<factor>0.04</factor>
  		<axis>
  			<x>1.0</x>
@@ -130,7 +130,7 @@ if you contacted me before making any changes to this software.
  	<animation>
  		<type>translate</type>
  		<object-name>pedalR</object-name>
- 		<property>controls/flight/rudder</property>
+ 		<property>surface-positions/rudder-pos-norm</property>
  		<factor>-0.04</factor>
  		<axis>
  			<x>1.0</x>

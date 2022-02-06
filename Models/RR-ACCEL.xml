@@ -605,7 +605,7 @@ if you contacted me before making any changes to this software.
    <type>rotate</type>
    <object-name>aileron-left</object-name>
    <property>surface-positions/flap-pos-norm</property>
-   <factor> -30 </factor>
+   <factor> 30 </factor>
    <axis>
      <x1-m> -0.734 </x1-m>
      <y1-m> -4.032 </y1-m>
