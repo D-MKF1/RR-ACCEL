@@ -188,7 +188,10 @@ var canvas_DDU10_main = {
 		me["ddu10.kw"].setText(sprintf("%2d", math.round(power_kw)));
 		me["bg.kw"].setRotation(power_deg*D2R);
 
-		settimer(func me.update(), 0.02);
+    var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
+		if(wgpu == 0){
+			settimer(func me.update(), 0.02);
+		}
 	}
 
 };

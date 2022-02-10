@@ -61,7 +61,10 @@ var canvas_LCD_base = {
 			LCD_main.page.hide();
 		}
 
-		settimer(func me.update(), 0.02);
+		var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
+		if(wgpu == 0){
+			settimer(func me.update(), 0.02);
+		}
 	},
 };
 
