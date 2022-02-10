@@ -105,7 +105,10 @@ var canvas_iPAD_base = {
 			iPad_Climb.page.hide();
 		}
 
-		settimer(func me.update(), 0.025);
+		var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
+		if(wgpu == 0){
+			settimer(func me.update(), 0.025);
+		}
 	},
 };
 
@@ -332,6 +335,18 @@ setlistener("sim/signals/fdm-initialized", func {
 	iPad_Climb = canvas_iPAD_Climb.new(groupClimb, instrument_dir~"climb.svg");
 
 	canvas_iPAD_base.update();
+});
+
+# if we go back from the weak gpu state
+setlistener("aircraft/settings/weak_gpu", func(state) {
+	var value = state.getValue();
+	if(!value){
+		iPad_Vmax.update();
+		iPad_8nm.update();
+		iPad_300on3.update();
+		iPad_Climb.update();
+		canvas_iPAD_base.update();
+	}
 });
 
 

@@ -88,7 +88,10 @@ var canvas_DDU10_base = {
 			DDU10_main.page.hide();
 		}
 
-		settimer(func me.update(), 0.02);
+    var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
+		if(wgpu == 0){
+			settimer(func me.update(), 0.02);
+		}
 	},
 };
 
@@ -205,6 +208,15 @@ setlistener("sim/signals/fdm-initialized", func {
 
 	DDU10_main.update();
 	canvas_DDU10_base.update();
+});
+
+# if we go back from the weak gpu state
+setlistener("aircraft/settings/weak_gpu", func(state) {
+	var value = state.getValue();
+	if(!value){
+		DDU10_main.update();
+		canvas_DDU10_base.update();
+	}
 });
 
 var showDDU10 = func {

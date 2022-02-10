@@ -24,12 +24,31 @@ if you contacted me before making any changes to this software.
 ########################################################################-->
 <PropertyList>
 
-<path>lcd-fwgpu.ac</path>
+<path>lcdfwgpu.ac</path>
 
 <animation>
   <type>material</type>
   <object-name>lcd.face</object-name>
   <object-name>hdg.knob</object-name>
+  <object-name>grd-ft-10000</object-name>
+  <object-name>grd-ft-1000</object-name>
+  <object-name>grd-ft-100</object-name>
+  <object-name>grd-ft-10</object-name>
+  <object-name>grd-ft-1</object-name>
+  <object-name>hdg-100</object-name>
+  <object-name>hdg-10</object-name>
+  <object-name>hdg-1</object-name>
+  <object-name>kw-100</object-name>
+  <object-name>kw-10</object-name>
+  <object-name>kw-1</object-name>
+  <object-name>rpm-eng-1000</object-name>
+  <object-name>rpm-eng-100</object-name>
+  <object-name>rpm-eng-10</object-name>
+  <object-name>rpm-prop-1</object-name>
+  <object-name>rpm-prop-1000</object-name>
+  <object-name>rpm-prop-100</object-name>
+  <object-name>rpm-prop-10</object-name>
+  <object-name>rpm-prop-1</object-name>
   <condition>
     <not><property>/sim/rendering/rembrandt/enabled</property></not>
     <property>systems/accel-electrical/outputs/cabin-dim</property>
@@ -54,6 +73,19 @@ if you contacted me before making any changes to this software.
 </animation>
 
 <animation>
+    <type>material</type>
+    <object-name>lcd.sphere</object-name>
+    <object-name>lcd.black</object-name>
+    <object-name>lcd.hdg</object-name>
+    <emission>
+        <red>0.6</red>
+        <green>0.6</green>
+        <blue>0.6</blue>
+        <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+    </emission>
+</animation>
+
+<animation>
   <type>select</type>
   <object-name>lcd.startsys</object-name>
   <condition>
@@ -69,6 +101,98 @@ if you contacted me before making any changes to this software.
       <property>systems/accel-electrical/start12v</property>
     </and>
   </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>lcd.sphere</object-name>
+  <object-name>lcd.black</object-name>
+  <object-name>lcd.hdg</object-name>
+  <object-name>grd-ft-10000</object-name>
+  <object-name>grd-ft-1000</object-name>
+  <object-name>grd-ft-100</object-name>
+  <object-name>grd-ft-10</object-name>
+  <object-name>grd-ft-1</object-name>
+  <object-name>hdg-100</object-name>
+  <object-name>hdg-10</object-name>
+  <object-name>hdg-1</object-name>
+  <object-name>hdg-sel-100</object-name>
+  <object-name>hdg-sel-10</object-name>
+  <object-name>hdg-sel-1</object-name>
+  <object-name>v-100</object-name>
+  <object-name>v-10</object-name>
+  <object-name>v-1</object-name>
+  <object-name>kw-100</object-name>
+  <object-name>kw-10</object-name>
+  <object-name>kw-1</object-name>
+  <object-name>rpm-eng-1000</object-name>
+  <object-name>rpm-eng-100</object-name>
+  <object-name>rpm-eng-10</object-name>
+  <object-name>rpm-eng-1</object-name>
+  <object-name>rpm-prop-1000</object-name>
+  <object-name>rpm-prop-100</object-name>
+  <object-name>rpm-prop-10</object-name>
+  <object-name>rpm-prop-1</object-name>
+  <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/startsys</property>
+        <value>0.95</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/startsys</property>
+        <value>0.3</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>hdg-auto-100</object-name>
+  <object-name>hdg-auto-10</object-name>
+  <object-name>hdg-auto-1</object-name>
+  <condition>
+    <and>
+      <greater-than>
+        <property>systems/accel-electrical/startsys</property>
+        <value>0.95</value>
+      </greater-than>
+      <greater-than>
+        <property>systems/accel-electrical/startsys</property>
+        <value>0.3</value>
+      </greater-than>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>autopilot/locks/heading</property>
+        <value>dg-heading-hold</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>rotate</type>
+  <object-name>lcd.sphere</object-name>
+  <property>orientation/roll-deg</property>
+  <center>
+    <x-m>-0.082548 </x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.00989 </z-m>
+  </center>
+  <axis><x>1</x></axis>
+</animation>
+<animation>
+  <type>rotate</type>
+  <object-name>lcd.sphere</object-name>
+  <property>orientation/pitch-deg</property>
+  <center>
+    <x-m>-0.082548 </x-m>
+    <y-m>0.0</y-m>
+    <z-m>0.00989 </z-m>
+  </center>
+  <axis><y>1</y></axis>
 </animation>
 
 <animation>
@@ -201,7 +325,7 @@ if you contacted me before making any changes to this software.
     </action>
 	</animation>
 
-  <!-- Cabin light -->
+  <!-- heading for autopilot -->
 <animation>
   <type>rotate</type>
   <object-name>hdg.knob</object-name>
@@ -216,6 +340,378 @@ if you contacted me before making any changes to this software.
     <x>1.0</x>
     <y>0.0</y>
     <z>0.0</z>
+  </axis>
+</animation>
+
+<!-- grd-ft -->
+<animation>
+  <type>textranslate</type>
+  <object-name>grd-ft-10000</object-name>
+    <property>position/altitude-agl-ft</property>
+    <step>10000</step>
+  <factor>0.00001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>grd-ft-1000</object-name>
+    <property>position/altitude-agl-ft</property>
+    <step>1000</step>
+  <factor>0.0001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>grd-ft-100</object-name>
+    <property>position/altitude-agl-ft</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>grd-ft-10</object-name>
+    <property>position/altitude-agl-ft</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>grd-ft-1</object-name>
+    <property>position/altitude-agl-ft</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- rpm-prop -->
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-prop-1000</object-name>
+    <property>systems/accel-electrical/fake-outputs/proppeller-rotation</property>
+    <step>1000</step>
+  <factor>0.0001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-prop-100</object-name>
+    <property>systems/accel-electrical/fake-outputs/proppeller-rotation</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-prop-10</object-name>
+    <property>systems/accel-electrical/fake-outputs/proppeller-rotation</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-prop-1</object-name>
+    <property>systems/accel-electrical/fake-outputs/proppeller-rotation</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- rpm-engine -->
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-eng-1000</object-name>
+    <property>systems/accel-electrical/fake-outputs/engine-rpm</property>
+    <step>1000</step>
+  <factor>0.0001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-eng-100</object-name>
+    <property>systems/accel-electrical/fake-outputs/engine-rpm</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-eng-10</object-name>
+    <property>systems/accel-electrical/fake-outputs/engine-rpm</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>rpm-eng-1</object-name>
+    <property>systems/accel-electrical/fake-outputs/engine-rpm</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- heading -->
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-100</object-name>
+    <property>orientation/true-heading-deg</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-10</object-name>
+    <property>orientation/true-heading-deg</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-1</object-name>
+    <property>orientation/true-heading-deg</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- selected heading autopilot-->
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-sel-100</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-sel-10</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-sel-1</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- heading autopilot-->
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-auto-100</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-auto-10</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>hdg-auto-1</object-name>
+    <property>autopilot/settings/heading-bug-deg</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- kilowatt -->
+<animation>
+  <type>textranslate</type>
+  <object-name>kw-100</object-name>
+    <property>systems/accel-electrical/fake-outputs/kw</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>kw-10</object-name>
+    <property>systems/accel-electrical/fake-outputs/kw</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>kw-1</object-name>
+    <property>systems/accel-electrical/battery/engine-volts</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- volts -->
+<animation>
+  <type>textranslate</type>
+  <object-name>v-100</object-name>
+    <property>systems/accel-electrical/battery/engine-volts</property>
+    <step>100</step>
+  <factor>0.001</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>v-10</object-name>
+    <property>systems/accel-electrical/battery/engine-volts</property>
+    <step>10</step>
+  <factor>0.01</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>v-1</object-name>
+    <property>systems/accel-electrical/battery/engine-volts</property>
+    <step>1</step>
+  <factor>0.1</factor>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
   </axis>
 </animation>
 

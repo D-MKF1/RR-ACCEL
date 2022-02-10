@@ -45,6 +45,28 @@ if you contacted me before making any changes to this software.
     </emission>
 	</animation>
 
+  <animation>
+    <type>select</type>
+    <object-name>COM</object-name>
+    <object-name>XPDR</object-name>
+    <condition>
+      <equals>
+        <property>aircraft/settings/weak_gpu</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>LCD-fwgpu</object-name>
+    <condition>
+      <equals>
+        <property>aircraft/settings/weak_gpu</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
 
   <!-- Instruments -->
   <model>
@@ -120,6 +142,16 @@ if you contacted me before making any changes to this software.
   <model>
     <name>LCD</name>
     <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd/lcd.xml</path>
+    <offsets>
+      <x-m>-0.018078</x-m>
+      <y-m>-0.24964</y-m>
+      <z-m> 0.1205</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <name>LCD-fwgpu</name>
+    <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/lcd-fwgpu/lcd-fwgpu.xml</path>
     <offsets>
       <x-m>-0.018078</x-m>
       <y-m>-0.24964</y-m>

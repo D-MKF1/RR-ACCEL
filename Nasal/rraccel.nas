@@ -29,6 +29,8 @@ var applyTrimWheels = func(v, which = 0) {
     if (which == 2) { interpolate("/controls/flight/aileron-trim-pos", v, trimBackTime); }
 }
 
+var weakgpu	   = props.globals.initNode("/aircraft/settings/weak_gpu",0,"BOOL");
+
 var cover_emer1	   = props.globals.initNode("/controls/switches/emergency/cover[0]",0,"BOOL");
 var cover_emer2	   = props.globals.initNode("/controls/switches/emergency/cover[1]",0,"BOOL");
 var cover_emer3	   = props.globals.initNode("/controls/switches/emergency/cover[2]",0,"BOOL");

@@ -106,6 +106,21 @@
               </script>
           </binding>
         </item>
+        <item>
+          <label>--------</label>
+          <enabled>false</enabled>
+        </item>
+        <item>
+          <label>Weak GPU</label>
+          <binding>
+             <command>nasal</command>
+             <script>
+              var registration = gui.Dialog.new("sim/gui/dialogs/weakgpu/dialog", "Aircraft/RR-ACCEL/Systems/weakgpu.xml");
+              registration.open();
+             </script>
+          </binding>
+        </item>
+
       </menu>
     </default>
   </menubar>
@@ -259,6 +274,7 @@
   </rendering>
 -->
   <aircraft-data>
+    <path>aircraft/settings/weak_gpu</path>
     <path>controls/flight/rudder-trim-pos</path>
     <path>controls/flight/aileron-trim-pos</path>
     <path>controls/flight/elevator-trim-pos</path>
@@ -374,7 +390,6 @@
      <file>Aircraft/RR-ACCEL/Nasal/liveries.nas</file>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-helper.nas</file>
    </rraccel>
-   <!--
    <canvas_ddu10>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ddu10/ddu10.nas</file>
    </canvas_ddu10>
@@ -390,7 +405,6 @@
    <bxp6401>
      <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
    </bxp6401>
- -->
  </nasal>
 
 </PropertyList>

@@ -18,7 +18,6 @@ var canvas_LCD_base = {
 			return "../../../Fonts/monoMMM_5.ttf";
 		};
 
-
 		canvas.parsesvg(canvas_group, file, {'font-mapper': font_mapper});
 
 		 var svg_keys = me.getKeys();
@@ -107,8 +106,11 @@ var canvas_LCD_main = {
 		me["lcd.hp"].setText(sprintf("%3d", hp));
 		me["lcd.kw"].setText(sprintf("%3d", kw));
 
+		var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
+		if(wgpu == 0){
+			settimer(func me.update(), 0.02);
+		}
 
-		settimer(func me.update(), 0.02);
 	}
 
 };
@@ -124,9 +126,17 @@ setlistener("sim/signals/fdm-initialized", func {
 	var groupMain = LCD_display.createGroup();
 
 	LCD_main = canvas_LCD_main.new(groupMain, instrument_dir~"LCD_main.svg");
-
 	LCD_main.update();
 	canvas_LCD_base.update();
+});
+
+# if we go back from the weak gpu state
+setlistener("aircraft/settings/weak_gpu", func(state) {
+	var value = state.getValue();
+	if(!value){
+		LCD_main.update();
+		canvas_LCD_base.update();
+	}
 });
 
 var showLCD = func {
