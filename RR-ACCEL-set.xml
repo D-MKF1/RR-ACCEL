@@ -381,6 +381,36 @@
    </weight>
  </payload>
 
+ <instrumentation>
+   <comm n="0">
+     <frequencies>
+       <display-sel-khz type="int">0</display-sel-khz>
+       <display-sel-mhz type="int">0</display-sel-mhz>
+       <display-sby-khz type="int">0</display-sby-khz>
+       <display-sby-mhz type="int">0</display-sby-mhz>
+     </frequencies>
+     <but-pos n="0">0</but-pos>
+     <but-pos n="1">0</but-pos>
+     <but-pos n="2">0</but-pos>
+     <active-mon>0</active-mon>
+     <active-mem>0</active-mem>
+
+   </comm>
+   <comm n="1">
+     <frequencies>
+       <display-sel-khz type="int">0</display-sel-khz>
+       <display-sel-mhz type="int">0</display-sel-mhz>
+       <display-sby-khz type="int">0</display-sby-khz>
+       <display-sby-mhz type="int">0</display-sby-mhz>
+     </frequencies>
+     <but-pos n="0">0</but-pos>
+     <but-pos n="1">0</but-pos>
+     <but-pos n="2">0</but-pos>
+     <active-mon>0</active-mon>
+     <active-mem>0</active-mem>
+   </comm>
+ </instrumentation>
+
  <nasal>
    <rraccel>
      <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>
