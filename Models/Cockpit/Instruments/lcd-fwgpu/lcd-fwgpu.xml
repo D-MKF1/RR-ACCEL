@@ -38,6 +38,12 @@ if you contacted me before making any changes to this software.
   <object-name>hdg-100</object-name>
   <object-name>hdg-10</object-name>
   <object-name>hdg-1</object-name>
+  <object-name>hdg-sel-100</object-name>
+  <object-name>hdg-sel-10</object-name>
+  <object-name>hdg-sel-1</object-name>
+  <object-name>v-100</object-name>
+  <object-name>v-10</object-name>
+  <object-name>v-1</object-name>
   <object-name>kw-100</object-name>
   <object-name>kw-10</object-name>
   <object-name>kw-1</object-name>

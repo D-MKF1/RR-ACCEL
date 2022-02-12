@@ -309,6 +309,26 @@
     <path>electrical-flight-events/vmax/vmax-str[7]</path>
     <path>electrical-flight-events/vmax/vmax-str[8]</path>
     <path>electrical-flight-events/vmax/vmax-str[9]</path>
+    <path>instrumentation/comm/standard-khz</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[1]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[2]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[3]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[4]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[5]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[6]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[7]</path>
+    <path>instrumentation/comm/frequencies/active-mem-freq[8]</path>
+    <path>instrumentation/comm[1]/standard-khz</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[1]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[2]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[3]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[4]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[5]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[6]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[7]</path>
+    <path>instrumentation/comm[1]/frequencies/active-mem-freq[8]</path>
   </aircraft-data>
 </sim>
 
@@ -384,30 +404,16 @@
  <instrumentation>
    <comm n="0">
      <frequencies>
-       <display-sel-khz type="int">0</display-sel-khz>
-       <display-sel-mhz type="int">0</display-sel-mhz>
-       <display-sby-khz type="int">0</display-sby-khz>
-       <display-sby-mhz type="int">0</display-sby-mhz>
+       <active-mem-freq type="double" n="0">118.10</active-mem-freq>
+       <active-mem-freq type="double" n="1">119.11</active-mem-freq>
+       <active-mem-freq type="double" n="2">120.12</active-mem-freq>
+       <active-mem-freq type="double" n="3">121.13</active-mem-freq>
+       <active-mem-freq type="double" n="4">122.14</active-mem-freq>
+       <active-mem-freq type="double" n="5">123.15</active-mem-freq>
+       <active-mem-freq type="double" n="6">124.16</active-mem-freq>
+       <active-mem-freq type="double" n="7">125.17</active-mem-freq>
+       <active-mem-freq type="double" n="8">126.18</active-mem-freq>
      </frequencies>
-     <but-pos n="0">0</but-pos>
-     <but-pos n="1">0</but-pos>
-     <but-pos n="2">0</but-pos>
-     <active-mon>0</active-mon>
-     <active-mem>0</active-mem>
-
-   </comm>
-   <comm n="1">
-     <frequencies>
-       <display-sel-khz type="int">0</display-sel-khz>
-       <display-sel-mhz type="int">0</display-sel-mhz>
-       <display-sby-khz type="int">0</display-sby-khz>
-       <display-sby-mhz type="int">0</display-sby-mhz>
-     </frequencies>
-     <but-pos n="0">0</but-pos>
-     <but-pos n="1">0</but-pos>
-     <but-pos n="2">0</but-pos>
-     <active-mon>0</active-mon>
-     <active-mem>0</active-mem>
    </comm>
  </instrumentation>
 
@@ -429,12 +435,9 @@
    <canvas_iPad>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ipad/ipad.nas</file>
    </canvas_iPad>
-   <ar6201>
-     <file>Aircraft/Instruments-3d/ar-6201/ar6201.nas</file>
-   </ar6201>
-   <bxp6401>
-     <file>Aircraft/Instruments-3d/bxp6401/bxp6401.nas</file>
-   </bxp6401>
+   <ty92vhf>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ty92vhf/ty92vhf.nas</file>
+   </ty92vhf>
  </nasal>
 
 </PropertyList>
