@@ -77,15 +77,15 @@ if you contacted me before making any changes to this software.
 			</greater-than>
       <or>
   			<greater-than>
-  				<property>controls/flight/rudder-trim-pos</property>
+  				<property>controls/flight/rudder-trim</property>
     			<value>0</value>
   			</greater-than>
   			<greater-than>
-  				<property>controls/flight/aileron-trim-pos</property>
+  				<property>controls/flight/aileron-trim</property>
     			<value>0</value>
   			</greater-than>
   			<greater-than>
-  				<property>controls/flight/elevator-trim-pos</property>
+  				<property>controls/flight/elevator-trim</property>
     			<value>0</value>
   			</greater-than>
       </or>
@@ -106,15 +106,15 @@ if you contacted me before making any changes to this software.
 			</greater-than>
       <or>
   			<less-than>
-  				<property>controls/flight/rudder-trim-pos</property>
+  				<property>controls/flight/rudder-trim</property>
     			<value>0</value>
   			</less-than>
   			<less-than>
-  				<property>controls/flight/aileron-trim-pos</property>
+  				<property>controls/flight/aileron-trim</property>
     			<value>0</value>
   			</less-than>
   			<less-than>
-  				<property>controls/flight/elevator-trim-pos</property>
+  				<property>controls/flight/elevator-trim</property>
     			<value>0</value>
   			</less-than>
       </or>
@@ -161,7 +161,7 @@ if you contacted me before making any changes to this software.
 <animation>
 	<type>translate</type>
 	<object-name>slider_1</object-name>
-	<property>controls/flight/rudder-trim-pos</property>
+	<property>controls/flight/rudder-trim</property>
 	<factor>0.035</factor>
 	<axis>
 		<x>0.0</x>
@@ -190,7 +190,7 @@ if you contacted me before making any changes to this software.
             <not><property>devices/status/keyboard/super</property></not>
         </condition>
         <command>property-adjust</command>
-        <property>controls/flight/rudder-trim-pos</property>
+        <property>controls/flight/rudder-trim</property>
         <step>0.005</step>
         <min>-1.0</min>
         <max>1.0</max>
@@ -204,7 +204,7 @@ if you contacted me before making any changes to this software.
            </or>
         </condition>
         <command>property-adjust</command>
-        <property>controls/flight/rudder-trim-pos</property>
+        <property>controls/flight/rudder-trim</property>
         <step>0.02</step>
         <min>-1.0</min>
         <max>1.0</max>
@@ -223,7 +223,7 @@ if you contacted me before making any changes to this software.
               <not><property>devices/status/keyboard/super</property></not>
           </condition>
         <command>property-adjust</command>
-        <property>controls/flight/rudder-trim-pos</property>
+        <property>controls/flight/rudder-trim</property>
         <step>-0.005</step>
         <min>-1.0</min>
         <max>1.0</max>
@@ -237,7 +237,7 @@ if you contacted me before making any changes to this software.
            </or>
         </condition>
         <command>property-adjust</command>
-        <property>controls/flight/rudder-trim-pos</property>
+        <property>controls/flight/rudder-trim</property>
         <step>-0.02</step>
         <min>-1.0</min>
         <max>1.0</max>
@@ -254,7 +254,7 @@ if you contacted me before making any changes to this software.
 <animation>
 <type>translate</type>
 <object-name>slider_2</object-name>
-<property>controls/flight/aileron-trim-pos</property>
+<property>controls/flight/aileron-trim</property>
 <factor>0.035</factor>
 <axis>
   <x>0.0</x>
@@ -283,7 +283,7 @@ if you contacted me before making any changes to this software.
           <not><property>devices/status/keyboard/super</property></not>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/aileron-trim-pos</property>
+      <property>controls/flight/aileron-trim</property>
       <step>0.005</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -297,7 +297,7 @@ if you contacted me before making any changes to this software.
          </or>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/aileron-trim-pos</property>
+      <property>controls/flight/aileron-trim</property>
       <step>0.02</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -316,7 +316,7 @@ if you contacted me before making any changes to this software.
             <not><property>devices/status/keyboard/super</property></not>
         </condition>
       <command>property-adjust</command>
-      <property>controls/flight/aileron-trim-pos</property>
+      <property>controls/flight/aileron-trim</property>
       <step>-0.005</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -330,7 +330,7 @@ if you contacted me before making any changes to this software.
          </or>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/aileron-trim-pos</property>
+      <property>controls/flight/aileron-trim</property>
       <step>-0.02</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -348,7 +348,7 @@ if you contacted me before making any changes to this software.
 <animation>
 <type>translate</type>
 <object-name>slider_3</object-name>
-<property>controls/flight/elevator-trim-pos</property>
+<property>controls/flight/elevator-trim</property>
 <factor>0.035</factor>
 <axis>
   <x>0.0</x>
@@ -377,7 +377,7 @@ if you contacted me before making any changes to this software.
           <not><property>devices/status/keyboard/super</property></not>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/elevator-trim-pos</property>
+      <property>controls/flight/elevator-trim</property>
       <step>0.005</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -391,7 +391,7 @@ if you contacted me before making any changes to this software.
          </or>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/elevator-trim-pos</property>
+      <property>controls/flight/elevator-trim</property>
       <step>0.02</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -410,7 +410,7 @@ if you contacted me before making any changes to this software.
             <not><property>devices/status/keyboard/super</property></not>
         </condition>
       <command>property-adjust</command>
-      <property>controls/flight/elevator-trim-pos</property>
+      <property>controls/flight/elevator-trim</property>
       <step>-0.005</step>
       <min>-1.0</min>
       <max>1.0</max>
@@ -424,7 +424,7 @@ if you contacted me before making any changes to this software.
          </or>
       </condition>
       <command>property-adjust</command>
-      <property>controls/flight/elevator-trim-pos</property>
+      <property>controls/flight/elevator-trim</property>
       <step>-0.02</step>
       <min>-1.0</min>
       <max>1.0</max>

@@ -89,7 +89,7 @@ if you contacted me before making any changes to this software.
 	  </and>
 	  </condition>
 	</animation>
-
+<!--
 	<animation>
 		<type>pick</type>
 		<object-name>display</object-name>
@@ -101,7 +101,7 @@ if you contacted me before making any changes to this software.
 			</binding>
 		</action>
 	</animation>
-
+-->
 	<animation>
 			<type>pick</type>
 			<object-name>touchbutton</object-name>

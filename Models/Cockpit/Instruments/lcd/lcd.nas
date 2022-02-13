@@ -118,7 +118,7 @@ var canvas_LCD_main = {
 
 };
 
-setlistener("sim/signals/fdm-initialized", func {
+var first_lcd_start = setlistener("sim/signals/fdm-initialized", func {
 	LCD_display = canvas.new({
 		"name": "LCD",
 		"size": [870, 470],
@@ -131,6 +131,7 @@ setlistener("sim/signals/fdm-initialized", func {
 	LCD_main = canvas_LCD_main.new(groupMain, instrument_dir~"LCD_main.svg");
 	LCD_main.update();
 	canvas_LCD_base.update();
+	removelistener(first_lcd_start);
 });
 
 # if we go back from the weak gpu state
@@ -146,3 +147,9 @@ var showLCD = func {
 	var dlg = canvas.Window.new([330,165], "dialog").set("resize", 1);
 	dlg.setCanvas(LCD_display);
 }
+
+
+#var t = systime(); # record time
+#showLCD(); # run function
+#var t2 = systime(); # record new time
+#print("LCD took ", t2 - t, " seconds"); # print result

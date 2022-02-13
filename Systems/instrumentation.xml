@@ -41,7 +41,17 @@ if you contacted me before making any changes to this software.
 
 	<comm-radio>
 		<name>comm</name>
+		<number>10</number>
+	</comm-radio>
+
+	<comm-radio>
+		<name>comm</name>
 		<number>1</number>
+	</comm-radio>
+
+	<comm-radio>
+		<name>comm</name>
+		<number>11</number>
 	</comm-radio>
 
 	<dme>

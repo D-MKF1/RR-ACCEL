@@ -19,14 +19,14 @@
 #		Every software has a developer, also free software. 					              #
 #		As a gesture of courtesy and respect, I would be delighted 				          #
 #		if you contacted me before making any changes to this software. 		        #
-#		<info (at) marc-kraus.de> Dec, 2021									                        #
+#		<info (at) marc-kraus.de> March, 2022									                        #
 #################################################################################
 # If trim wheels are not on 0 and you click the center of this wheel
 var trimBackTime = 1.0;
 var applyTrimWheels = func(v, which = 0) {
-    if (which == 0) { interpolate("/controls/flight/elevator-trim-pos", v, trimBackTime); }
-    if (which == 1) { interpolate("/controls/flight/rudder-trim-pos", v, trimBackTime); }
-    if (which == 2) { interpolate("/controls/flight/aileron-trim-pos", v, trimBackTime); }
+    if (which == 0) { interpolate("/controls/flight/elevator-trim", v, trimBackTime); }
+    if (which == 1) { interpolate("/controls/flight/rudder-trim", v, trimBackTime); }
+    if (which == 2) { interpolate("/controls/flight/aileron-trim", v, trimBackTime); }
 }
 
 var weakgpu	   = props.globals.initNode("/aircraft/settings/weak_gpu",0,"BOOL");
@@ -38,11 +38,6 @@ var cover_emer3	   = props.globals.initNode("/controls/switches/emergency/cover[
 var emer1	   = props.globals.initNode("/controls/switches/emergency/switch[0]",0,"BOOL");
 var emer2	   = props.globals.initNode("/controls/switches/emergency/switch[1]",0,"BOOL");
 var emer3	   = props.globals.initNode("/controls/switches/emergency/switch[2]",0,"BOOL");
-
-var trim_enable	   = props.globals.initNode("/controls/flight/trim-enable",0,"BOOL");
-var rudder_trim_pos	   = props.globals.initNode("/controls/flight/rudder-trim-pos",0,"DOUBLE");
-var aileron_trim_pos	 = props.globals.initNode("/controls/flight/aileron-trim-pos",0,"DOUBLE");
-var elevator_trim_pos	 = props.globals.initNode("/controls/flight/elevator-trim-pos",0,"DOUBLE");
 
 
 var ACCELSystem =
@@ -89,22 +84,6 @@ var ACCELSystem =
           setprop("/controls/gear/gear-down",0);
         }
 
-        ####  trim setting
-        var te = trim_enable.getBoolValue();
-        var rtp = rudder_trim_pos.getDoubleValue();
-        var atp = aileron_trim_pos.getDoubleValue();
-        var etp = elevator_trim_pos.getDoubleValue();
-
-        if(te == 1){
-          setprop("/controls/flight/rudder-trim", rtp);
-          setprop("/controls/flight/aileron-trim", atp);
-          setprop("/controls/flight/elevator-trim", etp);
-        }else{
-          setprop("/controls/flight/rudder-trim", 0.0);
-          setprop("/controls/flight/aileron-trim", 0.0);
-          setprop("/controls/flight/elevator-trim", 0.0);
-        }
-
         ### Emergency switches on Trimpanel
 
         var ce1 = cover_emer1.getValue();
@@ -143,6 +122,10 @@ setlistener("sim/signals/fdm-initialized",
             # executed on _every_ FDM reset (but not installing new listeners)
             func(idle) { ACCELSys.reset(); },
             0,0);
+
+var rraccel_init = setlistener("/sim/signals/fdm-initialized", func(idle) {
+  ACCELSys.reset();
+  removelistener( rraccel_init ); }, 0,0);
 
 settimer(func()
          {
