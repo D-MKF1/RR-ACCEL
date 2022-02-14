@@ -203,13 +203,13 @@ var push_mem = func (v,mode){
 		var diff = time - lt;
 		if(diff < 1.5){
 			if(mem_active == 0){
-				setprop("instrumentation/comm["~v~"]/active-mem",1);
+				setprop("instrumentation/comm["~v~"]/active-mem",2);
 			}else{
 				setprop("instrumentation/comm["~v~"]/active-mem",0);
 			}
 		}else{
 			if(mem_active == 0){
-				setprop("instrumentation/comm["~v~"]/active-mem",1);
+				setprop("instrumentation/comm["~v~"]/active-mem",2);
 			}
 
 			if(mem_active == 1){
@@ -220,6 +220,12 @@ var push_mem = func (v,mode){
 		}
 	}
 }
+
+  # find the frequencies of one Airport - but only in the menu, not in a property tree
+	#		<binding>
+	#			<command>ATC-freq-display</command>
+	#			<icao type="string">EDNY</icao>
+	#		</binding>
 
 
 # Testfunction for the performance of another function
@@ -232,3 +238,32 @@ var push_mem = func (v,mode){
 #push_mem(1); # run function
 #var t2 = systime(); # record new time
 #print("push_mem(1) took ", t2 - t, " seconds"); # print result
+
+var ty92vhf_start = setlistener("/sim/signals/fdm-initialized", func {
+
+	var comm1sel_init	= getprop("instrumentation/comm[0]/frequencies/selected-mhz") or 0;
+	var comm1sby_init	= getprop("instrumentation/comm[0]/frequencies/standby-mhz") or 0;
+	var comm2sel_init	= getprop("instrumentation/comm[1]/frequencies/selected-mhz") or 0;
+	var comm2sby_init	= getprop("instrumentation/comm[1]/frequencies/standby-mhz") or 0;
+
+	var c1sel = sprintf("%.3f",comm1sel_init);
+	var ct1 = split(".",c1sel);
+	comm1selmhz.setValue(ct1[0]);
+  comm1selkhz.setValue(ct1[1]);
+
+	var c1sby = sprintf("%.3f",comm1sby_init);
+	var csby1 = split(".",c1sby);
+  comm1sbymhz.setValue(csby1[0]);
+  comm1sbykhz.setValue(csby1[1]);
+
+	var c2sel = sprintf("%.3f",comm2sel_init);
+	var ct2 = split(".",c2sel);
+	comm2selmhz.setValue(ct2[0]);
+	comm2selkhz.setValue(ct2[1]);
+
+	var c2sby = sprintf("%.3f",comm2sby_init);
+	var csby2 = split(".",c2sby);
+  comm2sbymhz.setValue(csby2[0]);
+  comm2sbykhz.setValue(csby2[1]);
+
+});

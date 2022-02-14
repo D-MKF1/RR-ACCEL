@@ -157,19 +157,19 @@ var h_altimeter = func {
 }
 
 var h_ruddertrim = func {
- var rdt = getprop("controls/flight/rudder-trim-pos");
+ var rdt = getprop("controls/flight/rudder-trim");
  if(  rdt == nil ) rdt = 0.0;
  help_win.write(sprintf("Rudder trim pos: %.2f", rdt) );
 }
 
 var h_ailerontrim = func {
- var rdt = getprop("controls/flight/aileron-trim-pos");
+ var rdt = getprop("controls/flight/aileron-trim");
  if(  rdt == nil ) rdt = 0.0;
  help_win.write(sprintf("Aileron trim pos: %.2f", rdt) );
 }
 
 var h_elevatortrim = func {
- var rdt = getprop("controls/flight/elevator-trim-pos");
+ var rdt = getprop("controls/flight/elevator-trim");
  if(  rdt == nil ) rdt = 0.0;
  help_win.write(sprintf("Elevator trim pos: %.2f", rdt) );
 }
