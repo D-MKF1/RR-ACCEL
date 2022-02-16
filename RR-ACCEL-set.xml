@@ -398,22 +398,6 @@
    </weight>
  </payload>
 
- <instrumentation>
-   <comm n="0">
-     <frequencies>
-       <active-mem-freq type="double" n="0">118.10</active-mem-freq>
-       <active-mem-freq type="double" n="1">119.11</active-mem-freq>
-       <active-mem-freq type="double" n="2">120.12</active-mem-freq>
-       <active-mem-freq type="double" n="3">121.13</active-mem-freq>
-       <active-mem-freq type="double" n="4">122.14</active-mem-freq>
-       <active-mem-freq type="double" n="5">123.15</active-mem-freq>
-       <active-mem-freq type="double" n="6">124.16</active-mem-freq>
-       <active-mem-freq type="double" n="7">125.17</active-mem-freq>
-       <active-mem-freq type="double" n="8">126.18</active-mem-freq>
-     </frequencies>
-   </comm>
- </instrumentation>
-
  <nasal>
    <rraccel>
      <file>Aircraft/RR-ACCEL/Nasal/fake-battery-system.nas</file>

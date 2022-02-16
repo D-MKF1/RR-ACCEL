@@ -142,6 +142,118 @@ if you contacted me before making any changes to this software.
 
 <animation>
   <type>select</type>
+  <object-name>set.001</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>1</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.002</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>2</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.003</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>3</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.004</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>4</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.005</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>5</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.006</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>6</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.007</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>7</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.008</object-name>
+  <condition>
+  <and>
+    <equals>
+      <property>instrumentation/comm[1]/active-settings</property>
+      <value>8</value>
+    </equals>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
   <object-name>monitoring_dual</object-name>
   <condition>
   <and>
@@ -180,12 +292,12 @@ if you contacted me before making any changes to this software.
   <condition>
   <and>
     <greater-than>
-      <property>instrumentation/comm[1]/volume</property>
+      <property>instrumentation/comm[11]/volume</property>
       <value>0.0</value>
     </greater-than>
     <property>systems/accel-electrical/start12v</property>
     <greater-than>
-      <property>instrumentation/comm[1]/signal-quality-norm</property>
+      <property>instrumentation/comm[11]/signal-quality-norm</property>
       <value>0.399</value>
     </greater-than>
   </and>
@@ -503,10 +615,10 @@ if you contacted me before making any changes to this software.
       <value>0.0</value>
     </greater-than>
     <property>systems/accel-electrical/start12v</property>
-    <equals>
+    <greater-than>
       <property>instrumentation/comm[1]/active-mem</property>
-      <value>2</value>
-    </equals>
+      <value>1</value>
+    </greater-than>
   </and>
   </condition>
 </animation>
@@ -516,13 +628,13 @@ if you contacted me before making any changes to this software.
   <name>airportname</name>
   <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ty92vhf/airport.xml</path>
   <offsets>
-    <x-m> 0.001</x-m>
+    <x-m> 0.0007</x-m>
     <y-m>-0.0105</y-m>
-    <z-m> 0.0022</z-m>
+    <z-m> 0.0021</z-m>
   </offsets>
   <overlay>
     <params>
-      <property type="string">instrumentation/comm[1]/airport-id</property>
+      <property type="string">instrumentation/comm[1]/airport-icao-text</property>
       <character-size type="double">0.0052</character-size>
       <color>
         <red   type="double">0.36</red>
@@ -539,13 +651,13 @@ if you contacted me before making any changes to this software.
   <name>airportfreqpos</name>
   <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ty92vhf/airport.xml</path>
   <offsets>
-    <x-m> 0.001</x-m>
+    <x-m> 0.0007</x-m>
     <y-m> 0.002</y-m>
-    <z-m> 0.0022</z-m>
+    <z-m> 0.0021</z-m>
   </offsets>
   <overlay>
     <params>
-      <property type="string">instrumentation/comm[1]/station-name</property>
+      <property type="string">instrumentation/comm[1]/airport-type-text</property>
       <character-size type="double">0.0052</character-size>
       <color>
         <red   type="double">0.36</red>
@@ -712,11 +824,8 @@ if you contacted me before making any changes to this software.
 <animation>
   <type>rotate</type>
   <object-name>StdbyKnob1</object-name>
-  <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
-  <interpolation>
-    <entry><ind>117</ind><dep>  0</dep></entry>
-    <entry><ind>138</ind><dep>720</dep></entry>
-  </interpolation>
+  <property>instrumentation/comm[1]/but-pos[6]</property>
+  <factor>-10</factor>
   <center>
     <x-m>0</x-m>
     <y-m>0.01792</y-m>
@@ -902,9 +1011,9 @@ if you contacted me before making any changes to this software.
     <button>0</button>
     <repeatable>false</repeatable>
     <binding>
-			<command>property-toggle</command>
-			<property>instrumentation/comm[1]/active-mon</property>
-		</binding>
+      <command>nasal</command>
+      <script>ty92vhf.push_mon(1,"press")</script>
+    </binding>
     <binding>
 			<command>property-toggle</command>
 			<property>sim/sound/switch2</property>
@@ -919,6 +1028,10 @@ if you contacted me before making any changes to this software.
         <command>property-assign</command>
         <property>instrumentation/comm[1]/but-pos[1]</property>
         <value>0.0</value>
+      </binding>
+      <binding>
+        <command>nasal</command>
+        <script>ty92vhf.push_mon(1,"up")</script>
       </binding>
     </mod-up>
   </action>
@@ -1026,33 +1139,12 @@ if you contacted me before making any changes to this software.
     </mod-up>
   </action>
   <action>
-    <name>calibrate fine inc</name>
-    <button>1</button>
-    <repeatable>true</repeatable>
-    <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/comm[1]/volume</property>
-      <step>-0.1</step>
-      <min>0.0</min>
-      <max>1.0</max>
-      <wrap>false</wrap>
-    </binding>
-    <binding>
-      <command>property-toggle</command>
-      <property>sim/sound/switch2</property>
-    </binding>
-  </action>
-  <action>
     <name>calibrate fine dec</name>
     <button>3</button>
     <repeatable>true</repeatable>
     <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/comm[1]/volume</property>
-      <step>0.1</step>
-      <min>0.0</min>
-      <max>1.0</max>
-      <wrap>false</wrap>
+      <command>nasal</command>
+      <script>ty92vhf.sq_turn_step(1,0.1)</script>
     </binding>
     <binding>
       <command>property-toggle</command>
@@ -1064,12 +1156,8 @@ if you contacted me before making any changes to this software.
     <button>4</button>
     <repeatable>true</repeatable>
     <binding>
-      <command>property-adjust</command>
-      <property>instrumentation/comm[1]/volume</property>
-      <step>-0.1</step>
-      <min>0.0</min>
-      <max>1.0</max>
-      <wrap>false</wrap>
+      <command>nasal</command>
+      <script>ty92vhf.sq_turn_step(1,-0.1)</script>
     </binding>
     <binding>
       <command>property-toggle</command>
@@ -1077,6 +1165,5 @@ if you contacted me before making any changes to this software.
     </binding>
   </action>
 </animation>
-
 
 </PropertyList>
