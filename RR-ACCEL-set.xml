@@ -154,8 +154,11 @@
   </view>
 <view n="1">
   <config>
-  <!-- small plane, so extend chase view offset a bit -->
+  <!-- small plane, so extend helicopter view offset a bit -->
   <z-offset-m type="double"  archive="y">28.0</z-offset-m>
+  <pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
+  <heading-offset-deg archive="y">180</heading-offset-deg>
+  <default-field-of-view-deg type="double">50</default-field-of-view-deg>
   </config>
 </view>
 
