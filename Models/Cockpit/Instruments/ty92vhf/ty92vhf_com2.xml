@@ -277,10 +277,13 @@ if you contacted me before making any changes to this software.
       <value>0.0</value>
     </greater-than>
     <property>systems/accel-electrical/start12v</property>
-    <property>controls/radios/comm-ptt</property>
+    <equals>
+      <property>controls/radios/comm-ptt</property>
+      <value>2</value>
+    </equals>
     <equals>
       <property>controls/radios/comm-radio-selected</property>
-      <value>1</value>
+      <value>2</value>
     </equals>
   </and>
   </condition>

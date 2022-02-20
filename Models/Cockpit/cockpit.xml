@@ -29,16 +29,19 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>range</type>
    <min-m>0</min-m>
-   <max-m>50</max-m>
+   <max-m>100</max-m>
  </animation>
 
- <animation>
-   <object-name>hull</object-name>
-   <object-name>joystick</object-name>
-   <object-name>panel</object-name>
-   <object-name>seats</object-name>
-   <object-name>instpanel</object-name>
- </animation>
+ <!-- Pilot -->
+ <model>
+   <name>pilot-inside</name>
+   <path>Aircraft/RR-ACCEL/Models/Pilot/pilot-inside.xml</path>
+   <offsets>
+     <x-m>0.0</x-m>
+     <y-m>0.0</y-m>
+     <z-m>0.0</z-m>
+   </offsets>
+ </model>
 
  	<animation>
  		<type>material</type>
@@ -46,6 +49,8 @@ if you contacted me before making any changes to this software.
     <object-name>joystick</object-name>
     <object-name>panel</object-name>
     <object-name>seats</object-name>
+    <object-name>opener</object-name>
+    <object-name>pilot-inside</object-name>
  		<condition>
        <not><property>/sim/rendering/rembrandt/enabled</property></not>
        <property>systems/accel-electrical/outputs/cabin-dim</property>
@@ -84,7 +89,7 @@ if you contacted me before making any changes to this software.
    <type>rotate</type>
    <object-name>joystick</object-name>
    <property>surface-positions/elevator-pos-norm</property>
-   <factor> -20 </factor>
+   <factor> -6 </factor>
    <center>
      <x-m> 0.15 </x-m>
      <y-m> 0.000 </y-m>
@@ -101,7 +106,7 @@ if you contacted me before making any changes to this software.
    <type>rotate</type>
    <object-name>joystick</object-name>
    <property>surface-positions/left-aileron-pos-norm</property>
-   <factor> -20 </factor>
+   <factor> -6 </factor>
    <center>
      <x-m> 0.15 </x-m>
      <y-m> 0.000 </y-m>
@@ -172,4 +177,36 @@ if you contacted me before making any changes to this software.
         <z>  0 </z>
       </axis>
     </animation>
- </PropertyList>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>opener</object-name>
+    <property>sim/multiplay/generic/float[0]</property>
+    <factor> -90 </factor>
+    <center>
+      <x-m> 0.3102 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.2376 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+   <animation>
+    <type>pick</type>
+    <object-name>opener</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>true</repeatable>
+      <interval-sec>0.2</interval-sec>
+      <binding>
+       <command>nasal</command>
+       <script>rraccel.doorsystem.canopyopener();</script>
+      </binding>
+    </action>
+   </animation>
+
+</PropertyList>

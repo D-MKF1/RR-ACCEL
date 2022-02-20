@@ -1,0 +1,256 @@
+<?xml version="1.0"?>
+<!--####################################################################
+Lake of Constance Hangar
+Rolls Royce ACCEL - Spirit of Innovation for Flightgear
+Copyright (C) 2022 M.Kraus
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Every software has a developer, also free software.
+As a gesture of courtesy and respect, I would be delighted
+if you contacted me before making any changes to this software.
+<info (at) marc-kraus.de> Dec, 2021
+########################################################################-->
+<PropertyList>
+  
+ <path>pilot-inside.ac</path>
+
+ 	<animation>
+ 		<type>material</type>
+    <object-name>helmet</object-name>
+    <object-name>closure</object-name>
+    <object-name>mik</object-name>
+    <object-name>shield</object-name>
+
+    <property-base>sim/model/helmets</property-base>
+    <texture-prop>texture</texture-prop>
+    <texture>official.png</texture>
+ 	</animation>
+
+  <animation>
+  <type>rotate</type>
+    <object-name>shield</object-name>
+    <property>sim/multiplay/generic/float[0]</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.9 </ind><dep> 0 </dep></entry>
+      <entry><ind> 1.0 </ind><dep> 23 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.782 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.48 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+
+ <!-- joystick -->
+ <animation>
+   <type>rotate</type>
+   <object-name>hand-right</object-name>
+   <property>surface-positions/elevator-pos-norm</property>
+   <factor> -6 </factor>
+   <center>
+     <x-m> 0.15 </x-m>
+     <y-m> 0.000 </y-m>
+     <z-m> -0.074 </z-m>
+   </center>
+   <axis>
+     <x>  0 </x>
+     <y>  1 </y>
+     <z>  0 </z>
+   </axis>
+ </animation>
+
+ <animation>
+    <type>translate</type>
+    <object-name>arm-right</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor>-0.03</factor>
+    <axis>
+      <x>1.0</x>
+      <y>0.0</y>
+      <z>0.0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>head</object-name>
+    <object-name>helmet</object-name>
+    <object-name>closure</object-name>
+    <object-name>mik</object-name>
+    <object-name>shield</object-name>
+    <property>surface-positions/elevator-pos-norm</property>
+    <factor> -5</factor>
+    <center>
+      <x-m> 0.79 </x-m>
+      <y-m> 0.0 </y-m>
+      <z-m> 0.38 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>hand-right</object-name>
+   <property>surface-positions/left-aileron-pos-norm</property>
+   <factor> -6 </factor>
+   <center>
+     <x-m> 0.15 </x-m>
+     <y-m> 0.000 </y-m>
+     <z-m> -0.074 </z-m>
+   </center>
+   <axis>
+     <x>  1 </x>
+     <y>  0 </y>
+     <z>  0 </z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>arm-right</object-name>
+   <property>surface-positions/left-aileron-pos-norm</property>
+   <factor> -2 </factor>
+   <center>
+     <x-m> 0.7 </x-m>
+     <y-m> 0.0 </y-m>
+     <z-m> 0.0 </z-m>
+   </center>
+   <axis>
+     <x>  0 </x>
+     <y>  0 </y>
+     <z>  1 </z>
+   </axis>
+ </animation>
+
+ <animation>
+   <type>rotate</type>
+   <object-name>head</object-name>
+   <object-name>throat</object-name>
+   <object-name>helmet</object-name>
+   <object-name>closure</object-name>
+   <object-name>mik</object-name>
+   <object-name>shield</object-name>
+   <property>surface-positions/left-aileron-pos-norm</property>
+   <factor> -11 </factor>
+   <center>
+     <x-m> 0.78 </x-m>
+     <y-m>-0.2274 </y-m>
+     <z-m> 0.0 </z-m>
+   </center>
+   <axis>
+     <x>  0 </x>
+     <y>  0 </y>
+     <z>  1 </z>
+   </axis>
+ </animation>
+
+ 	<!-- rudder pedals -->
+
+  <animation>
+ 		<type>translate</type>
+    <object-name>shoe-left</object-name>
+ 		<object-name>leg-left</object-name>
+ 		<property>surface-positions/rudder-pos-norm</property>
+ 		<factor>0.04</factor>
+ 		<axis>
+ 			<x>1.0</x>
+ 			<y>0.0</y>
+ 			<z>0.0</z>
+ 		</axis>
+ 	</animation>
+
+ 	<animation>
+ 		<type>translate</type>
+    <object-name>shoe-right</object-name>
+ 		<object-name>leg-right</object-name>
+ 		<property>surface-positions/rudder-pos-norm</property>
+ 		<factor>-0.04</factor>
+ 		<axis>
+ 			<x>1.0</x>
+ 			<y>0.0</y>
+ 			<z>0.0</z>
+ 		</axis>
+ 	</animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>shoe-right</object-name>
+    <object-name>shoe-left</object-name>
+    <property>/controls/gear/brake-left</property>
+    <factor> -3 </factor>
+    <center>
+      <x-m>-0.3462 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m>-0.3034 </z-m>
+    </center>
+    <axis>
+      <x>  0 </x>
+      <y>  1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+    <animation>
+      <type>rotate</type>
+      <object-name>head</object-name>
+      <object-name>helmet</object-name>
+      <object-name>closure</object-name>
+      <object-name>mik</object-name>
+      <object-name>shield</object-name>
+      <property>surface-positions/rudder-pos-norm</property>
+      <factor> -30 </factor>
+      <center>
+        <x-m> 0.78 </x-m>
+        <y-m>-0.2274 </y-m>
+        <z-m> 0.0 </z-m>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  0 </y>
+        <z>  1 </z>
+      </axis>
+    </animation>
+
+    <animation>
+      <type>rotate</type>
+      <object-name>shoe-right</object-name>
+      <object-name>shoe-left</object-name>
+      <property>/controls/gear/brake-right</property>
+      <factor> -3 </factor>
+      <center>
+        <x-m>-0.3462 </x-m>
+        <y-m> 0.000 </y-m>
+        <z-m>-0.3034 </z-m>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  1 </y>
+        <z>  0 </z>
+      </axis>
+    </animation>
+
+
+ </PropertyList>

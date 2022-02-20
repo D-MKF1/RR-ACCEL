@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--###################################################################################
+		Lake of Constance Hangar :: M.Kraus
+	  RR-ACCEL Project for Flightgear March 2022
+		This file is licenced under the terms of the GNU General Public Licence V2 or later
+		###################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <helmets>
+          <name type="string">Green</name>
+          <texture type="string">green.png</texture>
+        </helmets>
+    </model>
+</sim>
+</PropertyList>

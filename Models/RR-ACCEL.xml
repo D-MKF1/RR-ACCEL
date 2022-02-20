@@ -28,10 +28,13 @@ if you contacted me before making any changes to this software.
    <nasal>
     <load>
       var livery_update = aircraft.livery_update.new("Aircraft/RR-ACCEL/Models/Liveries");
+      var helmet_update = aircraft.overlay_update.new();
+      helmet_update.add("Aircraft/RR-ACCEL/Models/Pilot","sim/multiplay/generic/string");
     </load>
 
     <unload>
       livery_update.stop();
+      helmet_update.stop();
     </unload>
   </nasal>
 
@@ -78,7 +81,6 @@ if you contacted me before making any changes to this software.
   <animation>
     <type>material</type>
     <object-name>canopy-frame-inlet</object-name>
-    <object-name>opener</object-name>
     <condition>
       <not><property>/sim/rendering/rembrandt/enabled</property></not>
       <property>systems/accel-electrical/outputs/cabin-dim</property>
@@ -285,7 +287,7 @@ if you contacted me before making any changes to this software.
    <condition>
        <greater-than>
          <property>gear/gear[1]/position-norm</property>
-         <value>0.06</value>
+         <value>0.62</value>
        </greater-than>
    </condition>
  </animation>
@@ -393,8 +395,8 @@ if you contacted me before making any changes to this software.
    <object-name>wheel-left-disk</object-name>
    <property>gear/gear[1]/position-norm</property>
    <interpolation>
-     <entry><ind> 0 </ind><dep> 88 </dep></entry>
-     <entry><ind> 1 </ind><dep>  0 </dep></entry>
+     <entry><ind> 0.6 </ind><dep> 88 </dep></entry>
+     <entry><ind>1.0 </ind><dep>  0 </dep></entry>
    </interpolation>
    <center>
      <x-m> -0.91 </x-m>
@@ -413,8 +415,7 @@ if you contacted me before making any changes to this software.
    <object-name>wheel-left-stab</object-name>
    <property>gear/gear[1]/position-norm</property>
    <interpolation>
-     <entry><ind>0.0</ind><dep> 1.0</dep></entry>
-     <entry><ind>0.3</ind><dep> 0.5</dep></entry>
+     <entry><ind>0.4</ind><dep> 1.0</dep></entry>
      <entry><ind>1.0</ind><dep> 0.0</dep></entry>
    </interpolation>
    <axis>
@@ -432,7 +433,7 @@ if you contacted me before making any changes to this software.
  <object-name>wheel-left-stab</object-name>
  <property>gear/gear[1]/position-norm</property>
  <interpolation>
-   <entry><ind>0.0</ind><dep>-45.0</dep></entry>
+   <entry><ind>0.6</ind><dep>-45.0</dep></entry>
    <entry><ind>1.0</ind><dep> 0.0</dep></entry>
  </interpolation>
  <center>
@@ -475,7 +476,7 @@ if you contacted me before making any changes to this software.
    <property>gear/gear[1]/position-norm</property>
    <interpolation>
      <entry><ind> 1.0 </ind><dep>  0 </dep></entry>
-     <entry><ind> 0 </ind><dep> 75 </dep></entry>
+     <entry><ind> 0.6 </ind><dep> 75 </dep></entry>
    </interpolation>
    <center>
      <x-m> -0.9619 </x-m>
@@ -517,7 +518,8 @@ if you contacted me before making any changes to this software.
     <property>gear/gear[1]/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep> -90 </dep></entry>
-      <entry><ind> 0.2 </ind><dep> 0 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>-90 </dep></entry>
+      <entry><ind> 0.7 </ind><dep> 0 </dep></entry>
     </interpolation>
     <center>
       <x-m> -1.373 </x-m>
@@ -707,20 +709,6 @@ if you contacted me before making any changes to this software.
      <z2-m>  0.2891 </z2-m>
    </axis>
  </animation>
-
-  <animation>
-   <type>pick</type>
-   <object-name>opener</object-name>
-   <action>
-     <button>0</button>
-     <repeatable>true</repeatable>
-     <interval-sec>0.2</interval-sec>
-     <binding>
-      <command>nasal</command>
-      <script>rraccel.doorsystem.canopyopener();</script>
-     </binding>
-   </action>
-  </animation>
 
   <animation>
    <type>pick</type>
