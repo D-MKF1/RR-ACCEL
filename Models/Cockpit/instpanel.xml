@@ -168,6 +168,16 @@ if you contacted me before making any changes to this software.
 	</model>
 
   <model>
+		<name>TT22</name>
+		<path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/tt22/tt22.xml</path>
+		<offsets>
+  		<x-m>-0.0269</x-m>
+  		<y-m>-0.079</y-m>
+  		<z-m> 0.068</z-m>
+		</offsets>
+	</model>
+
+  <model>
     <name>trimpanel</name>
     <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/trimpanel/trimpanel.xml</path>
     <offsets>

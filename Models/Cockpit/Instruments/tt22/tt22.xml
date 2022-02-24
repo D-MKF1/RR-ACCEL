@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--####################################################################
+Lake of Constance Hangar
+Rolls Royce ACCEL - Spirit of Innovation for Flightgear
+Copyright (C) 2022 M.Kraus
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Every software has a developer, also free software.
+As a gesture of courtesy and respect, I would be delighted
+if you contacted me before making any changes to this software.
+<info (at) marc-kraus.de> March, 2022
+########################################################################-->
+<PropertyList>
+
+<path>tt22.ac</path>
+
+<animation>
+  <type>material</type>
+  <object-name>face</object-name>
+  <object-name>knob.sel</object-name>
+  <object-name>knob.code</object-name>
+  <condition>
+    <not><property>/sim/rendering/rembrandt/enabled</property></not>
+    <property>systems/accel-electrical/outputs/cabin-dim</property>
+  </condition>
+  <emission>
+    <red>0.4</red>
+    <green>0.4</green>
+    <blue>0.4</blue>
+    <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+  </emission>
+</animation>
+
+<animation>
+    <type>material</type>
+    <object-name>Squawk.000</object-name>
+    <object-name>Squawk.001</object-name>
+    <object-name>Squawk.002</object-name>
+    <object-name>Squawk.003</object-name>
+    <object-name>SquawkEdit.000</object-name>
+    <object-name>SquawkEdit.001</object-name>
+    <object-name>SquawkEdit.002</object-name>
+    <object-name>SquawkSet.000</object-name>
+    <object-name>SquawkSet.001</object-name>
+    <object-name>SquawkSet.002</object-name>
+    <object-name>SquawkSet.003</object-name>
+    <object-name>FNDigit.000</object-name>
+    <object-name>FNDigit.001</object-name>
+    <object-name>FNDigit.002</object-name>
+    <object-name>FNDigit.003</object-name>
+    <object-name>FNDigit.004</object-name>
+    <object-name>FNDigit.005</object-name>
+    <object-name>FNDigit.006</object-name>
+    <object-name>FNDigit.007</object-name>
+    <object-name>FNDigitSet.000</object-name>
+    <object-name>FNDigitSet.001</object-name>
+    <object-name>FNDigitSet.002</object-name>
+    <object-name>FNDigitSet.003</object-name>
+    <object-name>FNDigitSet.004</object-name>
+    <object-name>FNDigitSet.005</object-name>
+    <object-name>FNDigitSet.006</object-name>
+    <object-name>FNDigitSet.007</object-name>
+    <object-name>FNShow.000</object-name>
+    <object-name>FNShow.001</object-name>
+    <object-name>FNShow.002</object-name>
+    <object-name>FNShow.003</object-name>
+    <object-name>FNShow.004</object-name>
+    <object-name>FNShow.005</object-name>
+    <object-name>FNShow.006</object-name>
+    <object-name>FNShow.007</object-name>
+    <object-name>SelDigit.000</object-name>
+    <object-name>SelDigit.001</object-name>
+    <object-name>SelDigit.002</object-name>
+    <object-name>SelDigit.003</object-name>
+    <object-name>SelDigit.004</object-name>
+    <object-name>SelDigit.005</object-name>
+    <object-name>SelDigit.006</object-name>
+    <object-name>SelDigit.007</object-name>
+    <object-name>set.000</object-name>
+    <object-name>set.001</object-name>
+    <object-name>set.002</object-name>
+    <object-name>set.003</object-name>
+    <object-name>set.004</object-name>
+    <object-name>but.fn</object-name>
+    <object-name>but.idt</object-name>
+    <object-name>but.vfr</object-name>
+    <object-name>dots</object-name>
+    <object-name>Enterbutton</object-name>
+    <object-name>tt22.display</object-name>
+    <condition>
+      <not><property>/sim/rendering/rembrandt/enabled</property></not>
+      <property>systems/accel-electrical/outputs/cabin-dim</property>
+    </condition>
+    <emission>
+        <red>0.8</red>
+        <green>0.8</green>
+        <blue>0.8</blue>
+        <factor-prop>systems/accel-electrical/outputs/cabin-dim</factor-prop>
+    </emission>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>tt22.display</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>dots</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <property>instrumentation/transponder/request/state</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>Squawk.000</object-name>
+  <object-name>Squawk.001</object-name>
+  <object-name>Squawk.002</object-name>
+  <object-name>Squawk.003</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <less-than>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </less-than>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>SquawkEdit.000</object-name>
+  <object-name>SquawkEdit.001</object-name>
+  <object-name>SquawkEdit.002</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>1</value>
+      </equals>
+      <less-than>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>4</value>
+      </less-than>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>SquawkSet.000</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>0</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>SquawkSet.001</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>1</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>SquawkSet.002</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>2</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>SquawkSet.003</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>1</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>3</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.002</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <property>instrumentation/transponder/ident</property>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.001</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>3</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.000</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>4</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>set.004</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>1</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigit.000</object-name>
+  <object-name>FNDigit.001</object-name>
+  <object-name>FNDigit.002</object-name>
+  <object-name>FNDigit.003</object-name>
+  <object-name>FNDigit.004</object-name>
+  <object-name>FNDigit.005</object-name>
+  <object-name>FNDigit.006</object-name>
+  <object-name>FNDigit.007</object-name>
+  <object-name>set.003</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>2</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.000</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>0</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.001</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>1</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.002</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>2</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.003</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>3</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.004</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>4</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.005</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>5</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.006</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>6</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNDigitSet.007</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/transponder/power-btn</property>
+      <property>systems/accel-electrical/start12v</property>
+      <equals>
+        <property>instrumentation/transponder/fn-active</property>
+        <value>2</value>
+      </equals>
+      <equals>
+        <property>instrumentation/transponder/inputs/enterstep</property>
+        <value>7</value>
+      </equals>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>FNShow.000</object-name>
+  <object-name>FNShow.001</object-name>
+  <object-name>FNShow.002</object-name>
+  <object-name>FNShow.003</object-name>
+  <object-name>FNShow.004</object-name>
+  <object-name>FNShow.005</object-name>
+  <object-name>FNShow.006</object-name>
+  <object-name>FNShow.007</object-name>
+  <object-name>ActDigit.000</object-name>
+  <object-name>ActDigit.001</object-name>
+  <object-name>ActDigit.002</object-name>
+  <object-name>ActDigit.003</object-name>
+  <object-name>ActDigit.004</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>0</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>ActDigit.005</object-name>
+  <object-name>ActDigit.006</object-name>
+  <object-name>ActDigit.007</object-name>
+  <condition>
+  <and>
+    <property>instrumentation/transponder/power-btn</property>
+    <property>systems/accel-electrical/start12v</property>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>0</value>
+    </equals>
+    <equals>
+      <property>instrumentation/transponder/inputs/knob-mode</property>
+      <value>5</value>
+    </equals>
+  </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>Squawk.000</object-name>
+  <property>instrumentation/transponder/inputs/digit[3]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>Squawk.001</object-name>
+  <property>instrumentation/transponder/inputs/digit[2]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>Squawk.002</object-name>
+  <property>instrumentation/transponder/inputs/digit[1]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>Squawk.003</object-name>
+  <property>instrumentation/transponder/inputs/digit</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkSet.000</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[3]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkSet.001</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[2]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkSet.002</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[1]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkEdit.000</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[3]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkEdit.001</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[2]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkEdit.002</object-name>
+  <property>instrumentation/transponder/inputs/digit-set[1]</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>SquawkSet.003</object-name>
+  <property>instrumentation/transponder/inputs/digit-set</property>
+  <factor>0.1</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.000</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[0]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.001</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[1]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.002</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[2]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.003</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[3]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.004</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[4]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.005</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[5]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.006</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[6]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigit.007</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[7]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.000</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[0]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.001</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[1]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.002</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[2]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.003</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[3]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.004</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[4]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.005</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[5]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.006</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[6]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNDigitSet.007</object-name>
+  <property>instrumentation/transponder/inputs/fnposstep[7]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.000</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[0]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.001</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[1]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.002</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[2]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.003</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[3]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.004</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[4]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.005</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[5]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.006</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[6]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>FNShow.007</object-name>
+  <property>instrumentation/transponder/inputs/fnposfix[7]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.000</object-name>
+  <property>instrumentation/transponder/inputs/activeline[0]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.001</object-name>
+  <property>instrumentation/transponder/inputs/activeline[1]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.002</object-name>
+  <property>instrumentation/transponder/inputs/activeline[2]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.003</object-name>
+  <property>instrumentation/transponder/inputs/activeline[3]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.004</object-name>
+  <property>instrumentation/transponder/inputs/activeline[4]</property>
+  <factor>0.027027027027</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.005</object-name>
+  <property>instrumentation/altimeter/mode-s-alt-ft</property>
+  <factor>0.00001</factor>
+  <step>10000</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.006</object-name>
+  <property>instrumentation/altimeter/mode-s-alt-ft</property>
+  <factor>0.0001</factor>
+  <step>1000</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ActDigit.007</object-name>
+  <property>instrumentation/altimeter/mode-s-alt-ft</property>
+  <factor>0.001</factor>
+  <step>100</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<!-- VRF Button -->
+
+<animation>
+    <type>translate</type>
+    <object-name>but.vfr</object-name>
+    <property>instrumentation/transponder/but-pos[0]</property>
+    <factor>-0.003</factor>
+    <axis>
+        <x> 1.0</x>
+        <y> 0.0</y>
+        <z> 0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>but.vfr</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>property-swap</command>
+      <property>instrumentation/transponder/inputs/digit[0]</property>
+      <property>instrumentation/transponder/inputs/digit-vfr-swap[0]</property>
+    </binding>
+    <binding>
+      <command>property-swap</command>
+      <property>instrumentation/transponder/inputs/digit[1]</property>
+      <property>instrumentation/transponder/inputs/digit-vfr-swap[1]</property>
+    </binding>
+    <binding>
+      <command>property-swap</command>
+      <property>instrumentation/transponder/inputs/digit[2]</property>
+      <property>instrumentation/transponder/inputs/digit-vfr-swap[2]</property>
+    </binding>
+    <binding>
+      <command>property-swap</command>
+      <property>instrumentation/transponder/inputs/digit[3]</property>
+      <property>instrumentation/transponder/inputs/digit-vfr-swap[3]</property>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+    <binding>
+      <command>property-assign</command>
+      <property>instrumentation/transponder/but-pos[0]</property>
+      <value>1.0</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/transponder/but-pos[0]</property>
+        <value>0.0</value>
+      </binding>
+    </mod-up>
+  </action>
+  <condition>
+    <equals>
+      <property>instrumentation/transponder/fn-active</property>
+      <value>0</value>
+    </equals>
+  </condition>
+</animation>
+
+<!-- Function (FN) Button -->
+
+<animation>
+    <type>translate</type>
+    <object-name>but.fn</object-name>
+    <property>instrumentation/transponder/but-pos[1]</property>
+    <factor>-0.003</factor>
+    <axis>
+        <x> 1.0</x>
+        <y> 0.0</y>
+        <z> 0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>but.fn</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.push_fn()</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+    <binding>
+      <command>property-assign</command>
+      <property>instrumentation/transponder/but-pos[1]</property>
+      <value>1.0</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/transponder/but-pos[1]</property>
+        <value>0.0</value>
+      </binding>
+    </mod-up>
+  </action>
+</animation>
+
+<!-- Code Knob -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>knob.code</object-name>
+  <property>instrumentation/transponder/but-pos[2]</property>
+  <factor>-10</factor>
+  <center>
+    <x-m>0</x-m>
+    <y-m>0.0185</y-m>
+    <z-m>-0.0156</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>knob.code</object-name>
+  <action>
+    <button>3</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.code_turn_step(1)</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+  </action>
+  <action>
+    <button>4</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.code_turn_step(-1)</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+  </action>
+</animation>
+
+<!--  Enter Button -->
+<animation>
+    <type>translate</type>
+    <object-name>Enterbutton</object-name>
+    <property>instrumentation/transponder/but-pos[3]</property>
+    <factor>-0.003</factor>
+    <axis>
+        <x> 1.0</x>
+        <y> 0.0</y>
+        <z> 0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>Enterbutton</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.push_enter()</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+    <binding>
+      <command>property-assign</command>
+      <property>instrumentation/transponder/but-pos[3]</property>
+      <value>1.0</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/transponder/but-pos[3]</property>
+        <value>0.0</value>
+      </binding>
+    </mod-up>
+  </action>
+</animation>
+
+<!-- Mode Selection Knob -->
+
+<animation>
+  <type>rotate</type>
+  <object-name>knob.sel</object-name>
+  <property>instrumentation/transponder/but-pos[4]</property>
+  <factor>-1</factor>
+  <center>
+    <x-m>0</x-m>
+    <y-m>-0.0185</y-m>
+    <z-m>-0.0156</z-m>
+  </center>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+<animation>
+  <type>pick</type>
+  <object-name>knob.sel</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.mode_click_step(1)</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+  </action>
+  <action>
+    <button>1</button>
+    <repeatable>false</repeatable>
+    <binding>
+      <command>nasal</command>
+      <script>tt22.mode_click_step(-1)</script>
+    </binding>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+  </action>
+  <action>
+      <button>3</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>tt22.mode_click_step(1)</script>
+      </binding>
+      <binding>
+  			<command>property-toggle</command>
+  			<property>sim/sound/switch2</property>
+  		</binding>
+    </action>
+    <action>
+      <button>4</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>tt22.mode_click_step(-1)</script>
+      </binding>
+      <binding>
+  			<command>property-toggle</command>
+  			<property>sim/sound/switch2</property>
+  		</binding>
+    </action>
+</animation>
+
+
+<!-- IDT Button -->
+
+<animation>
+    <type>translate</type>
+    <object-name>but.idt</object-name>
+    <property>instrumentation/transponder/but-pos[5]</property>
+    <factor>-0.003</factor>
+    <axis>
+        <x> 1.0</x>
+        <y> 0.0</y>
+        <z> 0.0</z>
+    </axis>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>but.idt</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>false</repeatable>
+    <binding>
+			<command>property-toggle</command>
+			<property>sim/sound/switch2</property>
+		</binding>
+    <binding>
+      <command>property-assign</command>
+      <property>instrumentation/transponder/but-pos[5]</property>
+      <value>1.0</value>
+    </binding>
+    <binding>
+      <command>property-assign</command>
+      <property>instrumentation/transponder/inputs/ident-btn</property>
+      <value>1</value>
+    </binding>
+    <mod-up>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/transponder/but-pos[5]</property>
+        <value>0.0</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/transponder/inputs/ident-btn</property>
+        <value>0</value>
+      </binding>
+    </mod-up>
+  </action>
+</animation>
+
+
+</PropertyList>

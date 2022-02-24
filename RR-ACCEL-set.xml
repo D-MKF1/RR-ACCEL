@@ -435,6 +435,9 @@
    <ty92vhf>
      <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ty92vhf/ty92vhf.nas</file>
    </ty92vhf>
+   <tt22>
+     <file>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/tt22/tt22.nas</file>
+   </tt22>
  </nasal>
 
 </PropertyList>

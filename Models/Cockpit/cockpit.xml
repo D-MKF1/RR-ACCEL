@@ -48,6 +48,7 @@ if you contacted me before making any changes to this software.
     <object-name>hull</object-name>
     <object-name>joystick</object-name>
     <object-name>panel</object-name>
+    <object-name>cable</object-name>
     <object-name>seats</object-name>
     <object-name>opener</object-name>
     <object-name>pilot-inside</object-name>
