@@ -3,9 +3,11 @@ MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000
 MATERIAL "ipad" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "screen" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "ipadholder" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "tt22-manual" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "ty92-manual" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__ipad.ac"
-kids 12
+kids 16
 OBJECT poly
 name "click300"
 data 9
@@ -54,6 +56,44 @@ numvert 4
 0.0002 -0.10082 -0.02736
 0.0002 -0.07626 -0.0028
 0.0002 -0.07626 -0.02736
+numsurf 1
+SURF 0X0
+mat 0
+refs 4
+0 0 0
+1 1 0
+3 1 1
+2 0 1
+kids 0
+OBJECT poly
+name "clicktt22"
+data 9
+Plane.007
+crease 40.0
+numvert 4
+0.0002 -0.00774 0.0725
+0.0002 -0.00774 0.04793
+0.0002 0.01683 0.0725
+0.0002 0.01683 0.04793
+numsurf 1
+SURF 0X0
+mat 0
+refs 4
+0 0 0
+1 1 0
+3 1 1
+2 0 1
+kids 0
+OBJECT poly
+name "clickty92"
+data 9
+Plane.008
+crease 40.0
+numvert 4
+0.0002 0.01916 0.0725
+0.0002 0.01916 0.04793
+0.0002 0.04372 0.0725
+0.0002 0.04372 0.04793
 numsurf 1
 SURF 0X0
 mat 0
@@ -3153,6 +3193,46 @@ refs 4
 1 0.979484 0.506998
 3 0.979484 0.979078
 2 0.626039 0.979078
+kids 0
+OBJECT poly
+name "ipad.tt22-manual"
+data 9
+Plane.005
+crease 40.0
+texture "TT22.png"
+numvert 4
+0.00058 -0.10021 0.07562
+0.00058 -0.10021 -0.07589
+0.00058 0.10216 0.07562
+0.00058 0.10216 -0.07589
+numsurf 1
+SURF 0X0
+mat 4
+refs 4
+0 0.000094 0.035051
+1 0.075818 0.035051
+3 0.075818 0.979026
+2 0.000094 0.979026
+kids 0
+OBJECT poly
+name "ipad.ty92-manual"
+data 9
+Plane.006
+crease 40.0
+texture "TY92vhf.png"
+numvert 4
+0.00058 -0.10021 0.07562
+0.00058 -0.10021 -0.07589
+0.00058 0.10216 0.07562
+0.00058 0.10216 -0.07589
+numsurf 1
+SURF 0X0
+mat 5
+refs 4
+0 0.000115 0.025528
+1 0.050644 0.025528
+3 0.050644 0.97038
+2 0.000115 0.97038
 kids 0
 OBJECT poly
 name "startbtn"

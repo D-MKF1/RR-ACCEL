@@ -91,7 +91,9 @@ var canvas_DDU10_base = {
     var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
 		if(wgpu == 0){
 			settimer(func me.update(), 0.02);
-		}
+		}else{
+      DDU10_main.page.hide();
+    }
 	},
 };
 

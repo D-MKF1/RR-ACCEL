@@ -52,6 +52,8 @@ if you contacted me before making any changes to this software.
 <animation>
     <type>material</type>
     <object-name>ipad.display</object-name>
+    <object-name>ipad.tt22-manual</object-name>
+    <object-name>ipad.ty92-manual</object-name>
     <emission>
         <red>0.8</red>
         <green>0.8</green>
@@ -69,11 +71,13 @@ if you contacted me before making any changes to this software.
   <object-name>clickvmax</object-name>
   <condition>
     <and>
-      <property>electrical-flight-events/ipad/start</property>
+      <property>instrumentation/ipad/start</property>
       <equals>
-          <property>electrical-flight-events/ipad/page</property>
+          <property>instrumentation/ipad/page</property>
           <value>start</value>
       </equals>
+      <not><property>instrumentation/ipad/show-manual-tt22</property></not>
+      <not><property>instrumentation/ipad/show-manual-ty92</property></not>
     </and>
   </condition>
 </animation>
@@ -83,14 +87,16 @@ if you contacted me before making any changes to this software.
   <object-name>startbtn</object-name>
   <condition>
     <and>
-      <property>electrical-flight-events/ipad/start</property>
+      <property>instrumentation/ipad/start</property>
       <not>
         <property>electrical-flight-events/start-event</property>
       </not>
       <not-equals>
-          <property>electrical-flight-events/ipad/page</property>
+          <property>instrumentation/ipad/page</property>
           <value>start</value>
       </not-equals>
+      <not><property>instrumentation/ipad/show-manual-tt22</property></not>
+      <not><property>instrumentation/ipad/show-manual-ty92</property></not>
     </and>
   </condition>
 </animation>
@@ -100,15 +106,159 @@ if you contacted me before making any changes to this software.
   <object-name>stopbtn</object-name>
   <condition>
     <and>
-      <property>electrical-flight-events/ipad/start</property>
+      <property>instrumentation/ipad/start</property>
       <property>electrical-flight-events/start-event</property>
       <not-equals>
-          <property>electrical-flight-events/ipad/page</property>
+          <property>instrumentation/ipad/page</property>
           <value>start</value>
       </not-equals>
+      <not><property>instrumentation/ipad/show-manual-tt22</property></not>
+      <not><property>instrumentation/ipad/show-manual-ty92</property></not>
     </and>
   </condition>
 </animation>
+
+<animation>
+  <type>select</type>
+  <object-name>ipad.tt22-manual</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/ipad/start</property>
+      <property>instrumentation/ipad/show-manual-tt22</property>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ipad.tt22-manual</object-name>
+  <property>instrumentation/ipad/page-tt22</property>
+  <factor>0.07143</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>ipad.ty92-manual</object-name>
+  <condition>
+    <and>
+      <property>instrumentation/ipad/start</property>
+      <property>instrumentation/ipad/show-manual-ty92</property>
+    </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>textranslate</type>
+  <object-name>ipad.ty92-manual</object-name>
+  <property>instrumentation/ipad/page-ty92</property>
+  <factor>0.04762</factor>
+  <step>1</step>
+  <axis>
+    <x>1</x>
+    <y>0</y>
+    <z>0</z>
+  </axis>
+</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>clickty92</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/ipad/show-manual-ty92</property>
+        <value>1</value>
+      </binding>
+    </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>ipad.ty92-manual</object-name>
+  <visible>true</visible>
+    <action>
+        <name>hdg dec</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/ipad/page-ty92</property>
+            <step>1</step>
+            <min>0</min>
+            <max>22</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+    <action>
+        <name>hdg inc</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/ipad/page-ty92</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>22</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+	</animation>
+
+<animation>
+		<type>pick</type>
+		<object-name>clicktt22</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/ipad/show-manual-tt22</property>
+        <value>1</value>
+      </binding>
+    </action>
+</animation>
+
+<animation>
+  <type>pick</type>
+  <object-name>ipad.tt22-manual</object-name>
+  <visible>true</visible>
+    <action>
+        <name>hdg dec</name>
+        <button>3</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/ipad/page-tt22</property>
+            <step>1</step>
+            <min>0</min>
+            <max>14</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+    <action>
+        <name>hdg inc</name>
+        <button>4</button>
+        <repeatable>true</repeatable>
+        <binding>
+            <command>property-adjust</command>
+            <property>instrumentation/ipad/page-tt22</property>
+            <step>-1</step>
+            <min>0</min>
+            <max>14</max>
+            <wrap>true</wrap>
+        </binding>
+    </action>
+	</animation>
 
 <animation>
     <type>pick</type>
@@ -133,7 +283,7 @@ if you contacted me before making any changes to this software.
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>electrical-flight-events/ipad/page</property>
+        <property>instrumentation/ipad/page</property>
         <value>vmax</value>
       </binding>
     </action>
@@ -148,7 +298,7 @@ if you contacted me before making any changes to this software.
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>electrical-flight-events/ipad/page</property>
+        <property>instrumentation/ipad/page</property>
         <value>300on3</value>
       </binding>
     </action>
@@ -163,7 +313,7 @@ if you contacted me before making any changes to this software.
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>electrical-flight-events/ipad/page</property>
+        <property>instrumentation/ipad/page</property>
         <value>8nm</value>
       </binding>
     </action>
@@ -178,7 +328,7 @@ if you contacted me before making any changes to this software.
       <repeatable>false</repeatable>
       <binding>
         <command>property-assign</command>
-        <property>electrical-flight-events/ipad/page</property>
+        <property>instrumentation/ipad/page</property>
         <value>climb</value>
       </binding>
     </action>

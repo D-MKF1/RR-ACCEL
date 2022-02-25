@@ -21,6 +21,10 @@
 #		if you contacted me before making any changes to this software. 		        #
 #		<info (at) marc-kraus.de> March, 2022									                        #
 #################################################################################
+# settings
+props.globals.initNode("/aircraft/settings/inside-canopy",1,"BOOL");
+props.globals.initNode("/aircraft/settings/internal-pilot",1,"BOOL");
+
 # If trim wheels are not on 0 and you click the center of this wheel
 var trimBackTime = 1.0;
 var applyTrimWheels = func(v, which = 0) {

@@ -122,11 +122,11 @@
           <enabled>false</enabled>
         </item>
         <item>
-          <label>Weak GPU</label>
+          <label>RR-ACCEL Settings</label>
           <binding>
              <command>nasal</command>
              <script>
-              var registration = gui.Dialog.new("sim/gui/dialogs/weakgpu/dialog", "Aircraft/RR-ACCEL/Systems/weakgpu.xml");
+              var registration = gui.Dialog.new("sim/gui/dialogs/rraccel-settings/dialog", "Aircraft/RR-ACCEL/Systems/rraccel-settings.xml");
               registration.open();
              </script>
           </binding>
@@ -289,6 +289,12 @@
 -->
   <aircraft-data>
     <path>aircraft/settings/weak_gpu</path>
+    <path>aircraft/settings/internal-pilot</path>
+    <path>aircraft/settings/inside-canopy</path>
+    <path>instrumentation/transponder/inputs/digit-vfr-swap</path>
+  	<path>instrumentation/transponder/inputs/digit-vfr-swap[1]</path>
+  	<path>instrumentation/transponder/inputs/digit-vfr-swap[2]</path>
+  	<path>instrumentation/transponder/inputs/digit-vfr-swap[3]</path>
     <path>controls/mtp/rpm</path>
     <path>electrical-flight-events/vmax/vmax</path>
     <path>electrical-flight-events/vmax/vmax[1]</path>

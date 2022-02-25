@@ -23,6 +23,8 @@
 #################################################################################
 var steady_sec = props.globals.getNode("/sim/time/steady-clock-sec",	1);
 
+props.globals.initNode("instrumentation/transponder/show-manual",0.0,"BOOL");
+
 props.globals.initNode("instrumentation/transponder/fn-active",0.0,"DOUBLE");
 props.globals.initNode("instrumentation/transponder/flight-id",0.0,"STRING");
 props.globals.initNode("instrumentation/transponder/inputs/enterstep",0.0,"DOUBLE");
@@ -526,10 +528,10 @@ var tt22_start = setlistener("/sim/signals/fdm-initialized", func {
 	fid = string.replace(fid,"-","");
 	fid = string.replace(fid,"_","");
 	fid = string.uc(fid);
-	fid = left(fid,8);
+	#fid = left(fid,8);
 
 	setprop("instrumentation/transponder/flight-id", fid);
-
+	print(fid);
 	var max = size(fid);
 
 	for(var i=0; i < max; i+=1){

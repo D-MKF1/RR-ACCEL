@@ -7,9 +7,13 @@ var iPAD_display = nil;
 
 ################ some inits  ##############
 var instrument_dir = "Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ipad/";
+props.globals.initNode("/instrumentation/ipad/show-manual-tt22",0,"BOOL");
+props.globals.initNode("/instrumentation/ipad/show-manual-ty92",0,"BOOL");
+props.globals.initNode("/instrumentation/ipad/page-tt22",0,"INT");
+props.globals.initNode("/instrumentation/ipad/page-ty92",0,"INT");
 
-var istart = props.globals.initNode("/electrical-flight-events/ipad/start",0,"BOOL");
-var page = props.globals.initNode("/electrical-flight-events/ipad/page","start","STRING");
+var istart = props.globals.initNode("/instrumentation/ipad/start",0,"BOOL");
+var page = props.globals.initNode("/instrumentation/ipad/page","start","STRING");
 var startevent = props.globals.initNode("/electrical-flight-events/start-event",0,"BOOL");
 var startaltitude = props.globals.initNode("/electrical-flight-events/start-altitude",0,"DOUBLE");
 var starthpa = props.globals.initNode("/electrical-flight-events/start-hpa",0,"DOUBLE");
@@ -108,6 +112,12 @@ var canvas_iPAD_base = {
 		var wgpu = getprop("aircraft/settings/weak_gpu") or 0;
 		if(wgpu == 0){
 			settimer(func me.update(), 0.025);
+		}else{
+			page.setValue("start");
+			iPad_Vmax.page.hide();
+			iPad_8nm.page.hide();
+			iPad_300on3.page.hide();
+			iPad_Climb.page.hide();
 		}
 	},
 };
@@ -353,17 +363,25 @@ setlistener("aircraft/settings/weak_gpu", func(state) {
 #########  stuff for the click action on the ipad ###########
 
 var startipad = func {
- 	var ipw = getprop("/electrical-flight-events/ipad/start") or 0;
-	var ipage = getprop("/electrical-flight-events/ipad/page") or "";
+ 	var ipw = getprop("/instrumentation/ipad/start") or 0;
+	var ipage = getprop("/instrumentation/ipad/page") or "";
+	var man1 = getprop("instrumentation/ipad/show-manual-tt22");
+	var man2 = getprop("instrumentation/ipad/show-manual-ty92");
+
 	if(ipw == 0){
 		if(ipage == ""){
-			setprop("/electrical-flight-events/ipad/page", "start");
+			setprop("instrumentation/ipad/page", "start");
 		}
-		setprop("/electrical-flight-events/ipad/start", 1);
+		setprop("instrumentation/ipad/start", 1);
 	}elsif(ipw == 1 and ipage != "start"){
-		setprop("/electrical-flight-events/ipad/page", "start");
+		setprop("instrumentation/ipad/page", "start");
+	}elsif(man1 == 1 or man2 == 1){
+		setprop("instrumentation/ipad/show-manual-tt22", 0);
+		setprop("instrumentation/ipad/show-manual-ty92", 0);
 	}else{
-		setprop("/electrical-flight-events/ipad/start", 0);
+		setprop("instrumentation/ipad/start", 0);
+		setprop("instrumentation/ipad/show-manual-tt22", 0);
+		setprop("instrumentation/ipad/show-manual-ty92", 0);
 	}
 }
 

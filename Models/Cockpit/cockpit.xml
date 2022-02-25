@@ -43,6 +43,17 @@ if you contacted me before making any changes to this software.
    </offsets>
  </model>
 
+ <animation>
+   <type>select</type>
+   <object-name>pilot-inside</object-name>
+   <condition>
+     <or>
+       <property>aircraft/settings/internal-pilot</property>
+      <not><property>sim/current-view/internal</property></not>
+     </or>
+   </condition>
+ </animation>
+
  	<animation>
  		<type>material</type>
     <object-name>hull</object-name>

@@ -16,7 +16,7 @@
  General Public License for more details.
 -->
 <PropertyList>
-  <name>In case of a weak GPU</name>
+  <name>Settings</name>
   <layout>vbox</layout>
   <modal>false</modal>
   <draggable>true</draggable>
@@ -25,9 +25,37 @@
   <group>
       <layout>hbox</layout>
       <checkbox>
-          <label>weak GPU</label>
+          <label>weak GPU - no canvas instruments</label>
           <halign>fill</halign>
           <property>/aircraft/settings/weak_gpu</property>
+          <live>true</live>
+          <binding>
+              <command>dialog-apply</command>
+          </binding>
+      </checkbox>
+  </group>
+
+  <layout>vbox</layout>
+  <group>
+      <layout>hbox</layout>
+      <checkbox>
+          <label>show pilot during internal view</label>
+          <halign>fill</halign>
+          <property>/aircraft/settings/internal-pilot</property>
+          <live>true</live>
+          <binding>
+              <command>dialog-apply</command>
+          </binding>
+      </checkbox>
+  </group>
+
+  <layout>vbox</layout>
+  <group>
+      <layout>hbox</layout>
+      <checkbox>
+          <label>show canopy glass-effect during internal view</label>
+          <halign>fill</halign>
+          <property>/aircraft/settings/inside-canopy</property>
           <live>true</live>
           <binding>
               <command>dialog-apply</command>

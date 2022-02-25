@@ -118,6 +118,7 @@ if you contacted me before making any changes to this software.
   <animation>
     <type>translate</type>
     <object-name>canopy</object-name>
+    <object-name>canopy-inside</object-name>
     <object-name>canopy-frame</object-name>
     <object-name>canopy-frame-inlet</object-name>
     <object-name>ap-fg</object-name>
@@ -140,11 +141,13 @@ if you contacted me before making any changes to this software.
     <shader>chrome</shader>
     <texture>Aircraft/RR-ACCEL/Models/glass_shader.png</texture>
     <object-name>canopy</object-name>
+    <object-name>canopy-inside</object-name>
   </animation>
 
  <animation>
    <type>noshadow</type>
    <object-name>canopy</object-name>
+   <object-name>canopy-inside</object-name>
    <object-name>propdisc</object-name>
    <object-name>propblur</object-name>
  </animation>
@@ -164,6 +167,14 @@ if you contacted me before making any changes to this software.
       <property>sim/multiplay/generic/int[0]</property>
       <property>sim/multiplay/generic/int[1]</property>
     </and>
+  </condition>
+</animation>
+
+<animation>
+  <type>select</type>
+  <object-name>canopy-inside</object-name>
+  <condition>
+      <property>aircraft/settings/inside-canopy</property>
   </condition>
 </animation>
 
@@ -692,6 +703,7 @@ if you contacted me before making any changes to this software.
  <animation>
  <type>rotate</type>
    <object-name>canopy</object-name>
+   <object-name>canopy-inside</object-name>
    <object-name>canopy-frame</object-name>
    <object-name>canopy-frame-inlet</object-name>
    <object-name>ap-fg</object-name>
@@ -1212,6 +1224,7 @@ if you contacted me before making any changes to this software.
     <animation>
       <type>select</type>
       <object-name>canopy</object-name>
+      <object-name>canopy-inside</object-name>
       <object-name>canopy-frame</object-name>
       <object-name>canopy-frame-inlet</object-name>
       <object-name>ap-fg</object-name>
