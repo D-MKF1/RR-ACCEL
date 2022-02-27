@@ -47,10 +47,16 @@ if you contacted me before making any changes to this software.
    <type>select</type>
    <object-name>pilot-inside</object-name>
    <condition>
+    <and>
+      <not>
+        <property>fdm/jsbsim/systems/crash-detect/crash-save</property>
+        <value>1</value>
+      </not>
      <or>
        <property>aircraft/settings/internal-pilot</property>
       <not><property>sim/current-view/internal</property></not>
      </or>
+    </and>
    </condition>
  </animation>
 
@@ -58,6 +64,8 @@ if you contacted me before making any changes to this software.
  		<type>material</type>
     <object-name>hull</object-name>
     <object-name>joystick</object-name>
+    <object-name>pttplate</object-name>
+    <object-name>pttbut</object-name>
     <object-name>panel</object-name>
     <object-name>cable</object-name>
     <object-name>seats</object-name>
@@ -96,10 +104,47 @@ if you contacted me before making any changes to this software.
    <path>Aircraft/RR-ACCEL/Models/Cockpit/instpanel.xml</path>
  </model>
 
+ <!--  Ptt Button -->
+ <animation>
+     <type>translate</type>
+     <object-name>pttbut</object-name>
+     <property>controls/radios/comm-ptt</property>
+     <factor>-0.003</factor>
+     <axis>
+         <x> 1.0</x>
+         <y> 0.0</y>
+         <z> 0.0</z>
+     </axis>
+ </animation>
+
+ <animation>
+   <type>pick</type>
+   <object-name>pttbut</object-name>
+   <object-name>pttplate</object-name>
+   <action>
+     <button>0</button>
+     <repeatable>false</repeatable>
+     <binding>
+       <command>property-assign</command>
+       <property>controls/radios/comm-ptt</property>
+       <value>1</value>
+     </binding>
+     <mod-up>
+       <binding>
+         <command>property-assign</command>
+         <property>controls/radios/comm-ptt</property>
+         <value>0</value>
+       </binding>
+     </mod-up>
+   </action>
+ </animation>
+
  <!-- joystick -->
  <animation>
    <type>rotate</type>
    <object-name>joystick</object-name>
+   <object-name>pttbut</object-name>
+   <object-name>pttplate</object-name>
    <property>surface-positions/elevator-pos-norm</property>
    <factor> -6 </factor>
    <center>
@@ -117,6 +162,8 @@ if you contacted me before making any changes to this software.
  <animation>
    <type>rotate</type>
    <object-name>joystick</object-name>
+   <object-name>pttbut</object-name>
+   <object-name>pttplate</object-name>
    <property>surface-positions/left-aileron-pos-norm</property>
    <factor> -6 </factor>
    <center>

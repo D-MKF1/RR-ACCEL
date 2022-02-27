@@ -73,8 +73,17 @@ var load		= electrical_base.initNode("load", 0.0, "DOUBLE");			#	internal batter
 var calculated_rest_hours		= electrical_base.initNode("crh", 1.0, "DOUBLE");			#	how long stay the battery
 var bus_load		= electrical_base.initNode("bus-load", 0.0, "DOUBLE");			#	Load on the avionics bus (from this engine)
 var ffb			= electrical_base.initNode("feed-from-battery", 0, "BOOL");		#	0: fed from avionics bus 1: fed from internal battery
-var eng_limit		= electrical_base.initNode("engine-limit", 0.0, "DOUBLE");		#	main param give his values in jsbsim to fcs/throttle-pos-norm and fcs/throttle-cmd-norm
+var eng_limit		= electrical_base.initNode("engine-limit", 0.0, "DOUBLE");		#	main param for power
+var eng_lospower	= electrical_base.initNode("engine-loses-power", 0.0, "DOUBLE");		#	factor for los power give his values in jsbsim to fcs/throttle-pos-norm and fcs/throttle-cmd-norm
 var bc			= electrical_base.initNode("battery-charging", 0, "BOOL");		#	0: not charging 1: charging
+
+var cover_emer1	   = props.globals.initNode("/controls/switches/emergency/cover[0]",1,"BOOL");
+var cover_emer2	   = props.globals.initNode("/controls/switches/emergency/cover[1]",1,"BOOL");
+var cover_emer3	   = props.globals.initNode("/controls/switches/emergency/cover[2]",1,"BOOL");
+
+var emer1	   = props.globals.initNode("/controls/switches/emergency/switch[0]",1,"BOOL");
+var emer2	   = props.globals.initNode("/controls/switches/emergency/switch[1]",1,"BOOL");
+var emer3	   = props.globals.initNode("/controls/switches/emergency/switch[2]",1,"BOOL");
 
 
 # only for the two lean instruments from the Instruments-3d folder
@@ -182,6 +191,22 @@ var update_electrical = func () {
 		startsystems.setDoubleValue(0.0);
 	}
 
+	####### controll the emergency switch covers for the three electrical engine_consumption        ### Emergency switches on Trimpanel
+
+  var ce1 = cover_emer1.getValue();
+  var ce2 = cover_emer2.getValue();
+  var ce3 = cover_emer3.getValue();
+
+  if(ce1 == 1){
+    emer1.setBoolValue(1);
+  }
+  if(ce2 == 1){
+    emer2.setBoolValue(1);
+  }
+  if(ce3 == 1){
+    emer3.setBoolValue(1);
+  }
+
   #### listen to propeller pitch setting in the mt-propeller instrument - do not change anything in the thrust, only in view and sound
   var mtrpm = getprop("/controls/mtp/rpm");   #range from 1400 to 2400 / Propeller pitch from 2 to 85 degree
   var mtba = 85-((mtrpm - 1400) * 0.083);
@@ -192,47 +217,50 @@ var update_electrical = func () {
 	var iohp = 0;
 	var iokw = 0;
 
+	var powerfactor = (emer1.getBoolValue() + emer2.getBoolValue() + emer3.getBoolValue()) / 3;
+
 	if( start_v == 1){
+
+		var is_eng_limit = eng_limit.getDoubleValue();
+		var corr_eng_limit = is_eng_limit*powerfactor;
 
 		var min_volts = internal_battery.ideal_volts - 50;
 
 		if(ins_volts.getValue() < min_volts){
 			# correction for the los of performance
-			var is_eng_limit = eng_limit.getDoubleValue();
-
-			var corr_eng_limit = is_eng_limit*ins_volts.getValue()/min_volts;
-			eng_limit.setDoubleValue(corr_eng_limit);
+			var corr_eng_limit = is_eng_limit*ins_volts.getValue()/min_volts*powerfactor;
 		}
+		eng_lospower.setDoubleValue(corr_eng_limit);
 
-		# average is 450kW, max 750kW | 0.7456 hp to kw | *1000 to get Watt not the kw after ht to kw
+		# average is 450kW, max 750kW | 0.7456 hp to kw | * 1000 to get Watt not the kw after ht to kw
 		engine_consumption = power_hp.getValue() * 0.7457 * 1000;
 
 		# fake consumption correction
 		if(engine_consumption > 3000000){
 				engine_consumption = 1500000;
-				if(prop_rpm.getValue()>2400){iopr = 2400};
-				if(engine_rpm.getValue()>2450){ioer = 2425};
-				if(power_hp.getValue()>1100){iohp = 1005};
+				if(prop_rpm.getValue()>2400){iopr = 2400*powerfactor};
+				if(engine_rpm.getValue()>2450){ioer = 2425*powerfactor};
+				if(power_hp.getValue()>1100){iohp = 1005*powerfactor};
 				iokw = iohp * 0.7457;
 
 		}elsif(engine_consumption > 760000){
 			engine_consumption = 900000;
-			if(prop_rpm.getValue()>2300){iopr = 2304};
-			if(engine_rpm.getValue()>2320){ioer = 2310};
-			if(power_hp.getValue()>1100){iohp = 950};
+			if(prop_rpm.getValue()>2300){iopr = 2304*powerfactor};
+			if(engine_rpm.getValue()>2320){ioer = 2310*powerfactor};
+			if(power_hp.getValue()>1100){iohp = 950*powerfactor};
 			iokw = iohp * 0.7457;
 
 		}else{
 			engine_consumption = engine_consumption;
-			iopr = prop_rpm.getValue()*0.9;
-			ioer = engine_rpm.getValue()*0.9;
-			iohp = power_hp.getValue()*0.8;
+			iopr = prop_rpm.getValue()*0.9*powerfactor;
+			ioer = engine_rpm.getValue()*0.9*powerfactor;
+			iohp = power_hp.getValue()*0.8*powerfactor;
 			iokw = iohp * 0.7457;
 		}
-		inst_output_prop_rot.setDoubleValue(iopr);
-		inst_output_eng_rpm.setDoubleValue(ioer);
-		inst_output_hp.setDoubleValue(iohp);
-		inst_output_kw.setDoubleValue(iokw);
+		inst_output_prop_rot.setDoubleValue(iopr*powerfactor);
+		inst_output_eng_rpm.setDoubleValue(ioer*powerfactor);
+		inst_output_hp.setDoubleValue(iohp*powerfactor);
+		inst_output_kw.setDoubleValue(iokw*powerfactor);
 	}
 
 	if( bus_volts_v > battery_volts ){						# The engine electrical system is fed from the avionics bus
@@ -247,7 +275,7 @@ var update_electrical = func () {
 		ins_volts.setValue(bus_volts_v);
 		ffb.setValue(0);
 	} else {									# The engine electrical system is fed from its internal battery
-		ins_volts.setValue(battery_volts);
+		ins_volts.setValue(battery_volts*powerfactor);
 		ffb.setValue(1);
 		bc.setValue(0);
 		if ( battery_volts > 0 ){

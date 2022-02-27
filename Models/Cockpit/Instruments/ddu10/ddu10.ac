@@ -2,9 +2,10 @@ AC3Db
 MATERIAL "DefaultWhite" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "display" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 MATERIAL "ddu10" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+MATERIAL "sysstart" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
 OBJECT world
 name "Blender_exporter_v3.3__ddu10.ac"
-kids 23
+kids 24
 OBJECT poly
 name "display"
 data 5
@@ -2131,6 +2132,26 @@ refs 4
 3 0.028641 0.159397
 1 0.180321 0.159397
 0 0.180321 0.219423
+kids 0
+OBJECT poly
+name "sysstart"
+data 9
+Plane.003
+crease 40.0
+texture "startsys.png"
+numvert 4
+0.0029 -0.05488 0.08919
+0.0029 -0.05488 -0.09081
+0.0029 0.05012 0.08919
+0.0029 0.05012 -0.09081
+numsurf 1
+SURF 0X0
+mat 3
+refs 4
+0 0.009829 0.212017
+1 0.999306 0.212017
+3 0.999306 0.789212
+2 0.009829 0.789212
 kids 0
 OBJECT poly
 name "touchbutton"

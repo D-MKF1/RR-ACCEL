@@ -35,15 +35,6 @@ var applyTrimWheels = func(v, which = 0) {
 
 var weakgpu	   = props.globals.initNode("/aircraft/settings/weak_gpu",0,"BOOL");
 
-var cover_emer1	   = props.globals.initNode("/controls/switches/emergency/cover[0]",0,"BOOL");
-var cover_emer2	   = props.globals.initNode("/controls/switches/emergency/cover[1]",0,"BOOL");
-var cover_emer3	   = props.globals.initNode("/controls/switches/emergency/cover[2]",0,"BOOL");
-
-var emer1	   = props.globals.initNode("/controls/switches/emergency/switch[0]",0,"BOOL");
-var emer2	   = props.globals.initNode("/controls/switches/emergency/switch[1]",0,"BOOL");
-var emer3	   = props.globals.initNode("/controls/switches/emergency/switch[2]",0,"BOOL");
-
-
 var ACCELSystem =
 {
     new : func()
@@ -86,22 +77,6 @@ var ACCELSystem =
           setprop("/controls/mtp/rpm",0);
           setprop("/controls/mtp/manu",1);
           setprop("/controls/gear/gear-down",0);
-        }
-
-        ### Emergency switches on Trimpanel
-
-        var ce1 = cover_emer1.getValue();
-        var ce2 = cover_emer2.getValue();
-        var ce3 = cover_emer3.getValue();
-
-        if(ce1 == 0){
-          emer1.setBoolValue(0);
-        }
-        if(ce2 == 0){
-          emer2.setBoolValue(0);
-        }
-        if(ce3 == 0){
-          emer3.setBoolValue(0);
         }
 
         ### update the main loop

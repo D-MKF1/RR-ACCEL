@@ -29,9 +29,19 @@ if you contacted me before making any changes to this software.
 		<number>0</number>
 	</adf>
 
+	<adf>
+		<name>adf</name>
+		<number>1</number>
+	</adf>
+	
 	<nav-radio>
 		<name>nav</name>
 		<number>0</number>
+	</nav-radio>
+
+	<nav-radio>
+		<name>nav</name>
+		<number>1</number>
 	</nav-radio>
 
 	<comm-radio>

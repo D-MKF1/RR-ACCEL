@@ -238,7 +238,7 @@
       <pure_gain>
         <input>/controls/engines/engine[0]/throttle</input>
         <input>/controls/engines/engine[1]/throttle</input>
-        <gain>/systems/accel-electrical/battery/engine-limit</gain>
+        <gain>/systems/accel-electrical/battery/engine-loses-power</gain>
         <output>fcs/throttle-pos-norm[0]</output>
         <output>fcs/throttle-cmd-norm[0]</output>
         <output>fcs/throttle-pos-norm[1]</output>

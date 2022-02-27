@@ -31,4 +31,20 @@ if you contacted me before making any changes to this software.
 		  <script>rraccel.ACCELSys.changeView(0);</script>
   </binding>
 </key>
+<!--
+<key n="261">
+ <name>F5</name>
+ <repeatable type="bool">true</repeatable>
+ <mod-shift>
+  <desc>Reload autopilot configuration</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+    fgcommand('reinit', props.Node.new({ subsystem: "xml-autopilot" }));
+    print("xml-autopilot reinitialized!");
+   </script>
+  </binding>
+ </mod-shift>
+</key>
+-->
 </PropertyList>

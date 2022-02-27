@@ -153,7 +153,7 @@ if you contacted me before making any changes to this software.
   	<offsets>
 			<x-m>-0.0269</x-m>
 			<y-m>-0.079</y-m>
-			<z-m> 0.188</z-m>
+			<z-m> 0.184</z-m>
   	</offsets>
   </model>
 
@@ -163,7 +163,7 @@ if you contacted me before making any changes to this software.
 		<offsets>
   		<x-m>-0.0269</x-m>
   		<y-m>-0.079</y-m>
-  		<z-m> 0.128</z-m>
+  		<z-m> 0.124</z-m>
 		</offsets>
 	</model>
 
@@ -173,7 +173,7 @@ if you contacted me before making any changes to this software.
 		<offsets>
   		<x-m>-0.0269</x-m>
   		<y-m>-0.079</y-m>
-  		<z-m> 0.068</z-m>
+  		<z-m> 0.064</z-m>
 		</offsets>
 	</model>
 

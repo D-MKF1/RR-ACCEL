@@ -28,10 +28,8 @@ setlistener("/autopilot/switches/ap", func (ap){
       var hdgGps = getprop("/autopilot/switches/gps");
 
       if((!hdgSet and !altSet and !iasSet and !navSet and !apprSet and !vsSet and !hdgGps)){
-        setprop("/autopilot/settings/heading-bug-deg",getprop("/orientation/heading-deg"));
-        setprop("/autopilot/locks/heading", "dg-heading-hold");
-        setprop("/autopilot/locks/altitude", "vertical-speed-hold");
-
+        setprop("/autopilot/locks/heading", "wing-leveler");
+        setprop("/autopilot/locks/altitude", "pitch-hold");
       }
     }else{
       setprop("/autopilot/locks/altitude", "");

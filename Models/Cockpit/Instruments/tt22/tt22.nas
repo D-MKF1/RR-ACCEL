@@ -531,7 +531,7 @@ var tt22_start = setlistener("/sim/signals/fdm-initialized", func {
 	#fid = left(fid,8);
 
 	setprop("instrumentation/transponder/flight-id", fid);
-	print(fid);
+	#print(fid);
 	var max = size(fid);
 
 	for(var i=0; i < max; i+=1){

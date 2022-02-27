@@ -105,8 +105,8 @@ if you contacted me before making any changes to this software.
    </model>
 
    <model>
-     <name>ap-fg</name>
-     <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap-fg.xml</path>
+     <name>ap</name>
+     <path>Aircraft/RR-ACCEL/Models/Cockpit/Instruments/ap/ap.xml</path>
      <offsets>
        <x-m>0.09</x-m>
        <y-m>-0.36</y-m>
@@ -121,7 +121,7 @@ if you contacted me before making any changes to this software.
     <object-name>canopy-inside</object-name>
     <object-name>canopy-frame</object-name>
     <object-name>canopy-frame-inlet</object-name>
-    <object-name>ap-fg</object-name>
+    <object-name>ap</object-name>
     <object-name>panel</object-name>
     <object-name>fuselage</object-name>
     <object-name>cockpit</object-name>
@@ -706,7 +706,7 @@ if you contacted me before making any changes to this software.
    <object-name>canopy-inside</object-name>
    <object-name>canopy-frame</object-name>
    <object-name>canopy-frame-inlet</object-name>
-   <object-name>ap-fg</object-name>
+   <object-name>ap</object-name>
    <property>sim/multiplay/generic/float[0]</property>
    <interpolation>
      <entry><ind> 0 </ind><dep> 0 </dep></entry>
@@ -1227,7 +1227,7 @@ if you contacted me before making any changes to this software.
       <object-name>canopy-inside</object-name>
       <object-name>canopy-frame</object-name>
       <object-name>canopy-frame-inlet</object-name>
-      <object-name>ap-fg</object-name>
+      <object-name>ap</object-name>
       <object-name>propeller</object-name>
       <object-name>aileron-right</object-name>
       <condition>

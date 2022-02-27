@@ -462,7 +462,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>cover_1</object-name>
     <property>controls/switches/emergency/cover[0]</property>
-    <factor>-95</factor>
+    <factor>95</factor>
     <axis>
      <x>0</x>
      <y>1</y>
@@ -497,7 +497,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>switch_1</object-name>
     <property>controls/switches/emergency/switch[0]</property>
-    <factor>-60</factor>
+    <factor>60</factor>
     <axis>
      <x>0</x>
      <y>1</y>
@@ -533,7 +533,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>cover_2</object-name>
     <property>controls/switches/emergency/cover[1]</property>
-    <factor>-95</factor>
+    <factor>95</factor>
     <axis>
      <x>0</x>
      <y>1</y>
@@ -568,7 +568,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>switch_2</object-name>
     <property>controls/switches/emergency/switch[1]</property>
-    <factor>-60</factor>
+    <factor>60</factor>
     <axis>
      <x>0</x>
      <y>1</y>
@@ -604,7 +604,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>cover_3</object-name>
     <property>controls/switches/emergency/cover[2]</property>
-    <factor>-95</factor>
+    <factor>95</factor>
     <axis>
      <x>0</x>
      <y>1</y>
@@ -639,7 +639,7 @@ if you contacted me before making any changes to this software.
     <type>rotate</type>
     <object-name>switch_3</object-name>
     <property>controls/switches/emergency/switch[2]</property>
-    <factor>-60</factor>
+    <factor>60</factor>
     <axis>
      <x>0</x>
      <y>1</y>

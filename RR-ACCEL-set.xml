@@ -141,6 +141,9 @@
   </instrumentation>
 
   <systems>
+    <autopilot>
+      <path>Aircraft/RR-ACCEL/Systems/autopilot.xml</path>
+    </autopilot>
     <electrical>
       <path/>
     </electrical>
@@ -376,23 +379,38 @@
  </flightnumber>
 
  <autopilot>
-  <settings>
-      <target-speed-kt type="double">200</target-speed-kt>
-      <target-pitch-deg type="double">0</target-pitch-deg>
-      <target-altitude-ft type="int">0</target-altitude-ft>
-      <heading-bug-deg type="int">0</heading-bug-deg>
-      <vertical-speed-fpm type="int">0</vertical-speed-fpm>
-  </settings>
-  <switches>
-    <ap type="bool">0</ap>
-    <hdg type="bool">0</hdg>
-    <alt type="bool">0</alt>
-    <ias type="bool">0</ias>
-    <nav type="bool">0</nav>
-    <appr type="bool">0</appr>
-    <vs type="bool">0</vs>
-  </switches>
-</autopilot>
+   <settings>
+       <target-speed-kt type="double">220</target-speed-kt>
+       <target-pitch-deg type="double">0</target-pitch-deg>
+       <target-altitude-ft type="int">0</target-altitude-ft>
+       <vertical-speed-fpm type="int">0</vertical-speed-fpm>
+       <heading-bug-deg type="int">0</heading-bug-deg>
+   </settings>
+   <switches>
+     <ap type="bool">0</ap>
+     <hdg type="bool">0</hdg>
+     <alt type="bool">0</alt>
+     <ias type="bool">0</ias>
+     <nav type="bool">0</nav>
+     <appr type="bool">0</appr>
+     <gps type="bool">0</gps>
+     <selected-nav type="bool">1</selected-nav>
+   </switches>
+   <constant>
+     <flare-base type="double">0.2</flare-base>
+     <derate-lowalt type="double">0.77</derate-lowalt>
+     <descent-profile-high-base type="double">0.18</descent-profile-high-base>
+     <descent-profile-high-rate type="double">-0.00096774</descent-profile-high-rate>
+     <descent-profile-low-base type="double">0.13</descent-profile-low-base>
+     <descent-profile-low-rate type="double">-0.00029032</descent-profile-low-rate>
+   </constant>
+   <Bendix-PB-20>
+     <controls>
+       <mode-selector type="int">2</mode-selector>	  <!-- 2 is manual control-->
+       <active type="bool">0</active>	  			  <!-- the AP engage switch -->
+     </controls>
+   </Bendix-PB-20>
+ </autopilot>
 
  <fdm>
    <jsbsim>
